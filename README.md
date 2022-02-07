@@ -1,3 +1,53 @@
+# EDGEMONY FINAL PROJECT - TEAM B
+
+## Organizzazione
+
+- daily standup **lun-ven 9-9.30**
+- durante il daily si segnalano problemi, si discutono implementazioni e il team leader assegna i task
+- si lavora in maniera autonoma
+- se necessario potete creare e autosegnare nuovi task
+
+## Strumenti
+
+- Github
+  - repo
+  - issues
+  - board
+- Slack
+- hosting: **a vostra discrezione**
+- backend: **a vostra discrezione**
+  - json-server usato durante il corso
+  - Firebase Firestore DB
+  - altro...
+
+## Repository
+
+- il branch `main` è protetto
+- ogni task viene sviluppato in una branch con nomenclatura `feature/[task]` o `fix/[task]` in base alla tipologia
+- per mergiare il codice da una branch verso `main` si crea una PR assegnando tutti i membri del team come reviewer
+- le PR possono essere mergiate solo aver ricevuto **almeno 1 approvazione**
+- siete liberi di fare fork ma solo questo repo sarà quello preso in considerazione
+
+## Obiettivo
+
+- AMAZON CLONE!
+  - usiamo Amazon come riferimento per UI/UX
+- ogni prodotto ha delle categorie
+- home page con una lista di prodotti
+  - griglia di prodotti, ognuno di questi ha il task "aggiungi"
+  - filtrare per categoria
+  - visible sia da loggati che da non loggati
+  - se l'utente è loggato deve poter aggiungere e togliere i prodotti dal carrello
+- pagina di checkout
+- pagina profilo utente
+
+- obiettivi extra:
+  - pagine dei singoli prodotti
+  - utente admin (può editare i prodotti)
+  - paginazione in home
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
