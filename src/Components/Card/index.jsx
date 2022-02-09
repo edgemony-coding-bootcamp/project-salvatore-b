@@ -33,7 +33,7 @@ const currentProdotti = querySnapshot.docs.map(doc => {
          <li key={items.id}>
          <h4>{items.titolo}</h4>
          <p>{items.prezzo}</p>
-         <img src={items.image} alt={items.titolo}/>
+         <img src={items.image} alt="items-title"/>
          </li>
        ))} 
 
