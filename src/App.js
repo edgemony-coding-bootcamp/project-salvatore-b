@@ -1,15 +1,18 @@
 
 import styles from './App.module.scss';
 import {Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home"
 
 function App() {
   return (
-    <div className={styles.App}>
-
+    <div>
+    
      <Routes>
 
-        <Route path="/" element={<h1>Home</h1>} />
-
+        <Route path="/" element={<Home /> } />
+  
+      
+   
         <Route path="/login" element={<h1>Login</h1>} />
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
@@ -17,7 +20,10 @@ function App() {
         <Route path="/checkout" element={<h1>Checkout</h1>} />
 
      </Routes>
-
+      {/* <Header />  search bar login logo link utili carrello category*/} 
+      {/* <Hero />  Carousel effetto sfocatura  */}
+      {/* <Card /> wrapper prodotti carousel */}
+      {/* <Footer /> Made by torna su link utili policy metodi di pagamento amazon aiuto  */}
     </div>
   );
 }
