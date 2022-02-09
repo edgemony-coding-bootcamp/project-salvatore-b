@@ -1,5 +1,5 @@
 
-import styles from './App.module.scss';
+// import styles from './App.module.scss';
 import {Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home"
 
