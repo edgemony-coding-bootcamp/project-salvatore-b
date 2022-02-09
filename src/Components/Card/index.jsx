@@ -32,7 +32,6 @@ const Card = () => {
           <div className={styles.Price_Rating}>
             <p> Rate {items.rating} </p>
             <p>{items.prezzo} €</p>
-            <p>{items.categoria}</p>
           </div>
           <button>Buy Now</button>
 
