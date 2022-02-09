@@ -1,15 +1,18 @@
 
 import styles from './App.module.scss';
 import {Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home"
 
 function App() {
   return (
-    <div className={styles.App}>
-      
+    <div>
+    
      <Routes>
 
-        <Route path="/" element={<h1>Home</h1>} />
-
+        <Route path="/" element={<Home /> } />
+  
+      
+   
         <Route path="/login" element={<h1>Login</h1>} />
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
