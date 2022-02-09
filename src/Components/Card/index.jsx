@@ -1,19 +1,15 @@
-import { useEffect, useState } from 'react';
-import { db } from '../../firebase';
+import { useEffect, useState } from "react";
+import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import styles from "./Card.module.scss";
 
-  
-const Card = () => 
-{
+const Card = () => {
+  const [product, setProduct] = useState([]);
 
-
-const [product, setProduct] = useState([]);
-
-
-useEffect( () => {
+  useEffect(() => {
     const getData = async () => {
-      const querySnapshot = await getDocs(collection(db, "prodotti"));
-const currentProdotti = querySnapshot.docs.map(doc => {
+      const querySnapshot = await getDocs(collection(db, "prodotto"));
+      const currentProdotti = querySnapshot.docs.map((doc) => {
         const obj = {
           id: doc.id,
           ...doc.data(),
@@ -22,30 +18,36 @@ const currentProdotti = querySnapshot.docs.map(doc => {
       });
       console.log(currentProdotti);
       setProduct(currentProdotti);
-    }
-    getData()
-  },[]);
+    };
+    getData();
+  }, []);
 
+  return (
+    <div className={styles.Wrapper}>
+      {product.map((items) => (
+        <div key={items.id} className={styles.Card}>
+          <img src={items.image} alt="items-title" />
+          <h4>{items.titolo}</h4>
+          <p>{items.descrizione}</p>
+          <div className={styles.Price_Rating}>
+            <p> Rate {items.rating} </p>
+            <p>{items.prezzo} €</p>
+            <p>{items.categoria}</p>
+          </div>
+          <button>Buy Now</button>
 
-    return (
-        <div>
-{product.map((items) => (
-         <li key={items.id}>
-         <h4>{items.titolo}</h4>
-         <p>{items.prezzo}</p>
-         <img src={items.image} alt="items-title"/>
-         </li>
-       ))} 
+        </div>
+      ))}
 
-            {/* <p>Categoria</p>
+      {/* <p>Categoria</p>
             <img src="#" />
             <p>Titolo</p>
             <p>Descrizione Hover</p>
             <p>Money$$$</p>
             <p>Rating da prendere material icon</p>
             <button>Buy Now</button> */}
-        </div>
-    );
+    </div>
+  );
 };
 
-export default Card
+export default Card;

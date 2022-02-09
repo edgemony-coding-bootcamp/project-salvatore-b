@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 const Footer = () => {
     return (
 
-        <div className = {styles.Footer}>
+        <div className={styles.Footer}>
         <p>Canta con noi</p>
         <p>About Us siamo chini i picciuli</p>
         <p>AIUTOOOOOOOOO</p>

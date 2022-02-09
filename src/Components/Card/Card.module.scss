@@ -1,0 +1,28 @@
+.Wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background:rgba(0, 0, 0, 0.1);
+  gap: 30px;
+  .Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25%;
+    max-height: 400px;
+    min-width: 100px;
+    z-index: 1;
+    background-color: rebeccapurple;
+    img {
+      max-height: 200px;
+      width: 100%;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .Price_Rating{
+         display: flex;
+         gap: 10px;
+    }
+  }
+}
