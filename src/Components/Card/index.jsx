@@ -1,6 +1,6 @@
-import { useEffect, useState, useRef, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { db } from '../../firebase';
-import { addDoc, collection, onSnapshot, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
   
 const Card = () => 
@@ -29,11 +29,11 @@ const currentProdotti = querySnapshot.docs.map(doc => {
 
     return (
         <div>
-{product.map((items, id) => (
+{product.map((items) => (
          <li key={items.id}>
          <h4>{items.titolo}</h4>
          <p>{items.prezzo}</p>
-         <img src={items.image} />
+         <img src={items.image} alt={items.titolo}/>
          </li>
        ))} 
 
@@ -49,14 +49,3 @@ const currentProdotti = querySnapshot.docs.map(doc => {
 };
 
 export default Card
-
-
-// return (
-//     <div className="App">
-//       <h1>Hello guys</h1>
-//  <ul>
-       
-//       </ul>
-//     </div>
-//   )
-// }
