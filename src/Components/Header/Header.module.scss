@@ -1,0 +1,116 @@
+.head{
+   
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 108px;
+    text-align: justify;
+
+    .wrapper_header_section{
+        padding: 5px 5px 0 5px;
+        height: 45px;
+    &:hover{
+            border: solid 1.5px;
+        }
+    }
+    
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    span{
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+    .firstLine{
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        background:#131921;
+        padding: 8px 20px 0px;
+        color: white;
+        gap: 1vw;
+        
+        .positionDiv{
+            display: flex;
+            span{
+                color: rgb(167, 162, 162);
+
+            }
+
+            .positionOn{
+                padding-top: 10px;
+            }
+        }
+
+            .imgLogoA{
+                width: 105px;
+                height: 30px;
+                padding-top: 10px;
+               } 
+            
+            .searchDiv{
+                display: flex;
+                flex: 1;
+                
+                
+            .searchInput{
+                width: 100%;
+                height: 20px;
+                padding: 11px;
+                margin-top: 3px;
+                outline: none;
+                border: none;
+                border-radius: 6px 0 0 6px;
+
+
+                &:focus{
+                    border: #cd9142ea solid 2px;
+                    box-shadow: 0 0 0 100000px rgba(0,0,0,0.5);
+                }
+                
+               } 
+            
+            .iconSearch{
+                color: black;
+                background: #cd9042;
+                height: 22.2px;
+                padding: 10px;
+                margin-left: -1.5px;
+                margin-top: 3px;
+                border-radius: 0 6px 6px 0;
+                cursor: pointer;
+                
+            }
+        }
+
+            .cartIcon{
+                margin-top:-8px;
+                color: white;
+                span{
+                    color: orange;
+                    position: absolute;
+                    right: 18px;
+                    top: 21px;
+                    font-size:18px;
+                }
+            }
+        .arrowDropDown{
+            position: absolute;
+            color: gray;
+        }
+    }
+    .secondLine{
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+        padding-left: 1vw;
+        gap: 1vw;
+        background: #232f3e;
+        line-height: 40px;
+    }
+}
