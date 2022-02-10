@@ -5,14 +5,7 @@
     width: 100%;
     height: 108px;
     text-align: justify;
-
-    .wrapper_header_section{
-        padding: 5px 5px 0 5px;
-        height: 45px;
-    &:hover{
-            border: solid 1.5px;
-        }
-    }
+    
     
     a{
         color: white;
@@ -34,7 +27,14 @@
         padding: 8px 20px 0px;
         color: white;
         gap: 1vw;
-        
+        .wrapper_header_section{
+            padding: 5px 5px 0 5px;
+            height: 45px;
+    
+        &:hover{
+                border: solid 1.5px white;
+            }
+        }
         .positionDiv{
             display: flex;
             span{
@@ -112,5 +112,14 @@
         gap: 1vw;
         background: #232f3e;
         line-height: 40px;
+
+        .wrapper_header_section{
+            padding: 0px 5px 13px 5px;
+            height: 20px;
+    
+        &:hover{
+                border: solid 1.5px white;
+            }
+        }
     }
 }

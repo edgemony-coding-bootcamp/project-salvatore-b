@@ -1,14 +1,30 @@
 import {Link} from "react-router-dom";
-import { Search, LocationOnOutlined } from '@mui/icons-material';
+import { LocationOnOutlined } from '@mui/icons-material';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-
+import SearchBar from './searchBar';
 import styles from "./Header.module.scss";
+import { useEffect, useState } from "react";
+
+
 
 
 const Header = () => {
+    // const [cercaInput, setCercaInput] = useState("");
+    // const [product, setProduct] = useState();
+    // const handleCercaInput = (e) => setCercaInput(e.target.value);
+
+    // useEffect(() => {
+    //     const search = prodotto.filter(
+    //         (prod) => 
+    //         prod.toLowerCase().included(cercaInput.toLowerCase())
+    //     )
+
+    //     setProduct(search)
+    // }, [cercaInput])
+
     return (
         <header className={styles.head}>
             <div className={styles.firstLine}>
@@ -17,7 +33,7 @@ const Header = () => {
                     <img className={styles.imgLogoA} src="https://www.pinclipart.com/picdir/big/358-3584545_amazon-web-services-logo-png-transparent-svg-vector.png" alt="" />
                 </Link>
             </div>
-                <a>
+                <a href="/">
             <div className={styles.wrapper_header_section}>
                 <div className={styles.positionDiv}><LocationOnOutlined className={styles.positionOn}/>
                 <div>
@@ -26,10 +42,12 @@ const Header = () => {
                 </div>
             </div>
                 </a>
-                <div className={styles.searchDiv}>
-                <input className={styles.searchInput}  type="text"/>
-                <Search className={styles.iconSearch}/>
-                </div>
+                
+                
+                <SearchBar
+                //   onClickSearch={handleCercaInput}  
+                />
+               
                     <Link to="/login">
                 <div className={styles.wrapper_header_section}>
                     <span>Ciao, Accedi</span> <br/> Account e liste 
@@ -53,12 +71,12 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.secondLine}>
-                <a href="/">Amazon Choice</a>
-                <a href="/">Libri</a>
-                <a href="/">Eletronica</a>
-                <a href="/">Bellezza e salute</a>
-                <a href="/">Gaming</a>
-                <a href="/">Film e TV</a>
+            <div className={styles.wrapper_header_section}><a href="/">Amazon Choice</a></div>
+            <div className={styles.wrapper_header_section}><a href="/">Libri</a></div>
+                <div className={styles.wrapper_header_section}><a href="/">Eletronica</a></div>
+                <div className={styles.wrapper_header_section}><a href="/">Bellezza e salute</a></div>
+                <div className={styles.wrapper_header_section}><a href="/">Gaming</a></div>
+                <div className={styles.wrapper_header_section}><a href="/">Film e TV</a></div>
             </div>
         </header>
     )
