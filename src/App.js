@@ -3,6 +3,7 @@ import styles from './App.module.scss';
 import {Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home"
 import Login from "./Pages/Login"
+import Checkout from "./Pages/Checkout";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
 
-        <Route path="/checkout" element={<h1>Checkout</h1>} />
+        <Route path="/checkout" element={<Checkout/>} />
 
      </Routes>
       {/* <Header />  search bar login logo link utili carrello category*/} 

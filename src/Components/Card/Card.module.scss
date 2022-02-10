@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   gap: 30px;
   .Card {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,6 +16,9 @@
     background-color: white;
     padding: 20px;
     height:55vh;
+           display: block;
+    margin-left: auto;
+    margin-right: auto ;
     img {
       max-height: 200px;
       width: 100%;
