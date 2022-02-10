@@ -18,3 +18,4 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_CLONE_8164F }}'
           channelId: live
           projectId: clone-8164f
+          clean: 'false'
