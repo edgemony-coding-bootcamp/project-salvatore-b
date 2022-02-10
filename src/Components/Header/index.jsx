@@ -1,5 +1,4 @@
-
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -9,7 +8,7 @@ const Header = () => {
                 <span>Scegli il tuo indirizzo</span>
                 <input type="text"></input>
                 <button type="button">icona lente</button>
-                <a href="/">Ciao Accedi</a>
+                <Link to="/login">Ciao Accedi</Link>
                 <a href="/">Politica Resi</a>
                 <a href="/">Carrello </a> {/*da sistemare com material ui */}
             </div>

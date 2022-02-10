@@ -2,6 +2,7 @@
 import styles from './App.module.scss';
 import {Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home"
+import Login from "./Pages/Login"
 
 function App() {
   return (
@@ -11,9 +12,7 @@ function App() {
 
         <Route path="/" element={<Home /> } />
   
-      
-   
-        <Route path="/login" element={<h1>Login</h1>} />
+        <Route path="/login" element={<Login />} />
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
 
