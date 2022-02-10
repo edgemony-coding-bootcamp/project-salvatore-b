@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import SearchBar from './searchBar';
 import styles from "./Header.module.scss";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 
 
