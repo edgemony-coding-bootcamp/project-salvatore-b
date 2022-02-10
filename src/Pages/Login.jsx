@@ -2,13 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "./Login.module.scss";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
 
   const auth = getAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  let navigate = useNavigate();
+  
   const loginFunction = (event) => {
     event.preventDefault();
 
@@ -17,6 +19,7 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user.email);
+        navigate('/');
       })
       .catch((error) => alert(error.message));
   };
@@ -29,6 +32,7 @@ const Login = () => {
         // Signed in 
         const user = userCredential.user;
         console.log(user.email);
+        navigate('/');
       })
       .catch((error) => alert(error.message));
   };
