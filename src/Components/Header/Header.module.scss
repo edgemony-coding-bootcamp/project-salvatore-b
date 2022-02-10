@@ -32,7 +32,7 @@
             height: 45px;
     
         &:hover{
-                border: solid 1.5px white;
+                outline: solid 1.5px white;
             }
         }
         .positionDiv{
@@ -111,14 +111,15 @@
         padding-left: 1vw;
         gap: 1vw;
         background: #232f3e;
-        line-height: 40px;
+        line-height: 30px;
+        align-items: center;
 
         .wrapper_header_section{
             padding: 0px 5px 13px 5px;
-            height: 20px;
+            height: 15px;
     
         &:hover{
-                border: solid 1.5px white;
+            outline: solid 1.5px white;
             }
         }
     }

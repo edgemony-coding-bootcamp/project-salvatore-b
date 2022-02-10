@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
     // const [cercaInput, setCercaInput] = useState("");
-    // const [product, setProduct] = useState();
+    // const [product, setProduct] = useState(prodotto);
     // const handleCercaInput = (e) => setCercaInput(e.target.value);
 
     // useEffect(() => {
@@ -43,10 +43,11 @@ const Header = () => {
             </div>
                 </a>
                 
-                
                 <SearchBar
-                //   onClickSearch={handleCercaInput}  
-                />
+            // cercaInput={cercaInput}
+            // handleCercaInput={handleCercaInput}
+             /> 
+
                
                     <Link to="/login">
                 <div className={styles.wrapper_header_section}>
