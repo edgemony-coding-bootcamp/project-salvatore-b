@@ -1,3 +1,4 @@
+
 import {Link} from "react-router-dom";
 import { Search, LocationOnOutlined } from '@mui/icons-material';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
@@ -16,6 +17,7 @@ const Header = () => {
                 <Link to="/">
                     <img className={styles.imgLogoA} src="https://www.pinclipart.com/picdir/big/358-3584545_amazon-web-services-logo-png-transparent-svg-vector.png" alt="" />
                 </Link>
+
             </div>
                 <a href="/">
             <div className={styles.wrapper_header_section}>

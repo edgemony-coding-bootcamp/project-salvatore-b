@@ -7,10 +7,10 @@ import styles from "./Pages.module.scss";
 const Home = () => {
   return (
     <div className={styles.Wrapper_Home}>
-    <Header/>
-    <Hero/>
-    <Card/>
-    <Footer/>
+      <Header/>
+      <Hero/>
+      <Card/>
+      <Footer/>
     </div>
   );
 };
