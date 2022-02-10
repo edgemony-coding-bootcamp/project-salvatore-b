@@ -17,7 +17,7 @@ const Header = () => {
                     <img className={styles.imgLogoA} src="https://www.pinclipart.com/picdir/big/358-3584545_amazon-web-services-logo-png-transparent-svg-vector.png" alt="" />
                 </Link>
             </div>
-                <a>
+                <a href="/">
             <div className={styles.wrapper_header_section}>
                 <div className={styles.positionDiv}><LocationOnOutlined className={styles.positionOn}/>
                 <div>
