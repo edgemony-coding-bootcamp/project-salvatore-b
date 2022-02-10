@@ -16,6 +16,7 @@ const Checkout = () => {
                 <h4>perché non acquisti altre cose... cioè ACQUISTA ALTRE COSE!!</h4>
             <button className={styles.Checkout__Button}>Torna Alla Home</button>
             </div>
+            
             <Footer />
         </>
     )
