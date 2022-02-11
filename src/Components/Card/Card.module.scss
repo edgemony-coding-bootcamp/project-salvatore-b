@@ -2,8 +2,8 @@
   position: relative;
   top: -355px;
   // margin: 0 20vw 0px;
-  width: 60%;
-  min-width: 60%;
+  width: 1500px;
+  // min-width: 60%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -13,13 +13,13 @@
   .Card {
     position: relative;
 
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     width: 280px;
     min-width: 270px;
-    z-index: 0;
+    // z-index: 0;
     background-color: white;
     padding: 20px;
     height:285px;
