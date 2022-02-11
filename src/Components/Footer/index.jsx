@@ -7,7 +7,7 @@ const Footer = () => {
 
     <div className={styles.FooterWrapper}>
       <div className={styles.NavFooter}>
-        <a href="" alt="" class={styles.BackToTop}>
+        <a href="/" class={styles.BackToTop}>
           {" "}
           Torna su {" "}
         </a>
