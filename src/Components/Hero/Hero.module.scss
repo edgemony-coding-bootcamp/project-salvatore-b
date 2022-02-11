@@ -1,23 +1,29 @@
 .containerHero{
-    position: absolute;
-    top: 107px;
-    left: 80px;
-    margin: 0 430px;
+    position: relative;
+    margin: auto;
+    // width: 1520px;
+    // left : 450px;
+    // min-width: 1520px;
     // z-index: -1;
     // overflow:hidden;
-
+    
     .hero {
+        // position: absolute;
+        // top: 107px;
+        // left: 80px;
+        // margin: 0 430px;
     // min-width: 1500px;
     // position: relative;
-    // width: 2340px;
-    // overflow: hidden;
-    scroll-behavior: smooth;
+    width: 1520px;
+        // overflow: hidden;
+    // scroll-behavior: smooth;
     // 
     .heroImg{
-        position: relative;
-        overflow: hidden;
+        // margin: auto;
+        // position: absolute;
+        // overflow: hidden;
         .imgRef{
-            width: 1520px;
+            // width: 1520px;
             
             // position: relative;
 
@@ -29,8 +35,8 @@
                 // position: relative;
 
                 // overflow:hidden;
-
-                min-width: 1520px;
+                width: 100%;
+                // min-width: 1520px;
 
             }
      

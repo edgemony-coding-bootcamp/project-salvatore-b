@@ -27,7 +27,7 @@ const carousel = useRef();
     <div className={styles.heroImg}>
       <div className={styles.imgRef}>
             <img src={"https://m.media-amazon.com/images/I/81OH+cHhEvL._SX3000_.jpg"} alt=""/>
-            <img src={"https://m.media-amazon.com/images/I/81OH+cHhEvL._SX3000_.jpg"} alt=""/>
+            {/* <img src={"https://m.media-amazon.com/images/I/81OH+cHhEvL._SX3000_.jpg"} alt=""/> */}
       </div>
       </div>
     </div>

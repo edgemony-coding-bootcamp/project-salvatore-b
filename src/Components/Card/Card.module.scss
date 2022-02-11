@@ -1,21 +1,29 @@
 .Wrapper {
-  margin: 252px 20vw 0px;
+  position: relative;
+  top: -355px;
+  // margin: 0 20vw 0px;
+  width: 60%;
+  min-width: 60%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  // justify-content: center;
+
   .Card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 300px;
+    width: 280px;
     min-width: 270px;
     z-index: 0;
     background-color: white;
     padding: 20px;
     height:285px;
-           display: block;
+    display: block;
     margin: 1px auto 20px;
 
     img {
