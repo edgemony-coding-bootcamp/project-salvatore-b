@@ -1,4 +1,3 @@
-
 import {Link} from "react-router-dom";
 import { LocationOnOutlined } from '@mui/icons-material';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
@@ -16,15 +15,15 @@ const Header = () => {
     // const [cercaInput, setCercaInput] = useState("");
     // const [product, setProduct] = useState(prodotto);
     // const handleCercaInput = (e) => setCercaInput(e.target.value);
-
     // useEffect(() => {
-    //     const search = prodotto.filter(
-    //         (prod) => 
-    //         prod.toLowerCase().included(cercaInput.toLowerCase())
-    //     )
-
-    //     setProduct(search)
-    // }, [cercaInput])
+        //     const search = prodotto.filter(
+            //         (prod) => 
+            //         prod.toLowerCase().included(cercaInput.toLowerCase())
+            //     )
+            
+            //     setProduct(search)
+            // }, [cercaInput])
+            
 
     return (
         <header className={styles.head}>
@@ -33,7 +32,6 @@ const Header = () => {
                 <Link to="/">
                     <img className={styles.imgLogoA} src="https://www.pinclipart.com/picdir/big/358-3584545_amazon-web-services-logo-png-transparent-svg-vector.png" alt="" />
                 </Link>
-
             </div>
                 <a href="/">
             <div className={styles.wrapper_header_section}>
@@ -46,6 +44,7 @@ const Header = () => {
                 </a>
                 
                 <SearchBar
+                
             // cercaInput={cercaInput}
             // handleCercaInput={handleCercaInput}
              /> 

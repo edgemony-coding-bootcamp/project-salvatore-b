@@ -27,14 +27,17 @@ const Card = () => {
       {product.map((items) => (
         <div key={items.id} className={styles.Card}>
           <img src={items.image} alt="items-title" />
-          <h4>{items.titolo}</h4>
-          <p>{items.descrizione}</p>
-          <div className={styles.Price_Rating}>
-            <p> Rate {items.rating} </p>
-            <p>{items.prezzo} €</p>
+          <h4 className={styles.title_card}>{items.titolo}</h4>
+          {/* <p>{items.descrizione}</p> */}
+          <div className={styles.PrRaBtn}>
+            <div className={styles.Price_Rating}>
+              <span>⭐ {items.rating} <br/></span>
+              <span>{items.prezzo} €</span>
+            </div>
+            <div>
+              <button>Acquista ora</button>
+            </div>
           </div>
-          <button>Buy Now</button>
-
         </div>
       ))}
 

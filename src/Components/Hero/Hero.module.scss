@@ -1,9 +1,74 @@
-.hero {
-    z-index: 0;
-     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-    img {
-        width: 100%;
-  
+.containerHero{
+    position: relative;
+    margin: auto;
+    // width: 1520px;
+    // left : 450px;
+    // min-width: 1520px;
+    // z-index: -1;
+    // overflow:hidden;
+    
+    .hero {
+        // position: absolute;
+        // top: 107px;
+        // left: 80px;
+        // margin: 0 430px;
+    // min-width: 1500px;
+    // position: relative;
+    width: 1520px;
+        // overflow: hidden;
+    // scroll-behavior: smooth;
+    // 
+    .heroImg{
+        // margin: auto;
+        // position: absolute;
+        // overflow: hidden;
+        .imgRef{
+            // width: 1520px;
+            
+            // position: relative;
+
+            // overflow:hidden;
+            // transition: all 0.35s;  
+         display: flex;
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+            img{
+                // position: relative;
+
+                // overflow:hidden;
+                width: 100%;
+                // min-width: 1520px;
+
+            }
+     
+     }
     }
 }
+.btnS{
+    position: absolute;
+    top: 0px;
+    
 
+    .btn {
+        position: absolute;
+            color: #fff;
+            width: 50px;
+            height: 251px;
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            z-index: 1;
+            &:active{
+                border: 1px solid #fff;
+            }
+        }
+
+          .btn:nth-of-type(2) {
+            left: 1470px;
+            &:active{
+                border: 1px solid #fff;
+            }
+        }
+}
+
+}

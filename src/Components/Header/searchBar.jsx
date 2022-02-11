@@ -1,7 +1,7 @@
 import { Search } from '@mui/icons-material';
 import styles from './Header.module.scss';
 
-const SearchBar = ({cercaInput, handleCercaInput,}) => {
+const SearchBar = ({cercaInput, handleCercaInput}) => {
 
     
     return(
