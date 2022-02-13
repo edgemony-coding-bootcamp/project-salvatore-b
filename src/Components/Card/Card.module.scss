@@ -1,33 +1,71 @@
 .Wrapper {
+  position: relative;
+  top: -355px;
+  // margin: 0 20vw 0px;
+  width: 1500px;
+  // min-width: 60%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 30px;
+  // justify-content: center;
+
   .Card {
-    
-    display: flex;
-    flex-direction: column;
+    position: relative;
+
+    // display: flex;
+    // flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    width: 25%;
-    // max-height: 400px;
-    min-width: 100px;
-    z-index: 1;
+    width: 280px;
+    min-width: 270px;
+    // z-index: 0;
     background-color: white;
     padding: 20px;
-    height:55vh;
-           display: block;
-    margin-left: auto;
-    margin-right: auto ;
+    height:285px;
+    display: block;
+    margin: 1px auto 20px;
+
     img {
-      max-height: 200px;
+      max-height: 150px;
       width: 100%;
       object-fit: contain;
-      margin-bottom: 15px;
+      // margin-bottom: 10px;
     }
-    .Price_Rating{
+
+    .title_card{
+      min-height: 45px;
+      max-height: 45px;
+    }
+
+    .PrRaBtn{
+      display: flex;
+      justify-content: space-between;
+
+.Price_Rating{
          display: flex;
+         flex-direction: column;
          gap: 10px;
     }
+    
+    button{
+      cursor: pointer;
+      // width: 30%;
+      height: 30px;
+      margin-top: 10px;
+      background-color: #f0c14b;
+      border: 1px solid;
+      border-color: #a88734 #9c7e31 #846a29;
+      border-radius: 4px;
+      outline: none;
+      background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+      margin-top: 20px;
+
+      &:hover {
+          background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
+      }}
+    
+    
+  }
   }
 }
