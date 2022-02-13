@@ -74,12 +74,12 @@ const Header = () => {
                 </div>
             </div>
             <div className={styles.secondLine}>
-            <div className={styles.wrapper_header_section}><a href="/">Amazon Choice</a></div>
-            <div className={styles.wrapper_header_section}><a href="/">Libri</a></div>
-                <div className={styles.wrapper_header_section}><a href="/">Eletronica</a></div>
-                <div className={styles.wrapper_header_section}><a href="/">Bellezza e salute</a></div>
-                <div className={styles.wrapper_header_section}><a href="/">Gaming</a></div>
-                <div className={styles.wrapper_header_section}><a href="/">Film e TV</a></div>
+            <div className={styles.wrapper_header_section}><Link to="/">Amazon Choice</Link></div>
+            <div className={styles.wrapper_header_section}><Link to="/libri">Libri</Link></div>
+                <div className={styles.wrapper_header_section}><Link to="/">Eletronica</Link></div>
+                <div className={styles.wrapper_header_section}><Link to="/beauty">Bellezza e salute</Link></div>
+                <div className={styles.wrapper_header_section}><Link to="/gaming">Gaming</Link></div>
+                <div className={styles.wrapper_header_section}><Link to="/">Film e TV</Link></div>
             </div>
         </header>
     )

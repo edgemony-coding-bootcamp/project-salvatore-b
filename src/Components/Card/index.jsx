@@ -4,7 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import styles from "./Card.module.scss";
 import { Context } from '../../Pages/Home';
 
-const Card = () => {
+const Card = (props) => {
   const [product, setProduct] = useState([]);
   const { value } = useContext(Context);
 
@@ -19,10 +19,19 @@ const Card = () => {
         return obj;
       });
       // console.log(currentProdotti);
-      setProduct(currentProdotti);
+      props.category ? setProduct(currentProdotti.filter((items) => items.categoria === `${props.category}`)) : setProduct(currentProdotti);
+      console.log(props.category);
     };
     getData();
-  }, []);
+  }, [props]);
+
+  // useEffect(() => {
+  //   const search = product.filter(
+  //     (prod) =>
+  //       prod.toLowerCase().included(value.toLowerCase())
+  //   )
+  //   setProduct(search);
+  // }, [value]) //da sistemare
 
   return (
     <>

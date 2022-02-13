@@ -6,7 +6,7 @@ import styles from "./Pages.module.scss";
 import { createContext, useState } from "react";
 export const Context = createContext({ value: "", setValue: () => {} });
 
-const Home = () => {
+const Home = ({category}) => {
   const [value, setValue] = useState("");
 
   return (
@@ -14,7 +14,7 @@ const Home = () => {
       <Context.Provider value={{value, setValue}}>
         <Header/>
         <Hero/>
-        <Card/>
+        <Card category={category} />
       </Context.Provider>
       <Footer/>
     </div>
