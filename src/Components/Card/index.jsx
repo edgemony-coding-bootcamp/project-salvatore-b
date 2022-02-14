@@ -4,10 +4,27 @@ import { collection, getDocs } from "firebase/firestore";
 import { Rating } from "@mui/material";
 import styles from "./Card.module.scss";
 import { Context } from '../../Pages/Home';
+import {useStateValue} from "../../Libs/StateProvider";
 
-const Card = (props) => {
+
+const Card = ({ id, titolo, image, prezzo, descrizione, rating, category }) => {
   const [product, setProduct] = useState([]);
+  const [{basket}, dispatch] = useStateValue();
   const { value } = useContext(Context);
+
+  const addToCart = () => {
+    dispatch({
+      type: "AGGIUNGI-CARRELLO",
+      oggetto: {
+         id,
+       titolo,
+        image,
+        prezzo,
+        descrizione,
+        rating,
+      },
+    });
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -19,10 +36,10 @@ const Card = (props) => {
         };
         return obj;
       });
-      props.category ? setProduct(currentProdotti.filter((items) => items.categoria === `${props.category}`)) : setProduct(currentProdotti);
+      category ? setProduct(currentProdotti.filter((items) => items.categoria === `${category}`)) : setProduct(currentProdotti);
     };
     getData();
-  }, [props]);
+  }, [category]);
 
   return (  
       <div className={styles.Wrapper}>
@@ -38,7 +55,7 @@ const Card = (props) => {
               <span>{items.prezzo} €</span>
             </div>
             <div className={styles.btnAB}>
-              <button className={styles.btnAdd}>Aggiungi al carrello</button>
+               <button onClick={addToCart} className={styles.btnAdd}>Aggiungi al carrello</button>
               <button className={styles.btnBuy}>Acquista ora</button>
             </div>
           </div>
