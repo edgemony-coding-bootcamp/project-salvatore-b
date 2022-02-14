@@ -13,8 +13,5 @@ jobs:
       uses: SpicyPizza/create-envfile@v1
       with:
         envkey_DEBUG: false
-        envkey_SOME_API_KEY: "123456abcdef"
-        envkey_SECRET_KEY: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
-        some_other_variable: foobar
-        directory: project-salvatore-b
+        envkey_REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
         file_name: .env
