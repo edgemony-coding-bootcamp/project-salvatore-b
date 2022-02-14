@@ -1,0 +1,20 @@
+name: Create envfile
+
+on: [push]
+
+jobs:
+
+  create-envfile:
+ 
+    runs-on: ubuntu-18.04
+ 
+    steps:
+    - name: Make envfile
+      uses: SpicyPizza/create-envfile@v1
+      with:
+        envkey_DEBUG: false
+        envkey_SOME_API_KEY: "123456abcdef"
+        REACT_APP_AUTH_DOMAIN: ${{ secrets.REACT_APP_AUTH_DOMAIN }}
+        some_other_variable: foobar
+        directory: project-salvatore-b
+        file_name: .env
