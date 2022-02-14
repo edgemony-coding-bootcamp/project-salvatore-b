@@ -6,32 +6,44 @@
         justify-content: center;
         text-align: center;
         
-         gap: 15px;
+        gap: 60px;
         background:#232f3e;
         width: 100%;
         color: white;
+
+        ul {
+            margin: 30px 0;
+            padding: 0;
+            max-width: 200px;
+        }
 
        
         li {
             text-align: left;
             list-style: none;
             padding-bottom: 8px;
+            font-size: 14px;
 
-            h3{
-            padding-bottom: 8px;
-        }
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            h3 {
+                padding-bottom: 8px;
+                font-size: 16px;
+            }
         }
     }
     
     .BackToTop {
+        width: 100%;
         background:#37475a;
-        display: flex;
-        flex: 1;
+        cursor: pointer;
+        border: none;
         color: white;
-        justify-content: center;
         line-height: 50px;
         height: 50px;
-        text-decoration: none ;
        
         &:hover{
          background: #3b4c61ea;
@@ -41,14 +53,12 @@
     
     .logo {
         background: #131a22;
-    .imgLogoA {
-            
+
+        .imgLogoA {    
             width: 105px;
             height: 30px;
             padding-top: 10px;
-           } 
-    
-    
+        } 
     }
 
     .Policy{

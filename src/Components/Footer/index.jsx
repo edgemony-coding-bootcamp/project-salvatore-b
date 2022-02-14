@@ -7,10 +7,7 @@ const Footer = () => {
 
     <div className={styles.FooterWrapper}>
       <div className={styles.NavFooter}>
-        <a href="/" className={styles.BackToTop}>
-          {" "}
-          Torna su {" "}
-        </a>
+        <button onClick={() => window.scrollTo(0, 0)} className={styles.BackToTop}>Torna su</button>
       </div>
       <div className={styles.Footer}>
         <ul>
