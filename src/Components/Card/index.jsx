@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import { Rating } from "@mui/material";
 import styles from "./Card.module.scss";
 import { Context } from '../../Pages/Home';
 
@@ -20,7 +21,7 @@ const Card = (props) => {
       });
       // console.log(currentProdotti);
       props.category ? setProduct(currentProdotti.filter((items) => items.categoria === `${props.category}`)) : setProduct(currentProdotti);
-      console.log(props.category);
+      // console.log(props.category);
     };
     getData();
   }, [props]);
@@ -34,23 +35,29 @@ const Card = (props) => {
   // }, [value]) //da sistemare
 
   return (
-    <>
-      <h1>Hai cercato: {value}</h1>
+    
       <div className={styles.Wrapper}>
-        {product.map((items) => (
-          <div key={items.id} className={styles.Card}>
-            <img src={items.image} alt="items-title" />
-            <h4>{items.titolo}</h4>
-            <p>{items.descrizione}</p>
+      {/* <h1>Hai cercato: {value}</h1> */}
+      {product.map((items) => (
+        <div key={items.id} className={styles.Card}>
+          <p className={styles.descCard}>{items.descrizione}</p>
+          <img src={items.image} alt="items-title" />
+          <h4 className={styles.title_card}>{items.titolo}</h4>
+          <div className={styles.PrRaBtn}>
             <div className={styles.Price_Rating}>
-              <p> Rate {items.rating} </p>
-              <p>{items.prezzo} €</p>
+            
+            <Rating name="half-rating-read" defaultValue={items.rating} precision={0.5} readOnly />
+              <span>{items.prezzo} €</span>
             </div>
-            <button>Buy Now</button>
+            <div className={styles.btnAB}>
+              <button className={styles.btnAdd}>Aggiungi al carrello</button>
+              <button className={styles.btnBuy}>Acquista ora</button>
+            </div>
           </div>
-        ))}
+        </div>
+      ))}
       </div>
-    </>
+    
   );
 };
 
