@@ -4,7 +4,7 @@ import { Rating } from "@mui/material";
 
 const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
   const [{ basket }, dispatch] = useStateValue();
-
+  
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",

@@ -9,6 +9,7 @@ import {useStateValue} from "../../Libs/StateProvider";
 
 const Card = ({ id, titolo, image, prezzo, descrizione, rating, category }) => {
   const [product, setProduct] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [{basket}, dispatch] = useStateValue();
   const { value } = useContext(Context);
 
