@@ -25,6 +25,28 @@
     height:285px;
     display: block;
     margin: 1px auto 20px;
+    transition: all 0.45s;
+
+    &:hover{
+      transform: scale(1.2);
+      z-index: 2;
+      height: auto;
+      background-color: rgba(37, 37, 37, 0.226);
+    }
+
+    &:hover > img{
+      width: 0;
+      
+    }
+
+    &:hover > .descCard{
+      position: relative;
+      // transform: translateY(-40px);
+      // background: rgba(0, 0, 0, 0.383);
+      color: black;
+      // transition: all 0.45s;
+
+    }
 
     img {
       max-height: 150px;
@@ -33,9 +55,21 @@
       // margin-bottom: 10px;
     }
 
+    .descCard{
+      position: absolute;
+      background: transparent;
+      color: transparent;
+      
+    }
+
     .title_card{
       min-height: 45px;
       max-height: 45px;
+      display: block;
+      // width: 100px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     .PrRaBtn{
@@ -47,25 +81,51 @@
          flex-direction: column;
          gap: 10px;
     }
-    
+
     button{
       cursor: pointer;
-      // width: 30%;
       height: 30px;
-      margin-top: 10px;
-      background-color: #f0c14b;
       border: 1px solid;
       border-color: #a88734 #9c7e31 #846a29;
       border-radius: 4px;
-      outline: none;
+            outline: none;
+    }
+
+    .btnAB{
+        display: flex;
+        flex-direction: column;
+        margin-top: -7px;
+        gap: 5px;
+    
+      .btnAdd{
+      
+      // width: 30%;
+      
+      background-color: #f0c14b;
+      
+      
+      
       background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-      margin-top: 20px;
 
       &:hover {
-          background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
-      }}
-    
+        background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
+      }
+}
+      .btnBuy{
+        cursor: pointer;
+
+        background-color: #ff7b00;
+
+        &:hover {
+          background: linear-gradient(to bottom, darken(#ff9100, 10%), darken(#ff8800, 10%));
+        }
+    }
+
+      
+     
+
+      
     
   }
-  }
+}}
 }
