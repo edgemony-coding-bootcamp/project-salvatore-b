@@ -4,6 +4,7 @@ import {Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home"
 import Login from "./Pages/Login"
 import Checkout from "./Pages/Checkout";
+import Carrello from "./Pages/Carrello";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
-
+        <Route path="/carrello" element={ <Carrello/>} />
         <Route path="/checkout" element={<Checkout/>} />
 
      </Routes>
