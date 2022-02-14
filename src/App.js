@@ -15,6 +15,8 @@ function App() {
         <Route path="/libri" element={<Home category="W18zO0uFpy1Ux3OLibri" /> } />
         <Route path="/gaming" element={<Home category="gQMf7U2u7VP3WxGAMING" /> } />
         <Route path="/beauty" element={<Home category="tFwGEENG8c0sIqbeauty" /> } />
+        <Route path="/elettronica" element={<Home category="LzDn3CtuhElettronica" /> } />
+        <Route path="/cucina" element={<Home category="izV883zg7TPzROcucina" /> } />
   
         <Route path="/login" element={<Login />} />
 

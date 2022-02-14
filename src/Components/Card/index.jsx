@@ -19,26 +19,14 @@ const Card = (props) => {
         };
         return obj;
       });
-      // console.log(currentProdotti);
       props.category ? setProduct(currentProdotti.filter((items) => items.categoria === `${props.category}`)) : setProduct(currentProdotti);
-      // console.log(props.category);
     };
     getData();
   }, [props]);
 
-  // useEffect(() => {
-  //   const search = product.filter(
-  //     (prod) =>
-  //       prod.toLowerCase().included(value.toLowerCase())
-  //   )
-  //   setProduct(search);
-  // }, [value]) //da sistemare
-
-  return (
-    
+  return (  
       <div className={styles.Wrapper}>
-      {/* <h1>Hai cercato: {value}</h1> */}
-      {product.map((items) => (
+      {product.map((items) => items.titolo.toLowerCase().includes(value.toLowerCase()) && (
         <div key={items.id} className={styles.Card}>
           <p className={styles.descCard}>{items.descrizione}</p>
           <img src={items.image} alt="items-title" />
