@@ -34,11 +34,11 @@ const Carrello = () => {
             </div>
           )}
         </div>
-        {basket?.length > 0 && (
+        {/* {basket?.length > 0 && (
           <div>
             <h1>TOTALE</h1>
           </div>
-        )}
+        )} */}
       </div>
       <Link to="/">
         <button>Torna Alla Home</button>

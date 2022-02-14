@@ -1,10 +1,11 @@
-
 import { useStateValue } from "../../Libs/StateProvider";
 import { Rating } from "@mui/material";
+import styles from "./Cart.module.scss";
 
 const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
+  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
-  
+
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
@@ -13,26 +14,24 @@ const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
   };
 
   return (
-    <div key={id}>
+    <div key={id} className={styles.Cart}>
       {/* <p className={styles.descCard}>{descrizione}</p> */}
-      <img src={image} alt="items-title" />
-      <h4>{titolo}</h4>
+      <img className={styles.product_image} src={image} alt={titolo} />
+      <h4 className={styles.product_title}>{titolo}</h4>
       <div>
-        <div>
+        <div className={styles.price_rating}>
           <Rating
             name="half-rating-read"
             defaultValue={rating}
             precision={0.5}
             readOnly
           />
-          <span>{prezzo} €</span>
+          <span className={styles.product_price}>{prezzo} €</span>
         </div>
-        
-          <button onClick={deleteFromCart}>
-            Rimuovi dal carrello
-          </button>
-         
-       
+
+        <button className={styles.remove_btn} onClick={deleteFromCart}>
+          Rimuovi dal carrello
+        </button>
       </div>
     </div>
   );

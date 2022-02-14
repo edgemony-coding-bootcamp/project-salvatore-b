@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import SearchBar from './searchBar';
 import styles from "./Header.module.scss";
-import {useStateValue} from "../../Libs/StateProvider";
+import { useStateValue } from "../../Libs/StateProvider";
 
 const Header = () => {
     const [{ basket }] = useStateValue();
@@ -43,16 +43,14 @@ const Header = () => {
                     </div>
                 </a>
                 <Link to="/carrello">
-                <div className={styles.wrapper_header_section}>
-                    <a href="/">
+                    <div className={styles.wrapper_header_section}>
                         <IconButton aria-label="cart">
                             <Badge badgeContent={basket?.length} className={styles.cartIcon}>
                                 <ShoppingBagOutlinedIcon fontSize="large" />
                             </Badge>
                         </IconButton>
                         Carrello
-                    </a>
-                </div>
+                    </div>
                 </Link>
             </div>
             <div className={styles.secondLine}>
