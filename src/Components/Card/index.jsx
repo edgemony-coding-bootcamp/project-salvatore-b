@@ -6,26 +6,11 @@ import styles from "./Card.module.scss";
 import { Context } from '../../Pages/Home';
 import {useStateValue} from "../../Libs/StateProvider";
 
-
-const Card = ({ id, titolo, image, prezzo, descrizione, rating, category }) => {
+const Card = ({ category }) => {
   const [product, setProduct] = useState([]);
   // eslint-disable-next-line no-unused-vars
   const [{basket}, dispatch] = useStateValue();
   const { value } = useContext(Context);
-
-  const addToCart = () => {
-    dispatch({
-      type: "AGGIUNGI-CARRELLO",
-      oggetto: {
-         id,
-       titolo,
-        image,
-        prezzo,
-        descrizione,
-        rating,
-      },
-    });
-  };
 
   useEffect(() => {
     const getData = async () => {
@@ -42,6 +27,20 @@ const Card = ({ id, titolo, image, prezzo, descrizione, rating, category }) => {
     getData();
   }, [category]);
 
+  const addToCart = (items) => {
+    dispatch({
+      type: "AGGIUNGI-CARRELLO",
+      oggetto: {
+        id: items.id,
+        titolo: items.titolo,
+        image: items.image,
+        prezzo: items.prezzo,
+        descrizione: items.descrizione,
+        rating: items.rating,
+      },
+    });
+  };
+
   return (  
       <div className={styles.Wrapper}>
       {product.map((items) => items.titolo.toLowerCase().includes(value.toLowerCase()) && (
@@ -56,8 +55,8 @@ const Card = ({ id, titolo, image, prezzo, descrizione, rating, category }) => {
               <span>{items.prezzo} €</span>
             </div>
             <div className={styles.btnAB}>
-               <button onClick={addToCart} className={styles.btnAdd}>Aggiungi al carrello</button>
-              <button className={styles.btnBuy}>Acquista ora</button>
+              <button onClick={() => addToCart(items)} className={styles.btnAdd}>Aggiungi al carrello</button>
+              <a href="/checkout"><button className={styles.btnBuy}>Acquista ora</button></a>
             </div>
           </div>
         </div>
