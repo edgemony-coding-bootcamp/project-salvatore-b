@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import styles from "./Login.module.scss";
 import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
 
@@ -24,18 +25,6 @@ const Login = () => {
       .catch((error) => alert(error.message));
   };
 
-  const register = (event) => {
-    event.preventDefault();
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log(user.email);
-        navigate('/');
-      })
-      .catch((error) => alert(error.message));
-  };
 
 
   return (
@@ -86,9 +75,9 @@ const Login = () => {
         <div className={styles.divider}>
           <p>Sei nuovo su amazon?</p>
         </div>
-
-        <button onClick={register} className={styles.register}>
-          Crea il tuo Account Amazon
+       
+        <button className={styles.register}>
+          <Link to="/iscrizione">Crea il tuo Account Amazon</Link> 
         </button>
 
       </div>

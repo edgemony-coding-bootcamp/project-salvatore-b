@@ -5,6 +5,7 @@ import Home from "./Pages/Home"
 import Login from "./Pages/Login"
 import Checkout from "./Pages/Checkout";
 import Carrello from "./Pages/Carrello";
+import Iscrizione from "./Pages/Iscrizione"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/cucina" element={<Home category="izV883zg7TPzROcucina" /> } />
   
         <Route path="/login" element={<Login />} />
+        <Route path="/iscrizione" element={<Iscrizione />} />
 
         <Route path="/profilo" element={ <h1>Profilo</h1>} />
         <Route path="/carrello" element={ <Carrello/>} />

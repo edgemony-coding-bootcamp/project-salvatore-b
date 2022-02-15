@@ -10,6 +10,7 @@
     .header {
         .logo {
             width: 100px;
+            height: 74px;
             object-fit: contain;
             margin: 20px 0;
         }
@@ -74,6 +75,10 @@
 
             &:hover {
                 background: linear-gradient(to bottom, darken(#f7dfa5, 5%), darken(#f0c14b, 5%));
+            }
+            a {
+                text-decoration: none;
+                color: black;
             }
         }
 

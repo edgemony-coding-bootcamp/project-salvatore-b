@@ -5,6 +5,7 @@
   width: 1500px;
   // min-width: 60%;
   margin: auto;
+  margin-bottom: -355px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -87,11 +88,14 @@
     button{
       cursor: pointer;
       height: 30px;
-      width: 124px;
       border: 1px solid;
       border-color: #a88734 #9c7e31 #846a29;
       border-radius: 4px;
       outline: none;
+      a{
+        text-decoration: none;
+        color: black;
+      }
     }
 
     .btnAB{
