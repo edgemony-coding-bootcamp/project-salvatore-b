@@ -56,7 +56,7 @@ const Card = ({ category }) => {
             </div>
             <div className={styles.btnAB}>
               <button onClick={() => addToCart(items)} className={styles.btnAdd}>Aggiungi al carrello</button>
-              <a href="/checkout"><button className={styles.btnBuy}>Acquista ora</button></a>
+               <button className={styles.btnBuy}><a href="/checkout">Acquista ora</a></button>
             </div>
           </div>
         </div>
