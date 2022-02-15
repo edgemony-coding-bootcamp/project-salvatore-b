@@ -52,7 +52,7 @@ const Card = ({ category }) => {
             <div className={styles.Price_Rating}>
             
             <Rating name="half-rating-read" defaultValue={items.rating} precision={0.5} readOnly />
-              <span>{items.prezzo} €</span>
+              <span>{items.prezzo.toFixed(2)} €</span>
             </div>
             <div className={styles.btnAB}>
               <button onClick={() => addToCart(items)} className={styles.btnAdd}>Aggiungi al carrello</button>

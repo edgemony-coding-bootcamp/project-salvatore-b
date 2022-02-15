@@ -4,15 +4,15 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
-    height: 100vh;
-    overflow: hidden;
+    height: 100%;
+    // overflow: hidden;
 
     .header {
         .logo {
             width: 100px;
             height: 74px;
             object-fit: contain;
-            margin: 20px 0;
+            margin: 20px 0 0;
         }
     }
 
@@ -133,6 +133,7 @@
     footer {
         margin-top: 30px;
         width: 95%;
+        height: 100px;
         display: block;
         background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
 
@@ -143,6 +144,8 @@
             justify-content: center;
             font-size: small;
             gap: 20px;
+            font-size: 11px;
+            line-height: 1.465;
     
             li {
                list-style: none;

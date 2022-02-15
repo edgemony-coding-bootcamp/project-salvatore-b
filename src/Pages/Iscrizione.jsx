@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { db } from "./../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "./Login.module.scss";
-import { useNavigate } from "react-router-dom";
 
 const Iscrizione = () => {
   const auth = getAuth();
@@ -19,20 +21,21 @@ const Iscrizione = () => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user.email);
-        //   const uid = userCredential.uid;
 
-        //    firebase.firestore().collection("utenti").doc(uid).set({
-        //     user_uid: uid,
-        //     indirizzo: address,
-        //     nome: nome,
-        //     email: email,
-        //   });
+          const newUser = {
+            user_uid: user.uid,
+            nome: nome,
+            email: email,
+            indirizzo: address,
+          };
+
+          console.log(newUser);
+          addDoc(collection(db, "utenti"), newUser);
           navigate("/");
         })
         .catch((error) => alert(error.message));
     } else {
-      alert("La password inserita non coincide con la prima!");
+      alert("Le password non corrispondono");
     }
   };
 
@@ -68,10 +71,11 @@ const Iscrizione = () => {
             onChange={(event) => setPassword(event.target.value)}
             type="password"
             name="password"
+            placeholder="Almeno 6 caratteri"
             required
           />
 
-          <label htmlFor="ConfermaPass">Conferma Password</label>
+          <label htmlFor="ConfermaPass">Verifica password</label>
           <input
             value={passwordConf}
             onChange={(event) => setPasswordConf(event.target.value)}
@@ -99,13 +103,9 @@ const Iscrizione = () => {
             required
           />
 
-          <button onClick={register}>Conferma la Registrazione</button>
+          <button onClick={register}>Continua</button>
           <p>
-            Accedendo al tuo account dichiari di aver letto e accetti le nostre
-            Condizioni generali di uso e vendita. Prendi visione della nostra
-            Informativa sulla privacy, della nostra Informativa sui Cookie e
-            della nostra Informativa sulla Pubblicità definita in base agli
-            interessi.
+            Registrandoti dichiari di aver letto e accetti integralmente le nostre Condizioni generali di uso e vendita. Prendi visione della nostra Informativa sulla privacy, della nostra Informativa sui Cookie e della nostra Informativa sulla Pubblicità definita in base agli interessi.
           </p>
         </form>
       </div>
