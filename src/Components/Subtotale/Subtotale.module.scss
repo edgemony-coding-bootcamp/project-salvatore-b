@@ -1,0 +1,29 @@
+.Subtotale {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: left;
+  margin: auto;
+
+
+  .SubBTN {
+    cursor: pointer;
+      height: 30px;
+      margin-top: 10px;
+      border: 1px solid;
+      border-color: #a88734 #9c7e31 #846a29;
+      border-radius: 4px;
+      outline: none;
+      background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+
+      &:hover {
+        background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
+      }
+  }
+}
