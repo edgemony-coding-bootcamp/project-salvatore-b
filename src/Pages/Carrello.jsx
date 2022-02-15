@@ -4,6 +4,7 @@ import Footer from "../Components/Footer";
 import { useStateValue } from "../Libs/StateProvider";
 import Cart from "../Components/Cart";
 import { Link } from "react-router-dom";
+import Subtotale from "../Components/Subtotale";
 
 const Carrello = () => {
   const [{ basket }] = useStateValue();
@@ -34,11 +35,7 @@ const Carrello = () => {
             </div>
           )}
         </div>
-        {/* {basket?.length > 0 && (
-          <div>
-            <h1>TOTALE</h1>
-          </div>
-        )} */}
+        {basket?.length > 0 && <Subtotale />}
       </div>
       <Link to="/">
         <button>Torna Alla Home</button>

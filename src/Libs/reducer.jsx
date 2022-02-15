@@ -2,8 +2,9 @@ export const initialState = {
     basket: [],
 };
 
-export const TotaleCarrello = (basket) =>
+export const totaleCarrello = (basket) =>
   basket?.reduce((totale, oggetto) => oggetto.prezzo + totale, 0);
+
 
 const reducer = (state, action) => {
   console.log(action);
@@ -16,6 +17,8 @@ const reducer = (state, action) => {
        case "RIMUOVI-CARRELLO":
       
         let newBasket = [...state.basket];
+
+
 
     const index = state.basket.findIndex(
         (basketOggetto) => basketOggetto.id === action.id

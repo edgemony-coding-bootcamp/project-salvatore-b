@@ -19,6 +19,11 @@
         text-align: left;
         padding: 20px;
     }
+    .RaCoRi{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+   
 
     // .price_rating {
     //     display: block;
@@ -30,6 +35,13 @@
         text-align: left;
         font-weight: 600s;
     }
+
+    .counter {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+}
+
     .remove_btn {
         cursor: pointer;
         background-color: #f0c14b;
@@ -44,4 +56,5 @@
             background-color: darkorange;
         }
     }
+}
 }

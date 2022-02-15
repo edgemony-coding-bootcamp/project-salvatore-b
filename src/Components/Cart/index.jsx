@@ -1,11 +1,12 @@
 import { useStateValue } from "../../Libs/StateProvider";
 import { Rating } from "@mui/material";
 import styles from "./Cart.module.scss";
+import { useState } from "react";
 
 const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
   // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
-
+  const [count, setCount] = useState(1);
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
@@ -18,7 +19,7 @@ const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
       {/* <p className={styles.descCard}>{descrizione}</p> */}
       <img className={styles.product_image} src={image} alt={titolo} />
       <h4 className={styles.product_title}>{titolo}</h4>
-      <div>
+      <div className={styles.RaCoRi}>
         <div className={styles.price_rating}>
           <Rating
             name="half-rating-read"
@@ -26,9 +27,27 @@ const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
             precision={0.5}
             readOnly
           />
-          <span className={styles.product_price}>{prezzo} €</span>
+          <br/>
+          <span className={styles.product_price}>{prezzo.toFixed(2)} €</span>
         </div>
-
+        <div className={styles.counter}>
+          <button
+            className={styles.countBtn}
+            onClick={() => setCount(count - 1)}
+            disabled={count <= 1}
+          >
+            {" "}
+            {"-"}
+          </button>
+          <span>{count}</span>
+          <button
+            className={styles.countBtn}
+            onClick={() => setCount(count + 1)}
+          >
+            {" "}
+            {"+"}{" "}
+          </button>
+        </div>
         <button className={styles.remove_btn} onClick={deleteFromCart}>
           Rimuovi dal carrello
         </button>
