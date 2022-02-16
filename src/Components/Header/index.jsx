@@ -8,7 +8,7 @@ import SearchBar from './searchBar';
 import styles from "./Header.module.scss";
 import { useStateValue } from "../../Libs/StateProvider";
 
-const Header = () => {
+const Header = ({handleSidebar}) => {
     const [{ basket }] = useStateValue();
     return (
         <header className={styles.head}>
@@ -43,7 +43,7 @@ const Header = () => {
                     </div>
                 </a>
                 <Link to="/carrello">
-                    <div className={styles.wrapper_header_section}>
+                    <div className={styles.wrapper_header_section} onMouseOver={handleSidebar}>
                         <IconButton aria-label="cart">
                             <Badge badgeContent={basket?.length} className={styles.cartIcon}>
                                 <ShoppingBagOutlinedIcon fontSize="large" />

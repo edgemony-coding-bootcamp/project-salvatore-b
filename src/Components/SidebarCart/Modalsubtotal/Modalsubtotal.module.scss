@@ -1,0 +1,35 @@
+.subT {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 20px auto;
+    padding: 5px;
+    width: 60%;
+    
+    background-color: white;
+    border-radius: 5px;
+
+    .textMod{
+        font-size:12px !important;
+    }
+    .subTMod{
+        font-size:15px !important;
+        color:red !important;
+    }
+
+
+    .sidebarBtn {
+        cursor: pointer;
+        background-color: #f0c14b;
+        border: 1px solid;
+        border-color: #a88734 #9c7e31 #846a29;
+        outline: none;
+        border-radius: 4px;
+        background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+        margin-bottom:5px;
+        &:hover {
+            box-shadow: 0 0 3pt 1pt orange;
+            background-color: darkorange;
+        }
+    }
+}
