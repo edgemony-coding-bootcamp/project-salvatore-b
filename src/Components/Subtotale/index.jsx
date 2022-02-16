@@ -1,6 +1,6 @@
 import {totaleCarrello} from "../../Libs/reducer";
 import { useStateValue } from "../../Libs/StateProvider";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Subtotale.module.scss";
 
 function Subtotale({id}) {
@@ -31,7 +31,7 @@ function Subtotale({id}) {
         <input type="checkbox" /> Questo ordine contiene un regalo
       </div>
     
-      <button className={styles.SubBTN} onClick={svuotacart}><a href="/checkout">Procedi all'acquisto</a></button>
+      <Link to="/checkout"><button className={styles.SubBTN} onClick={svuotacart}>Procedi all'acquisto</button></Link>
       
     </div>
   );
