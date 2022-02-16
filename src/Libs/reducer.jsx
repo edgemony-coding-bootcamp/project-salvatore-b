@@ -33,6 +33,15 @@ const reducer = (state, action) => {
        }
      
       return { ...state, basket: newBasket };
+
+     case "SVUOTA-CARRELLO":
+      return {
+        ...state,
+        basket: [],
+      };
+
+
+
     default:
       return state;
   }

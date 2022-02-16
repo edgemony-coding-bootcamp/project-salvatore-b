@@ -3,11 +3,16 @@ import { useStateValue } from "../../Libs/StateProvider";
 // import { Link } from "react-router-dom";
 import styles from "./Subtotale.module.scss";
 
-function Subtotale() {
-  const [{ basket }] = useStateValue();
+function Subtotale({id}) {
+  const [{ basket }, dispatch] = useStateValue();
 
   const sommaProdotti = totaleCarrello(basket).toFixed(2);
- 
+  
+  const svuotacart = () => {
+    dispatch({
+      type: "SVUOTA-CARRELLO", id,
+    });
+  };
 
   return (
     <div className={styles.Subtotale}>
@@ -26,7 +31,7 @@ function Subtotale() {
         <input type="checkbox" /> Questo ordine contiene un regalo
       </div>
     
-      <button className={styles.SubBTN}><a href="/checkout">Procedi all'acquisto</a></button>
+      <button className={styles.SubBTN} onClick={svuotacart}><a href="/checkout">Procedi all'acquisto</a></button>
       
     </div>
   );

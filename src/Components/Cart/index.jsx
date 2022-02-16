@@ -14,6 +14,7 @@ const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
     });
   };
 
+  const prezzoCount= prezzo * count;
   return (
     <div key={id} className={styles.Cart}>
       {/* <p className={styles.descCard}>{descrizione}</p> */}
@@ -28,7 +29,7 @@ const Cart = ({ id, titolo, image, prezzo, descrizione, rating }) => {
             readOnly
           />
           <br/>
-          <span className={styles.product_price}>{prezzo.toFixed(2)} €</span>
+          <span className={styles.product_price}>{prezzoCount.toFixed(2)} €</span>
         </div>
         <div className={styles.counter}>
           <button
