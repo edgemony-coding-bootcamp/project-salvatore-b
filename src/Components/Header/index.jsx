@@ -19,6 +19,13 @@ const Header = ({ handleSidebar }) => {
         }
     };
 
+    const getTotalItems = () => {
+        return basket.reduce(
+          (total, currentItem) => (total += currentItem.count),
+          0
+        );
+      };
+
     return (
         <header className={styles.head}>
             <div className={styles.firstLine}>
@@ -57,7 +64,7 @@ const Header = ({ handleSidebar }) => {
                 <Link to="/carrello">
                     <div className={styles.wrapper_header_section} onMouseOver={handleSidebar}>
                         <IconButton aria-label="cart">
-                            <Badge badgeContent={basket?.length} className={styles.cartIcon}>
+                            <Badge badgeContent={getTotalItems()} className={styles.cartIcon}>
                                 <ShoppingBagOutlinedIcon fontSize="large" />
                             </Badge>
                         </IconButton>
