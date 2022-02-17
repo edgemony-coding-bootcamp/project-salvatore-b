@@ -42,7 +42,9 @@ function Subtotale({id}) {
         <input type="checkbox" /> Questo ordine contiene un regalo
       </div>
     
+
       <Link to="/checkout"><button disabled={getTotalItems() === 0} className={styles.SubBTN} onClick={svuotacart}>Procedi all'acquisto</button></Link>
+
       
     </div>
   );
