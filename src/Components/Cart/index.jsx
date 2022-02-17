@@ -13,7 +13,12 @@ const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
-      id,
+      oggetto: {id, titolo,
+        image,
+        prezzo,
+        rating,
+        count,
+      }
     });
   };
 
@@ -24,8 +29,8 @@ const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
     let numItems = parseInt(select.options[select.selectedIndex].value);
 
     dispatch({
-      type: "CHANGE_COUNT_IN_BASKET",
-      item: {
+      type: "COUNTER-CARRELLO",
+      oggetto: {
         id,
         titolo,
         image,
