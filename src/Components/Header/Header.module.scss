@@ -1,11 +1,9 @@
-.head{
-   
+.head{   
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 108px;
     text-align: justify;
-    
     
     a{
         color: white;
@@ -14,6 +12,7 @@
         font-weight: bold;
         cursor: pointer;
     }
+
     span{
         font-size: 12px;
         font-weight: normal;
@@ -27,14 +26,28 @@
         padding: 8px 20px 0px;
         color: white;
         gap: 1vw;
+
         .wrapper_header_section{
             padding: 5px 5px 0 5px;
             height: 45px;
     
-        &:hover{
-                outline: solid 1.5px white;
+            &:hover{
+                    outline: solid 1.5px white;
+                }
             }
-        }
+
+            .login_section {
+                width: 125px;
+                .hellouser {
+                    display: inline-block;
+                    max-width: 124px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            }
+
+
         .positionDiv{
             display: flex;
             span{
