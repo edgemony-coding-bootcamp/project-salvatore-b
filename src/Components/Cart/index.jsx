@@ -1,19 +1,19 @@
 import { useStateValue } from "../../Libs/StateProvider";
 import { Rating } from "@mui/material";
 import styles from "./Cart.module.scss";
-import {  useEffect  } from "react";
+import { useEffect } from "react";
 import { setLengthTitle } from '../../Libs/utils.jsx';
 
-const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
+const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
   // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
-  // const [count, setCount] = useState(1);
   const selectId = "numItems_" + id;
 
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
-      oggetto: {id, titolo,
+      oggetto: {
+        id, titolo,
         image,
         prezzo,
         rating,
@@ -21,8 +21,6 @@ const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
       }
     });
   };
-
-  // const prezzoCount= prezzo * count;
 
   const cambiaQty = () => {
     let select = document.querySelector(`#${selectId}`);
@@ -54,10 +52,26 @@ const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
 
   return (
     <div key={id} className={styles.Cart}>
-      {/* <p className={styles.descCard}>{descrizione}</p> */}
       <img className={styles.product_image} src={image} alt={titolo} />
-      
-      <h4 className={styles.product_title}>{setLengthTitle(titolo, 150)}</h4>
+
+      <div className={styles.titleQuantity}>
+        <h4 className={styles.product_title}>{setLengthTitle(titolo, 250)}</h4>
+        <div className={styles.counter} >
+          <select onChange={cambiaQty} id={selectId}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+
       <div className={styles.RaCoRi}>
         <div className={styles.price_rating}>
           <Rating
@@ -66,41 +80,10 @@ const Cart = ({ id, titolo, image, prezzo, rating, count  }) => {
             precision={0.5}
             readOnly
           />
-          <br/>
+          <br />
           <span className={styles.product_price}>{(prezzo * count).toFixed(2)} €</span>
         </div>
-        <div className={styles.counter} >
-          
-          <select onChange={cambiaQty} id={selectId}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-
-          {/* <button
-            className={styles.countBtn}
-            onClick={() => setCount(count - 1)}
-            disabled={count <= 1}
-          >
-            {" "}
-            {"-"}
-          </button>
-          <span>{count}</span>
-          <button
-            className={styles.countBtn}
-            onClick={() => setCount(count + 1)}
-          >
-            {" "}
-            {"+"}{" "}
-          </button> */}
-        </div>
+        
         <button className={styles.remove_btn} onClick={deleteFromCart}>
           Rimuovi dal carrello
         </button>
