@@ -1,46 +1,49 @@
 export const initialState = {
-    basket: [],
+  basket: [],
+  user: null,
 };
 
 export const totaleCarrello = (basket) =>
   basket?.reduce((totale, oggetto) => oggetto.prezzo + totale, 0);
 
-
 const reducer = (state, action) => {
   console.log(action);
+
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
+
     case "AGGIUNGI-CARRELLO":
-        return {
-          ...state,
-          basket: [...state.basket, action.oggetto],
-        };
-       case "RIMUOVI-CARRELLO":
-      
-        let newBasket = [...state.basket];
+      return {
+        ...state,
+        basket: [...state.basket, action.oggetto],
+      };
+    case "RIMUOVI-CARRELLO":
 
+      let newBasket = [...state.basket];
 
-
-    const index = state.basket.findIndex(
+      const index = state.basket.findIndex(
         (basketOggetto) => basketOggetto.id === action.id
       );
       if (index >= 0) {
-       
-         newBasket.splice(index, 1);
+
+        newBasket.splice(index, 1);
       } else {
         console.warn(
           `Cant remove product (id: ${action.id}) as its not in the basket`
-         );
-       }
-     
+        );
+      }
+
       return { ...state, basket: newBasket };
 
-     case "SVUOTA-CARRELLO":
+    case "SVUOTA-CARRELLO":
       return {
         ...state,
         basket: [],
       };
-
-
 
     default:
       return state;
