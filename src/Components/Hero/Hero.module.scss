@@ -3,15 +3,12 @@
     margin: auto;
     width: 1520px;
 
-
     .hero {
         overflow: hidden;
         width: 1520px;
         scroll-behavior: smooth;
 
-
         .heroImg {
-
 
             .imgRef {
                 width: 7600px;
@@ -21,18 +18,11 @@
                 flex-wrap: nowrap;
                 background-repeat: none;
 
-
                 mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 
                 img {
-
-
-
                     width: 1520px;
-
-
                 }
-
             }
         }
     }
@@ -40,7 +30,6 @@
     .btnS {
         position: absolute;
         top: 0px;
-
 
         .btn {
             position: absolute;
@@ -66,5 +55,4 @@
             }
         }
     }
-
 }
