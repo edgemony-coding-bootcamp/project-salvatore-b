@@ -22,14 +22,15 @@ const Carrello = () => {
           ) : (
             <div>
               <h2>Il tuo carrello</h2>
-              {basket?.map((item, index) => (
+              {basket?.map((item) => (
                 <Cart
-                  key={index}
+                  key={item.id}
                   id={item.id}
                   titolo={item.titolo}
                   image={item.image}
                   prezzo={item.prezzo}
                   rating={item.rating}
+                  count={item.count}
                 />
               ))}
             </div>
