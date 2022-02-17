@@ -1,53 +1,49 @@
-.containerHero{
+.containerHero {
     position: relative;
     margin: auto;
-    // left : 450px;
-    // min-width: 1520px;
-    // z-index: -1;
-    // overflow:hidden;
-    
+    width: 1520px;
+
+
     .hero {
-        // position: absolute;
-        // top: 107px;
-        // left: 80px;
-        // margin: 0 430px;
-    // min-width: 1500px;
-    // position: relative;
-    // width: 100%;
-    // overflow: hidden;
-    // scroll-behavior: smooth;
-    // 
-    .heroImg{
-        // position: absolute;
-        // overflow: hidden;
-        .imgRef{
-            width: 1520px;
-            
-            // position: relative;
+        overflow: hidden;
+        width: 1520px;
+        scroll-behavior: smooth;
 
-            // overflow:hidden;
-            // transition: all 0.35s;  
-         display: flex;
-        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-            img{
-                // position: relative;
 
-                // overflow:hidden;
-                width: 100%;
-                // min-width: 1520px;
+        .heroImg {
+
+
+            .imgRef {
+                width: 7600px;
+                overflow: hidden;
+                position: relative;
+                display: flex;
+                flex-wrap: nowrap;
+                background-repeat: none;
+
+
+                mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+                img {
+
+
+
+                    width: 1520px;
+
+
+                }
 
             }
-     
-     }
+        }
     }
-}
-.btnS{
-    position: absolute;
-    top: 0px;
-    
 
-    .btn {
+    .btnS {
         position: absolute;
+        top: 0px;
+
+
+        .btn {
+            position: absolute;
             color: #fff;
             width: 50px;
             height: 251px;
@@ -56,17 +52,19 @@
             cursor: pointer;
             background: transparent;
             z-index: 1;
-            &:active{
+
+            &:active {
                 border: 1px solid #fff;
             }
         }
 
-          .btn:nth-of-type(2) {
+        .btn:nth-of-type(2) {
             left: 1470px;
-            &:active{
+
+            &:active {
                 border: 1px solid #fff;
             }
         }
-}
+    }
 
 }
