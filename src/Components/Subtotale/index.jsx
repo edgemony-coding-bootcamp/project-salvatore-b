@@ -1,37 +1,48 @@
-import {totaleCarrello} from "../../Libs/reducer";
+import {getBasketTotal} from "../../Libs/reducer";
 import { useStateValue } from "../../Libs/StateProvider";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./Subtotale.module.scss";
 
 function Subtotale({id}) {
   const [{ basket }, dispatch] = useStateValue();
 
-  const sommaProdotti = totaleCarrello(basket).toFixed(2);
+  // const sommaProdotti = totaleCarrello(basket).toFixed(2);
   
   const svuotacart = () => {
     dispatch({
       type: "SVUOTA-CARRELLO", id,
     });
   };
+  
 
+ const getTotalItems = () => {
+    return basket.reduce(
+      (total, currentItem) => (total += currentItem.count),
+      0
+    );
+  };
   return (
     <div className={styles.Subtotale}>
       
-      {basket?.length === 1 ? (
+      <p>
+          Subtotale ({getTotalItems()} oggetto/i): <strong>{getBasketTotal(basket)} €</strong>
+        </p>
+
+      {/* {getTotalItems() === 1 ? (
         <p>
-          Subtotale ({basket?.length} oggetto): <strong>{sommaProdotti} €</strong>
+          Subtotale ({getTotalItems()} oggetto): <strong>{getBasketTotal(basket)} €</strong>
         </p>
       ) : (
         <p>
-          Subtotale ({basket?.length} oggetti): <strong>{sommaProdotti} €</strong>
+          Subtotale ({getTotalItems()} oggetti): <strong>{getBasketTotal(basket)} €</strong>
         </p>
-      )}
+      )} */}
 
       <div>
         <input type="checkbox" /> Questo ordine contiene un regalo
       </div>
     
-      <button className={styles.SubBTN} onClick={svuotacart}><a href="/checkout">Procedi all'acquisto</a></button>
+      <Link to="/checkout"><button disabled={getTotalItems() === 0} className={styles.SubBTN} onClick={svuotacart}>Procedi all'acquisto</button></Link>
       
     </div>
   );
