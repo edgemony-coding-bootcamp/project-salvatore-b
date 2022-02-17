@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import styles from "./Hero.module.scss";
 
