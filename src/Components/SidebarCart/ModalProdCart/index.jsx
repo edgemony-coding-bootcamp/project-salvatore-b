@@ -1,15 +1,21 @@
 import { useStateValue } from "../../../Libs/StateProvider";
 import styles from "./ModalProdCart.module.scss"
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
-const ModalProdCart = ({ id, titolo, image, prezzo }) => {
+const ModalProdCart = ({ id, titolo, image, prezzo, count, rating }) => {
   // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
  
   const deleteFromCart = () => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
-      id,
+      oggetto: {id, titolo,
+        image,
+        prezzo,
+        rating,
+        count,
+      }
     });
   };
 
@@ -19,11 +25,11 @@ const ModalProdCart = ({ id, titolo, image, prezzo }) => {
       
       
       <div className={styles.prodrow}>
-          <span className={styles.prodprice} >{prezzo.toFixed(2)} €</span>
+          <span className={styles.prodprice} >{prezzo.toFixed(2)} € x {count}</span>
         
         
         <span className={styles.sidebarDel} onClick={deleteFromCart}>
-          🗑️
+          <DeleteIcon fontSize="xsmall"/>
         </span>
         </div>
       </div>

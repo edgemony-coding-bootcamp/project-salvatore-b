@@ -18,6 +18,7 @@ const SidebarCart = () =>{
             id={item.id}
             image={item.image}
             prezzo={item.prezzo}
+            count={item.count}
           />
         ))}
         </div>
