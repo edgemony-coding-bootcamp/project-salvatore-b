@@ -15,7 +15,6 @@ export const getBasketTotal = (basket) => {
 };
 
 const reducer = (state, action) => {
-  console.log(action);
   let index;
 
   if (action.oggetto) {
