@@ -38,9 +38,9 @@ const Header = ({ handleSidebar }) => {
             />
           </Link>
         </div>
-        <a href="/">
+
           <div className={styles.wrapper_header_section}>
-            <div className={styles.positionDiv}>
+            <div className={styles.positionDiv} >
               <LocationOnOutlined className={styles.positionOn} />
               <div>
                 <span>Spediamo</span>
@@ -49,7 +49,6 @@ const Header = ({ handleSidebar }) => {
               </div>
             </div>
           </div>
-        </a>
 
         <SearchBar />
 
@@ -71,7 +70,7 @@ const Header = ({ handleSidebar }) => {
             </div>
           </div>
         </Link>
-        <Link to={user ? "/user" : "/login"}>
+        <Link to={user ? "/profilo" : "/login"}>
           <div className={styles.wrapper_header_section}>
             <span>Il mio profilo</span> <br /> Amazon
             <ArrowDropDownIcon

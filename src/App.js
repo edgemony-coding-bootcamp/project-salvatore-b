@@ -8,6 +8,7 @@ import Checkout from "./Pages/Checkout";
 import Carrello from "./Pages/Carrello";
 import Iscrizione from "./Pages/Iscrizione";
 import styles from "./App.module.scss";
+import Profilo from "./Pages/Profilo";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -62,9 +63,9 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/iscrizione" element={<Iscrizione />} />
-        <Route path="/user" element={<h1>Il mio account</h1>} />
+        {/* <Route path="/user" element={<h1>Il mio account</h1>} /> */}
 
-        <Route path="/profilo" element={<h1>Profilo</h1>} />
+        <Route path="/profilo" element={<Profilo />} />
         <Route path="/carrello" element={<Carrello />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>

@@ -56,6 +56,7 @@
 .Wrapper_Home {
   display: flex;
   flex-direction: column;
+  
 }
 
 .cartPage {
@@ -78,4 +79,16 @@
       text-align: center;
     }
   }
+}
+
+.containerProfile{
+  display: flex;
+  justify-content:center;
+  margin: 300px auto;
+  gap: 60px;
+  background-color: rgba(255, 255, 255, 0.623);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.381);
+  width: 600px;
+  padding: 50px 0;
+  border-radius:20px;
 }
