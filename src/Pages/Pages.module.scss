@@ -60,7 +60,6 @@
 
 .cartPage {
   margin-top: 10px;
-
   .cartPage_wrap {
     display: flex;
     flex-wrap: nowrap;
@@ -73,9 +72,9 @@
     }
 
     .centered {
-      display: block;
+      position: absolute;
+      left: 0;
       width: 100%;
-      margin: auto;
       text-align: center;
     }
   }
