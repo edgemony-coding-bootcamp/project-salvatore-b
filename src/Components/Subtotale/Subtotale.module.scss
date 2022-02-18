@@ -24,7 +24,11 @@
     background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
 
     &:hover {
-      background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
+      background: linear-gradient(
+        to bottom,
+        darken(#f7dfa5, 10%),
+        darken(#f0c14b, 10%)
+      );
     }
     a {
       text-decoration: none;

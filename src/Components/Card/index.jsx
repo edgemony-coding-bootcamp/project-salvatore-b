@@ -3,7 +3,7 @@ import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Rating } from "@mui/material";
 import styles from "./Card.module.scss";
-import { Context } from '../../Pages/Home';
+import { Context } from "../../Pages/Home";
 import { useStateValue } from "../../Libs/StateProvider";
 
 const Card = ({ category }) => {
@@ -12,7 +12,8 @@ const Card = ({ category }) => {
   const [{ basket }, dispatch] = useStateValue();
   const { value } = useContext(Context);
 
-  const checkInclusi = (valore) => basket.find((prod) => prod.titolo.includes(valore));
+  const checkInclusi = (valore) =>
+    basket.find((prod) => prod.titolo.includes(valore));
 
   useEffect(() => {
     const getData = async () => {
@@ -24,7 +25,11 @@ const Card = ({ category }) => {
         };
         return obj;
       });
-      category ? setProduct(currentProdotti.filter((items) => items.categoria === `${category}`)) : setProduct(currentProdotti);
+      category
+        ? setProduct(
+            currentProdotti.filter((items) => items.categoria === `${category}`)
+          )
+        : setProduct(currentProdotti);
     };
     getData();
   }, [category]);
@@ -45,28 +50,42 @@ const Card = ({ category }) => {
 
   return (
     <div className={styles.Wrapper}>
-      {product.map((items) => items.titolo.toLowerCase().includes(value.toLowerCase()) && (
-        <div key={items.id} className={styles.Card}>
-          <p className={styles.descCard}>{items.descrizione}</p>
-          <img src={items.image} alt="items-title" />
-          <h4 className={styles.title_card}>{items.titolo}</h4>
-          <div className={styles.PrRaBtn}>
-            <div className={styles.Price_Rating}>
-
-              <Rating name="half-rating-read" defaultValue={items.rating} precision={0.5} readOnly />
-              <span>{items.prezzo.toFixed(2)} €</span>
+      {product.map(
+        (items) =>
+          items.titolo.toLowerCase().includes(value.toLowerCase()) && (
+            <div key={items.id} className={styles.Card}>
+              <p className={styles.descCard}>{items.descrizione}</p>
+              <img src={items.image} alt="items-title" />
+              <h4 className={styles.title_card}>{items.titolo}</h4>
+              <div className={styles.PrRaBtn}>
+                <div className={styles.Price_Rating}>
+                  <Rating
+                    name="half-rating-read"
+                    defaultValue={items.rating}
+                    precision={0.5}
+                    readOnly
+                  />
+                  <span>{items.prezzo.toFixed(2)} €</span>
+                </div>
+                <div className={styles.btnAB}>
+                  <button
+                    onClick={() => addToCart(items)}
+                    className={styles.btnAdd}
+                    disabled={checkInclusi(items.titolo)}
+                  >
+                    {!checkInclusi(items.titolo)
+                      ? "Aggiungi al carrello"
+                      : "Già nel carrello"}
+                  </button>
+                  <button className={styles.btnBuy}>
+                    <a href="/checkout">Acquista ora</a>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className={styles.btnAB}>
-              <button onClick={() => addToCart(items)} className={styles.btnAdd} disabled={checkInclusi(items.titolo)}>
-                {!checkInclusi(items.titolo) ? 'Aggiungi al carrello' : 'Già nel carrello'}
-              </button>
-              <button className={styles.btnBuy}><a href="/checkout">Acquista ora</a></button>
-            </div>
-          </div>
-        </div>
-      ))}
+          )
+      )}
     </div>
-
   );
 };
 

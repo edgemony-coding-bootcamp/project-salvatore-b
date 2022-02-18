@@ -7,21 +7,21 @@ import styles from "./Pages.module.scss";
 import { createContext, useState } from "react";
 export const Context = createContext({ value: "", setValue: () => {} });
 
-const Home = ({category}) => {
+const Home = ({ category }) => {
   const [value, setValue] = useState("");
-  const [modalCart] = useState (false);
+  const [modalCart] = useState(false);
   const handleSidebar = () => {
-   modalCart(true);
+    modalCart(true);
   };
   return (
     <div className={styles.Wrapper_Home}>
-      <Context.Provider value={{value, setValue}}>
-        <Header/>
-        <SidebarCart handleSidebar={handleSidebar}/>
-        <Hero/>
+      <Context.Provider value={{ value, setValue }}>
+        <Header />
+        <SidebarCart handleSidebar={handleSidebar} />
+        <Hero />
         <Card category={category} />
       </Context.Provider>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

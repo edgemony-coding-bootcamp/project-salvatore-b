@@ -134,7 +134,11 @@ const Iscrizione = () => {
 
           <button onClick={register}>Continua</button>
           <p>
-            Registrandoti dichiari di aver letto e accetti integralmente le nostre Condizioni generali di uso e vendita. Prendi visione della nostra Informativa sulla privacy, della nostra Informativa sui Cookie e della nostra Informativa sulla Pubblicità definita in base agli interessi.
+            Registrandoti dichiari di aver letto e accetti integralmente le
+            nostre Condizioni generali di uso e vendita. Prendi visione della
+            nostra Informativa sulla privacy, della nostra Informativa sui
+            Cookie e della nostra Informativa sulla Pubblicità definita in base
+            agli interessi.
           </p>
         </form>
       </div>
