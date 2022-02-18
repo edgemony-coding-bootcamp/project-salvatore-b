@@ -13,7 +13,7 @@ const Profilo = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) navigate("/");
+        if (!user) {} navigate("/");
         
         const getData = async () => {
             const querySnapshot = await getDocs(collection(db, "utenti"));
@@ -29,6 +29,7 @@ const Profilo = () => {
             setProfUser(checkUtente);
         };
         getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [user]);
 
     return (

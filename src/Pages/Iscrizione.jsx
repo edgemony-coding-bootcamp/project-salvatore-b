@@ -39,13 +39,11 @@ const Iscrizione = () => {
                 indirizzo: address,
               };
 
-              console.log(newUser);
               addDoc(collection(db, "utenti"), newUser);
               navigate("/");
             })
             .catch((error) => {
               setErrors(error.code);
-              console.log(error.code);
               if (error.code === "auth/email-already-in-use" || error.code === "auth/invalid-email") setEmail("");
               if (error.code === "auth/weak-password" || error.code === "auth/internal-error") setPassword("");
             });
