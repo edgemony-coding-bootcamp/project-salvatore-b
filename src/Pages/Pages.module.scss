@@ -6,10 +6,19 @@
   z-index: 1;
   margin-top: 50px;
   background: rgb(214, 214, 214);
-  background: linear-gradient(0deg,rgba(214, 214, 214, 1) 0%,rgba(136, 223, 223, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(214, 214, 214, 1) 0%,
+    rgba(136, 223, 223, 1) 100%
+  );
   padding: 20vh;
   z-index: 0;
-  mask-image: linear-gradient(to bottom,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0)
+  );
   padding-bottom: 10vh;
   height: 50vh;
   width: 50vw;
@@ -30,7 +39,11 @@
     background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
 
     &:hover {
-    background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
+      background: linear-gradient(
+        to bottom,
+        darken(#f7dfa5, 10%),
+        darken(#f0c14b, 10%)
+      );
     }
   }
 
@@ -54,7 +67,7 @@
     margin: auto 2.5%;
     gap: 50px;
     padding: 0 20px;
-    
+
     .yourCart {
       text-align: left;
     }

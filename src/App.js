@@ -2,12 +2,12 @@ import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import { useStateValue } from "./Libs/StateProvider";
-import Home from "./Pages/Home"
-import Login from "./Pages/Login"
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
 import Checkout from "./Pages/Checkout";
 import Carrello from "./Pages/Carrello";
-import Iscrizione from "./Pages/Iscrizione"
-import styles from './App.module.scss';
+import Iscrizione from "./Pages/Iscrizione";
+import styles from "./App.module.scss";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -37,15 +37,28 @@ function App() {
 
   return (
     <div className={styles.App}>
-
       <Routes>
-
         <Route path="/" element={<Home />} />
-        <Route path="/libri" element={<Home category="W18zO0uFpy1Ux3OLibri" />} />
-        <Route path="/gaming" element={<Home category="gQMf7U2u7VP3WxGAMING" />} />
-        <Route path="/beauty" element={<Home category="tFwGEENG8c0sIqbeauty" />} />
-        <Route path="/elettronica" element={<Home category="LzDn3CtuhElettronica" />} />
-        <Route path="/cucina" element={<Home category="izV883zg7TPzROcucina" />} />
+        <Route
+          path="/libri"
+          element={<Home category="W18zO0uFpy1Ux3OLibri" />}
+        />
+        <Route
+          path="/gaming"
+          element={<Home category="gQMf7U2u7VP3WxGAMING" />}
+        />
+        <Route
+          path="/beauty"
+          element={<Home category="tFwGEENG8c0sIqbeauty" />}
+        />
+        <Route
+          path="/elettronica"
+          element={<Home category="LzDn3CtuhElettronica" />}
+        />
+        <Route
+          path="/cucina"
+          element={<Home category="izV883zg7TPzROcucina" />}
+        />
 
         <Route path="/login" element={<Login />} />
         <Route path="/iscrizione" element={<Iscrizione />} />
@@ -54,7 +67,6 @@ function App() {
         <Route path="/profilo" element={<h1>Profilo</h1>} />
         <Route path="/carrello" element={<Carrello />} />
         <Route path="/checkout" element={<Checkout />} />
-
       </Routes>
       {/* <Header />  search bar login logo link utili carrello category*/}
       {/* <Hero />  Carousel effetto sfocatura  */}
