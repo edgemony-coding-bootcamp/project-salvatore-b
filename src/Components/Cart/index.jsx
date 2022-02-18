@@ -59,6 +59,7 @@ const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
         <h4 className={styles.product_title}>{setLengthTitle(titolo, 250)}</h4>
         <div className={styles.counter}>
           <select onChange={cambiaQty} id={selectId}>
+            <option value={count} defaultValue={count} hidden>{count}</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

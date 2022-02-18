@@ -2,6 +2,7 @@ import { useStateValue } from "../Libs/StateProvider";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Cart from "../Components/Cart";
+import CarrelloHero from "../Components/CarrelloHero";
 import Subtotale from "../Components/Subtotale";
 import styles from "./Pages.module.scss";
 
@@ -10,15 +11,17 @@ const Carrello = () => {
   return (
     <>
       <Header />
-
       <div className={styles.cartPage}>
         <div>
           <div className={styles.cartPage_wrap}>
             {basket?.length === 0 ? (
+              <>
+                <CarrelloHero />
               <div className={styles.centered}>
                 <h2>Il tuo carrello è vuoto</h2>
                 <p>Non ci sono articoli nel tuo carrello</p>
               </div>
+              </>
             ) : (
               <div>
                 <h2 className={styles.yourCart}>Il tuo carrello</h2>
