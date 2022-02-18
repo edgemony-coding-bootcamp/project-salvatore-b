@@ -17,7 +17,7 @@ function App() {
   const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+    auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         dispatch({
           type: "SET_USER",
@@ -30,11 +30,8 @@ function App() {
         });
       }
     });
-
-    return () => {
-      unsubscribe();
-    };
-  }, [dispatch, auth]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className={styles.App}>
