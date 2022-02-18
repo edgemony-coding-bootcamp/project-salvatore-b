@@ -4,14 +4,15 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import styles from "./Login.module.scss";
 import { useNavigate } from "react-router-dom";
 
-
 const Login = () => {
 
   const auth = getAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   let navigate = useNavigate();
-  
+
+  const [errors, setErrors] = useState("");
+
   const loginFunction = (event) => {
     event.preventDefault();
 
@@ -22,10 +23,11 @@ const Login = () => {
         console.log(user.email);
         navigate('/');
       })
-      .catch((error) => alert(error.message));
-  };
-
-
+      .catch((error) => {
+        setErrors(error.code);
+        console.log(error.code);
+      });
+  }
 
   return (
     <div className={styles.Login}>
@@ -42,28 +44,31 @@ const Login = () => {
 
           <label htmlFor="email">E-mail</label>
           <input
+            style={{borderColor: (errors === "auth/user-not-found" || errors === "auth/invalid-email") && "red"}}
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            type="email" 
-            name="email" 
-            autoComplete="off" 
+            type="email"
+            name="email"
+            autoComplete="off"
             required
           />
 
           <label htmlFor="password">Password</label>
           <input
+            style={{borderColor: (errors === "auth/wrong-password" || errors === "auth/internal-error" || errors === "auth/invalid-email") && "red"}}
             value={password}
-            onChange={(event) => setPassword(event.target.value)} 
-            type="password" 
-            name="password" 
+            onChange={(event) => setPassword(event.target.value)}
+            type="password"
+            name="password"
             required
           />
+          {errors && <small style={{color: "red", frontSize: "smaller"}}>I dati inseriti non sono corretti.</small>}
 
-          <button 
+          <button
             type="submit"
             onClick={loginFunction}
-            >
-              Continua
+          >
+            Continua
           </button>
 
           <p>
@@ -75,9 +80,9 @@ const Login = () => {
         <div className={styles.divider}>
           <p>Sei nuovo su amazon?</p>
         </div>
-       
+
         <button className={styles.register}>
-          <Link to="/iscrizione">Crea il tuo Account Amazon</Link> 
+          <Link to="/iscrizione">Crea il tuo Account Amazon</Link>
         </button>
 
       </div>

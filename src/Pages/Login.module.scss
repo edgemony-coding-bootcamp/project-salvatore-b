@@ -12,7 +12,7 @@
             width: 100px;
             height: 74px;
             object-fit: contain;
-            margin: 20px 0 0;
+            margin: 0;
         }
     }
 
@@ -54,11 +54,18 @@
             padding: 0 5px;
             outline: none;
 
+            .invalido {
+                border-color: red;
+                box-shadow: 0 0 3pt 1pt red;
+            }
+
             &:focus {
                 border-color: darkorange;
                 box-shadow: 0 0 3pt 1pt orange;
                 outline: none;
             }
+
+
         }
 
         button {
