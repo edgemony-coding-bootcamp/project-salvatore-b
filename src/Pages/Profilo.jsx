@@ -1,7 +1,7 @@
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import { useStateValue } from "../Libs/StateProvider";
-import { getAuth } from "firebase/auth";
+// import { getAuth } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
