@@ -12,17 +12,20 @@ const Login = () => {
   const [errors, setErrors] = useState("");
   let navigate = useNavigate();
 
+
   const loginFunction = (event) => {
     event.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // eslint-disable-next-line no-unused-vars
+        // Signed in 
         const user = userCredential.user;
+        console.log(user.email);
         navigate('/');
       })
       .catch((error) => {
         setErrors(error.code);
+        console.log(error.code);
         if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") setEmail("");
         if (error.code === "auth/wrong-password") setPassword("");
       });
