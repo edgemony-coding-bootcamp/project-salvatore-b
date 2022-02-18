@@ -10,7 +10,7 @@ import styles from "./Pages.module.scss";
 
 
 const Profilo = () => {
-    const auth = getAuth();
+//     const auth = getAuth();
     const [{ user }] = useStateValue();
     const [profUser, setProfUser] = useState({});
 
