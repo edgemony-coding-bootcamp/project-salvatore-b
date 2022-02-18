@@ -8,7 +8,7 @@ export const totaleCarrello = (basket) =>
 
 export const getBasketTotal = (basket) => {
   let total = basket?.reduce(
-    (total, currentItem) => (currentItem.prezzo * currentItem.count) + total,
+    (total, currentItem) => currentItem.prezzo * currentItem.count + total,
     0
   );
   return Math.round(total * 100) / 100;
@@ -19,11 +19,12 @@ const reducer = (state, action) => {
   let index;
 
   if (action.oggetto) {
-    index = state.basket.findIndex((oggetto) => oggetto.id === action.oggetto.id);
+    index = state.basket.findIndex(
+      (oggetto) => oggetto.id === action.oggetto.id
+    );
   }
 
   switch (action.type) {
-
     case "SET_USER":
       return {
         ...state,
@@ -44,43 +45,45 @@ const reducer = (state, action) => {
         };
       }
 
-
-      case "RIMUOVI-CARRELLO":
-
+    case "RIMUOVI-CARRELLO":
       return {
         ...state,
-        basket: state.basket.filter((oggetto) => oggetto.id !== action.oggetto.id),
+        basket: state.basket.filter(
+          (oggetto) => oggetto.id !== action.oggetto.id
+        ),
       };
 
-      case "SVUOTA-CARRELLO":
+    case "SVUOTA-CARRELLO":
+      return {
+        ...state,
+        basket: [],
+      };
+
+    case "COUNTER-CARRELLO":
+      if (index === -1) {
         return {
           ...state,
-          basket: [],
         };
-
-      case "COUNTER-CARRELLO":
-        if (index === -1) {
+      } else {
+        if (action.oggetto.count === 0) {
           return {
             ...state,
+            basket: state.basket.filter(
+              (oggetto) => oggetto.id !== action.oggetto.id
+            ),
           };
         } else {
-          if (action.oggetto.count === 0) {
-            return {
-              ...state,
-              basket: state.basket.filter((oggetto) => oggetto.id !== action.oggetto.id),
-            };
-          } else {
-            state.basket[index].count = action.oggetto.count;
-            return {
-              ...state,
-            };
-          }
-        }
-
-        default:
+          state.basket[index].count = action.oggetto.count;
           return {
             ...state,
           };
+        }
+      }
+
+    default:
+      return {
+        ...state,
+      };
   }
 };
 

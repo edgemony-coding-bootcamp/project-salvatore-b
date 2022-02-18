@@ -2,7 +2,7 @@ import { useStateValue } from "../../Libs/StateProvider";
 import { Rating } from "@mui/material";
 import styles from "./Cart.module.scss";
 import { useEffect } from "react";
-import { setLengthTitle } from '../../Libs/utils.jsx';
+import { setLengthTitle } from "../../Libs/utils.jsx";
 
 const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
   // eslint-disable-next-line no-unused-vars
@@ -13,12 +13,13 @@ const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
     dispatch({
       type: "RIMUOVI-CARRELLO",
       oggetto: {
-        id, titolo,
+        id,
+        titolo,
         image,
         prezzo,
         rating,
         count,
-      }
+      },
     });
   };
 
@@ -56,7 +57,7 @@ const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
 
       <div className={styles.titleQuantity}>
         <h4 className={styles.product_title}>{setLengthTitle(titolo, 250)}</h4>
-        <div className={styles.counter} >
+        <div className={styles.counter}>
           <select onChange={cambiaQty} id={selectId}>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -81,9 +82,11 @@ const Cart = ({ id, titolo, image, prezzo, rating, count }) => {
             readOnly
           />
           <br />
-          <span className={styles.product_price}>{(prezzo * count).toFixed(2)} €</span>
+          <span className={styles.product_price}>
+            {(prezzo * count).toFixed(2)} €
+          </span>
         </div>
-        
+
         <button className={styles.remove_btn} onClick={deleteFromCart}>
           Rimuovi dal carrello
         </button>

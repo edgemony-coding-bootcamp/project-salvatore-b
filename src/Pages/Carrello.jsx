@@ -14,7 +14,6 @@ const Carrello = () => {
       <div className={styles.cartPage}>
         <div>
           <div className={styles.cartPage_wrap}>
-
             {basket?.length === 0 ? (
               <div className={styles.centered}>
                 <h2>Il tuo carrello è vuoto</h2>
@@ -36,7 +35,7 @@ const Carrello = () => {
                 ))}
               </div>
             )}
-          {basket?.length > 0 && <Subtotale />}
+            {basket?.length > 0 && <Subtotale />}
           </div>
         </div>
       </div>

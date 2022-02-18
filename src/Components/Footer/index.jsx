@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-
-
     <div className={styles.FooterWrapper}>
       <div className={styles.NavFooter}>
-        <button onClick={() => window.scrollTo(0, 0)} className={styles.BackToTop}>Torna su</button>
+        <button
+          onClick={() => window.scrollTo(0, 0)}
+          className={styles.BackToTop}
+        >
+          Torna su
+        </button>
       </div>
       <div className={styles.Footer}>
         <ul>
@@ -62,9 +65,7 @@ const Footer = () => {
           <li>IVA e fatturazione</li>
           <li>Garanzia legale</li>
         </ul>
-      
       </div>
-      
 
       <div className={styles.logo}>
         <Link to="/">
@@ -77,8 +78,8 @@ const Footer = () => {
       </div>
 
       <div className={styles.Policy}>
-         <p>Condizioni generali di uso e vendita </p> 
-          <p>Informativa sulla privacy</p>
+        <p>Condizioni generali di uso e vendita </p>
+        <p>Informativa sulla privacy</p>
         <p>Area Legale</p>
         <p>Cookie</p>
         <p>Pubblicità definita in base agli interessi</p>
