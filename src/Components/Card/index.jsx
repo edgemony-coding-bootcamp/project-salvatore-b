@@ -49,7 +49,7 @@ const Card = ({ category }) => {
   };
 
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "100px" }}>
       {product.map(
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (

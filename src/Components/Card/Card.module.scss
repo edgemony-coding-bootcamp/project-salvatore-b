@@ -1,33 +1,58 @@
 .Wrapper {
   position: relative;
   top: -355px;
-  // margin: 0 20vw 0px;
-  width: 1500px;
-  // min-width: 60%;
+  max-width: 1400px;
   margin: auto;
   margin-bottom: -355px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: border-box;
-  // justify-content: center;
+  justify-content: center;
+  gap: 10px;
 
   .Card {
     position: relative;
-
-    // display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     width: 280px;
     min-width: 270px;
-    // z-index: 0;
     background-color: white;
     padding: 20px;
     height: 285px;
     display: block;
     margin: 1px auto 20px;
     transition: all 0.45s;
+
+    &:nth-child(5) {
+      min-width: 44%;
+    }
+    &:nth-child(8) {
+      width: 94%;
+    }
+    &:nth-child(15) {
+      min-width: 44%;
+    }
+    &:nth-child(24) {
+      width: 94%;
+    }
+
+    @media screen and (max-width: 900px) {
+    
+        &:nth-child(5) {
+          width: 280px;
+        }
+        &:nth-child(8) {
+          width: 280px;
+        }
+        &:nth-child(15) {
+          width: 280px;
+        }
+        &:nth-child(24) {
+          width: 280px;
+        }
+      }
+    
 
     &:hover {
       z-index: 2;

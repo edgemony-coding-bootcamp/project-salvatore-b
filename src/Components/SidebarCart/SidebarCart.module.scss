@@ -1,16 +1,15 @@
 .sidebarLayout {
-  right: 5px;
-  top: 108px;
-  z-index: 1;
-  width: 180px;
-  max-height: 70vh;
-  position: absolute;
   overflow-x: hidden;
-  background-color: rgba(192, 183, 183, 0.3);
-  border-radius: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-@media screen and (max-width: 1889px) {
+@media screen and (max-width: 1100px) {
   .sidebarLayout {
     display: none;
   }
