@@ -41,7 +41,7 @@ const Hero = () => {
           onClick={
             index === images.length ? setIndex(0) : () => setIndex(index + 1)
           }
-          style={{left: (basket?.length > 0) && "1370px" }}
+          style={{ left: (basket?.length > 0) && "1370px" }}
         >
           {">"}
         </button>
