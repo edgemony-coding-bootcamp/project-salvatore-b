@@ -1,11 +1,10 @@
 .prodcard {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: auto;
   padding: 5px;
-  width: 60%;
-  background-color: white;
-  border-radius: 5px;
+  width: 75px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 
   .prodimg {
     object-fit: contain;
@@ -18,13 +17,12 @@
 
     .prodprice {
       padding-top: 6px;
-      font-size: 12px;
+      font-size: 10px;
     }
     .sidebarDel {
       cursor: pointer;
-      background-color: transparent;
-      outline: none;
-      border: none;
+      font-size: 14px;
+      margin-top: 3.5px;
     }
   }
 }

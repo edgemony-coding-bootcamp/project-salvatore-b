@@ -2,13 +2,13 @@ import { useEffect, useState, useContext } from "react";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Rating } from "@mui/material";
-import styles from "./Card.module.scss";
 import { Context } from "../../Pages/Home";
 import { useStateValue } from "../../Libs/StateProvider";
+import { Link } from "react-router-dom";
+import styles from "./Card.module.scss";
 
 const Card = ({ category }) => {
   const [product, setProduct] = useState([]);
-  // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
   const { value } = useContext(Context);
 
@@ -48,8 +48,14 @@ const Card = ({ category }) => {
     });
   };
 
+  const svuotacart = () => {
+    dispatch({
+      type: "SVUOTA-CARRELLO"
+    });
+  };
+
   return (
-    <div className={styles.Wrapper}>
+    <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "calc(50% - 660px)" }}>
       {product.map(
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (
@@ -77,8 +83,8 @@ const Card = ({ category }) => {
                       ? "Aggiungi al carrello"
                       : "Già nel carrello"}
                   </button>
-                  <button className={styles.btnBuy}>
-                    <a href="/checkout">Acquista ora</a>
+                  <button className={styles.btnBuy} onClick={svuotacart}>
+                    <Link to="/checkout">Acquista ora</Link>
                   </button>
                 </div>
               </div>

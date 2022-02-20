@@ -63,10 +63,10 @@ const Header = ({ handleSidebar }) => {
               </span>{" "}
               <br />
               {user ? "Disconnettiti" : "Accedi adesso"}
-              <ArrowDropDownIcon
+              {/* <ArrowDropDownIcon
                 className={styles.arrowDropDown}
                 fontSize="small"
-              />
+              /> */}
             </div>
           </div>
         </Link>

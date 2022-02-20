@@ -1,27 +1,26 @@
 .Wrapper {
   position: relative;
   top: -355px;
-  // margin: 0 20vw 0px;
-  width: 1500px;
-  // min-width: 60%;
+  max-width: 1400px;
   margin: auto;
   margin-bottom: -355px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   box-sizing: border-box;
-  // justify-content: center;
+  justify-content: center;
+  gap: 10px;
+
+  @media screen and (min-width: 1620px) {
+    margin-right: calc(50% - 700px) !important;
+  }
 
   .Card {
     position: relative;
-
-    // display: flex;
-    // flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     width: 280px;
     min-width: 270px;
-    // z-index: 0;
     background-color: white;
     padding: 20px;
     height: 285px;
@@ -29,9 +28,39 @@
     margin: 1px auto 20px;
     transition: all 0.45s;
 
+    &:nth-child(5) {
+      min-width: 44%;
+    }
+    &:nth-child(8) {
+      width: 94%;
+    }
+    &:nth-child(15) {
+      min-width: 44%;
+    }
+    &:nth-child(24) {
+      width: 94%;
+    }
+
+    @media screen and (max-width: 900px) {
+    
+        &:nth-child(5) {
+          width: 280px;
+        }
+        &:nth-child(8) {
+          width: 280px;
+        }
+        &:nth-child(15) {
+          width: 280px;
+        }
+        &:nth-child(24) {
+          width: 280px;
+        }
+      }
+    
     &:hover {
       z-index: 2;
-      background-color: rgba(37, 37, 37, 0.226);
+      // background-color: rgba(37, 37, 37, 0.226);
+      cursor: pointer;
     }
 
     &:hover > img {
@@ -50,7 +79,6 @@
       max-height: 150px;
       width: 100%;
       object-fit: contain;
-      // margin-bottom: 10px;
     }
 
     .descCard {
@@ -60,13 +88,13 @@
       height: 135px;
       margin: 0;
       padding: 0;
+      font-size: 14px;
     }
 
     .title_card {
       min-height: 45px;
       max-height: 45px;
       display: block;
-      // width: 100px;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -92,6 +120,7 @@
         border-color: #a88734 #9c7e31 #846a29;
         border-radius: 4px;
         outline: none;
+        
         a {
           text-decoration: none;
           color: black;
@@ -105,10 +134,7 @@
         gap: 5px;
 
         .btnAdd {
-          // width: 30%;
-
           background-color: #f0c14b;
-
           background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
 
           &:hover {
@@ -121,7 +147,6 @@
         }
         .btnBuy {
           cursor: pointer;
-
           background-color: #ff7b00;
 
           &:hover {

@@ -13,7 +13,7 @@ const Profilo = () => {
     let navigate = useNavigate();
 
     useEffect(() => {
-        if (!user) {} navigate("/");
+        if (!user) navigate("/");
         
         const getData = async () => {
             const querySnapshot = await getDocs(collection(db, "utenti"));

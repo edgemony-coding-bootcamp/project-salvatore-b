@@ -1,8 +1,10 @@
 import { useState } from "react";
-
+import { useStateValue } from "../../Libs/StateProvider";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+  const [{ basket }] = useStateValue();
+
   const images = [
     "https://m.media-amazon.com/images/I/71rG91MSnoL._SX3000_.jpg",
     "https://m.media-amazon.com/images/I/71AmZIC92xL._SX3000_.jpg",
@@ -39,6 +41,7 @@ const Hero = () => {
           onClick={
             index === images.length ? setIndex(0) : () => setIndex(index + 1)
           }
+          style={{ left: (basket?.length > 0) && "1370px" }}
         >
           {">"}
         </button>

@@ -1,34 +1,33 @@
 .subT {
   display: flex;
   flex-direction: column;
-
-  margin: 20px auto;
-  padding: 5px;
-  width: 60%;
-
-  background-color: white;
-  border-radius: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 10px auto;
 
   .textMod {
-    font-size: 12px !important;
+    font-size: 14px;
+    margin: 12px auto 0;
   }
   .subTMod {
-    font-size: 15px !important;
-    color: red !important;
+    font-size: 13px;
+    color: red;
+    margin: 5px auto 10px;
   }
 
   .sidebarBtn {
     cursor: pointer;
+    width: 70px;
     background-color: #f0c14b;
     border: 1px solid;
     border-color: #a88734 #9c7e31 #846a29;
     outline: none;
     border-radius: 4px;
     background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 13px;
+
     &:hover {
-      box-shadow: 0 0 3pt 1pt orange;
-      background-color: darkorange;
+      background: linear-gradient(to bottom, darken(#f7dfa5, 10%), darken(#f0c14b, 10%));
     }
   }
 }

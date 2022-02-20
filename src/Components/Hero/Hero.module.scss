@@ -22,10 +22,11 @@
           rgba(0, 0, 0, 1),
           rgba(0, 0, 0, 0.75),
           rgba(0, 0, 0, 0)
-        );
-
-        img {
-          width: 1520px;
+          );
+          
+          img {
+            width: 1520px;
+            pointer-events: none;
         }
       }
     }
