@@ -11,6 +11,10 @@
   justify-content: center;
   gap: 10px;
 
+  @media screen and (min-width: 1620px) {
+    margin-right: calc(50% - 700px) !important;
+  }
+
   .Card {
     position: relative;
     align-items: center;

@@ -55,7 +55,7 @@ const Card = ({ category }) => {
   };
 
   return (
-    <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "100px" }}>
+    <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "calc(50% - 660px)" }}>
       {product.map(
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (
