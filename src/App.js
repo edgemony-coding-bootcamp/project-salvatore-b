@@ -7,6 +7,7 @@ import Login from "./Pages/Login";
 import Checkout from "./Pages/Checkout";
 import Carrello from "./Pages/Carrello";
 import Iscrizione from "./Pages/Iscrizione";
+
 import styles from "./App.module.scss";
 import Profilo from "./Pages/Profilo";
 

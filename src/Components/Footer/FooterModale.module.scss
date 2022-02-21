@@ -1,0 +1,182 @@
+.footerModal {
+  position: fixed;
+  width: 52vw;
+  height: 50vh;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  z-index: 1;
+  border-radius: 20px;
+  box-shadow: 0 0 0 200vh rgba(0, 0, 0, 0.5);
+  .headerMod {
+    display: flex;
+
+    .titleMod {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .membri {
+    display: flex;
+    justify-content: center;
+    // gap: 2vw;
+    margin: 0 1.5vw;
+    width: 50vw;
+    .membro {
+      text-align: center;
+      width: 18vw;
+      height: 5vh;
+      margin-top: 4vh;
+      transition: all 0.35s;
+
+      .nomeMembro {
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      .containerDescMod {
+        font-size: small;
+        overflow: hidden;
+        max-height: 0px;
+        .containerLinks {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 3.7rem;
+          .imgLinkedin {
+            width: 3.4rem;
+          }
+          .imgGitHub {
+            width: 3.3rem;
+            transform: translateY(-3px);
+          }
+        }
+      }
+
+      .membroImg {
+        width: 3vw;
+        border-radius: 50%;
+        transform: scale(1.5);
+      }
+      &:hover {
+        height: 28vh;
+        background-color: rgb(235, 232, 232);
+        transform: translateY(-5vh);
+
+        .membroImg {
+          transform: scale(1);
+        }
+
+        .containerDescMod {
+          overflow: visible;
+          max-height: none;
+        }
+      }
+    }
+  }
+  .imgCloseMod {
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    padding-top: 15vh;
+    top: 10vh;
+    left: 51.5vw;
+    bottom: 15vh;
+
+    .imgModal {
+      position: fixed;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      width: 150px;
+
+      cursor: pointer;
+    }
+  }
+}
+
+.Footer {
+  position: relative;
+  text-align: center;
+  background-color: white;
+  margin: 5vh 0;
+  font-size: 1.5rem;
+  .Snorlax {
+    cursor: pointer;
+    text-decoration: underline;
+    color: coral;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .footerModal {
+    width: 90vw;
+    height: 90vh;
+    // top: 8vh;
+    // left:8vw;
+    .titleMod {
+      margin: -2vh 0 -5vh;
+    }
+    .membri {
+      flex-direction: column;
+      margin-left: 3vw;
+      gap: 2vh;
+
+      .membro {
+        display: flex;
+        flex-direction: row;
+        gap: 5vw;
+        height: 7vh;
+        width: 20vw;
+        text-align: justify;
+        margin-top: 3vh;
+        padding-top: 2vh;
+
+        .containerDescMod {
+          display: flex;
+          flex-direction: row;
+          font-size: small;
+          overflow: hidden;
+          max-width: 0px;
+          gap: 1vw;
+          .containerLinks {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-top: 0;
+            .imgLinkedin {
+              width: 8vw;
+            }
+            .imgGitHub {
+              width: 8vw;
+              transform: translateY(-3px);
+            }
+          }
+        }
+        .membroImg {
+          width: 10vw;
+          height: 10vw;
+        }
+        &:hover {
+          height: 10vh;
+          width: 85vw;
+          transform: translatex(-2vw);
+        }
+      }
+    }
+    .imgCloseMod {
+      // height: 20px;
+      position: relative;
+      // left: 60vw;
+      // bottom: 22vh;
+      .imgModal {
+        top: 85vh;
+        left: 70vw;
+        width: 125px;
+        // height: 125px;
+      }
+    }
+  }
+}

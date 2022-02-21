@@ -69,4 +69,11 @@
     gap: 20px;
     font-size: 11px;
   }
+  .Snorlax {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
