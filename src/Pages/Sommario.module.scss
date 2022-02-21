@@ -1,0 +1,61 @@
+.Sommario {
+    width: 80vw;
+    margin: auto;
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px 40px;
+    border-radius: 5px;
+
+    .addressSection {
+        width: 30vw;
+        display: flex;
+        flex-direction: row;
+        gap: 125px;
+
+        p {
+            margin-top: 25px;
+        }
+    }
+
+    .cartSection {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 125px;
+
+        h2 {
+            white-space: nowrap;
+        }
+
+        .productSection {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+            white-space: normal;
+            gap: 20px;
+
+            // h3 {
+            //     max-width: 30%;
+            // }
+
+            img {
+                width: 150px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .paymentSection {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        white-space: normal;
+        gap: 20px;
+
+        input {
+            margin-top: 25px;
+        }
+    }
+}

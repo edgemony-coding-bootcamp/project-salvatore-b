@@ -3,15 +3,17 @@ import { useStateValue } from "../../Libs/StateProvider";
 import { Link } from "react-router-dom";
 import styles from "./Subtotale.module.scss";
 
-function Subtotale({ id }) {
-  const [{ basket }, dispatch] = useStateValue();
+// function Subtotale({ id }) {
+function Subtotale() {
+  const [{ basket }] = useStateValue();
 
-  const svuotacart = () => {
-    dispatch({
-      type: "SVUOTA-CARRELLO",
-      id,
-    });
-  };
+  // const [{ basket }, dispatch] = useStateValue();
+  // const svuotacart = () => {
+  //   dispatch({
+  //     type: "SVUOTA-CARRELLO",
+  //     id,
+  //   });
+  // };
 
   const getTotalItems = () => {
     return basket.reduce(
@@ -37,11 +39,10 @@ function Subtotale({ id }) {
         <input type="checkbox" /> Questo ordine contiene un regalo
       </div>
 
-      <Link to="/checkout">
+      <Link to="/sommario">
         <button
           disabled={getTotalItems() === 0}
           className={styles.SubBTN}
-          onClick={svuotacart}
         >
           Procedi all'acquisto
         </button>
