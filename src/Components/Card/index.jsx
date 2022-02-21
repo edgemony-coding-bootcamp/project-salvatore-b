@@ -5,9 +5,12 @@ import { Rating } from "@mui/material";
 import { Context } from "../../Pages/Home";
 import { useStateValue } from "../../Libs/StateProvider";
 import { Link } from "react-router-dom";
+
 import styles from "./Card.module.scss";
 
+
 const Card = ({ category }) => {
+
   const [product, setProduct] = useState([]);
   const [{ basket }, dispatch] = useStateValue();
   const { value } = useContext(Context);
@@ -60,8 +63,8 @@ const Card = ({ category }) => {
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (
             <div key={items.id} className={styles.Card}>
-              <p className={styles.descCard}>{items.descrizione}</p>
-              <img src={items.image} alt="items-title" />
+              {/* <p className={styles.descCard}>{items.descrizione}</p> */}
+              <Link to={`/prodotto/${items.id}`}><img src={items.image} alt="items-title" /></Link>
               <h4 className={styles.title_card}>{items.titolo}</h4>
               <div className={styles.PrRaBtn}>
                 <div className={styles.Price_Rating}>
