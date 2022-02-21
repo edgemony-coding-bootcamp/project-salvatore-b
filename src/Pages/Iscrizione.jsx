@@ -13,19 +13,17 @@ const Iscrizione = () => {
   const [passwordConf, setPasswordConf] = useState("");
   const [address, setAddress] = useState("");
   const [nome, setNome] = useState("");
-  let navigate = useNavigate();
   const [errors, setErrors] = useState("");
+  let navigate = useNavigate();
 
   const register = (event) => {
     event.preventDefault();
 
     if (nome.trim() === "" || nome.trim().length <= 5 || !nome.trim().match(/([A-Za-z]( )[A-Za-z]+$)/)) {
       setErrors("Nome non valido")
-      setNome("");
     } else {
       if (address.trim() === "" || address.trim().length <= 5 || !address.trim().match(/([A-Za-z]( )[A-Za-z]+( )[0-9])/)) {
         setErrors("Indirizzo non valido");
-        setAddress("");
       } else {
         if (password === passwordConf) {
           createUserWithEmailAndPassword(auth, email, password)
@@ -44,7 +42,6 @@ const Iscrizione = () => {
             })
             .catch((error) => {
               setErrors(error.code);
-              if (error.code === "auth/email-already-in-use" || error.code === "auth/invalid-email") setEmail("");
               if (error.code === "auth/weak-password" || error.code === "auth/internal-error") setPassword("");
             });
         } else {
@@ -79,9 +76,10 @@ const Iscrizione = () => {
             onChange={(event) => setNome(event.target.value)}
             type="text"
             name="Nome"
-            placeholder={errors === "Nome non valido" ? "Inserisci il tuo nome" : ""}
+            placeholder="Nome Cognome"
             required
           />
+          {errors === "Nome non valido" ? <small>Inserisci il tuo nome</small> : <small><br /></small>}
 
           <label htmlFor="Indirizzo">
             Inserisci il tuo indirizzo di spedizione
@@ -92,9 +90,10 @@ const Iscrizione = () => {
             onChange={(event) => setAddress(event.target.value)}
             type="text"
             name="indirizzo"
-            placeholder={errors === "Indirizzo non valido" ? "Indirizzo non valido" : ""}
+            placeholder="Es. Via Roma 123"
             required
           />
+          {errors === "Indirizzo non valido" ? <small>Indirizzo non valido</small> : <small><br /></small>}
 
           <label htmlFor="email">E-mail</label>
           <input
@@ -104,9 +103,12 @@ const Iscrizione = () => {
             type="email"
             name="email"
             autoComplete="off"
-            placeholder={(errors === "auth/email-already-in-use" ? "Email già in uso" : "") || ((errors === "auth/invalid-email" || errors === "auth/missing-email") ? "Email non valida" : "")}
+            placeholder="Indirizzo Email"
             required
           />
+          {errors === "auth/email-already-in-use" && <small>Email già in uso</small>}
+          {(errors === "auth/invalid-email" || errors === "auth/missing-email") && <small>Email non valida</small>}
+          {!(errors === "auth/email-already-in-use" || errors === "auth/invalid-email" || errors === "auth/missing-email") && <small><br /></small>}
 
           <label htmlFor="password">Password</label>
           <input
@@ -115,9 +117,10 @@ const Iscrizione = () => {
             onChange={(event) => setPassword(event.target.value)}
             type="password"
             name="password"
-            placeholder={(errors === "auth/weak-password" ||  errors === "auth/internal-error") ? "Almeno 6 caratteri" : ""}
+            placeholder="Almeno 6 caratteri"
             required
           />
+          {(errors === "auth/weak-password" ||  errors === "auth/internal-error") ? <small>Almeno 6 caratteri</small> : <small><br /></small>}
 
           <label htmlFor="ConfermaPass">Verifica password</label>
           <input
@@ -126,9 +129,10 @@ const Iscrizione = () => {
             onChange={(event) => setPasswordConf(event.target.value)}
             type="password"
             name="ConfermaPass"
-            placeholder={errors === "Le password non corrispondono" ? "Le password non corrispondono" : ""}
+            placeholder="Conferma la password"
             required
           />
+          {errors === "Le password non corrispondono" ? <small>Le password non corrispondono</small> : <small><br /></small>}
 
           <button onClick={register}>Continua</button>
           <p>
