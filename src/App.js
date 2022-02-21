@@ -10,6 +10,7 @@ import Iscrizione from "./Pages/Iscrizione";
 import PaginaProdotto from "./Pages/PaginaProdotto";
 import styles from "./App.module.scss";
 import Profilo from "./Pages/Profilo";
+import Sommario from "./Pages/Sommario";
 
 function App() {
   // eslint-disable-next-line no-unused-vars
@@ -70,11 +71,9 @@ function App() {
         <Route path="/profilo" element={<Profilo />} />
         <Route path="/carrello" element={<Carrello />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/sommario" element={<Sommario />} />
       </Routes>
-      {/* <Header />  search bar login logo link utili carrello category*/}
-      {/* <Hero />  Carousel effetto sfocatura  */}
-      {/* <Card /> wrapper prodotti carousel */}
-      {/* <Footer /> Made by torna su link utili policy metodi di pagamento amazon aiuto  */}
+
     </div>
   );
 }
