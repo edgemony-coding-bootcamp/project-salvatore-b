@@ -7,7 +7,7 @@ import Login from "./Pages/Login";
 import Checkout from "./Pages/Checkout";
 import Carrello from "./Pages/Carrello";
 import Iscrizione from "./Pages/Iscrizione";
-
+import PaginaProdotto from "./Pages/PaginaProdotto";
 import styles from "./App.module.scss";
 import Profilo from "./Pages/Profilo";
 
@@ -58,6 +58,10 @@ function App() {
           path="/cucina"
           element={<Home category="izV883zg7TPzROcucina" />}
         />
+
+            <Route path="/prodotto/:id" element={<PaginaProdotto/>}/>
+              
+           
 
         <Route path="/login" element={<Login />} />
         <Route path="/iscrizione" element={<Iscrizione />} />

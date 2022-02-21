@@ -1,0 +1,152 @@
+
+.Card {
+    position: relative;
+    // align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    min-width: 270px;
+    background-color: white;
+    padding: 20px;
+    height: auto;
+    padding: 10vh 0;
+    display: flex;
+    // margin: 1px auto 20px;
+    transition: all 0.45s;
+
+    &:nth-child(5) {
+      min-width: 44%;
+    }
+    &:nth-child(8) {
+      width: 94%;
+    }
+    &:nth-child(15) {
+      min-width: 44%;
+    }
+    &:nth-child(24) {
+      width: 94%;
+    }
+
+    @media screen and (max-width: 900px) {
+    
+        &:nth-child(5) {
+          width: 280px;
+        }
+        &:nth-child(8) {
+          width: 280px;
+        }
+        &:nth-child(15) {
+          width: 280px;
+        }
+        &:nth-child(24) {
+          width: 280px;
+        }
+      }
+    
+    &:hover {
+      z-index: 2;
+      // background-color: rgba(37, 37, 37, 0.226);
+    //   cursor: pointer;
+    }
+
+    img {
+      max-height: 420px;
+    //   width: 100%;
+      object-fit: contain;
+      cursor:zoom-in;
+      &:hover{
+          transform: scale(1.3)
+      }
+    }
+    .parteDestra{
+        display: flex;
+        flex-direction: column;
+    
+.Title_Rating {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+
+    .title_card {
+        padding-bottom: 5px;
+      overflow: hidden;
+    }
+    
+    .ratingStelle {
+      display: flex;
+      padding-left: 20px;
+      padding-bottom: 20px;
+    }
+      
+        .prezzoBtn{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            span{
+                color: red;
+                font-weight: bold;
+            }
+      
+
+      
+      .btnAB {
+          display: flex;
+          flex-direction: column;
+          margin-top: -7px;
+          gap: 5px;
+          
+          button {
+            cursor: pointer;
+            height: 30px;
+            width: 130px;
+            white-space: nowrap;
+            border: 1px solid;
+            border-color: #a88734 #9c7e31 #846a29;
+            border-radius: 4px;
+            outline: none;
+            
+            a {
+              text-decoration: none;
+              color: black;
+            }
+          }
+        .btnAdd {
+          background-color: #f0c14b;
+          background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+
+          &:hover {
+            background: linear-gradient(
+              to bottom,
+              darken(#f7dfa5, 10%),
+              darken(#f0c14b, 10%)
+            );
+          }
+        }
+        .btnBuy {
+          cursor: pointer;
+          background-color: #ff7b00;
+
+          &:hover {
+            background: linear-gradient(
+              to bottom,
+              darken(#ff9100, 10%),
+              darken(#ff8800, 10%)
+            );
+          }
+        }
+    }
+      }
+    }
+    .descCard {
+        
+        text-align: justify;
+          height: auto;
+          width: 60vw;
+          padding: 0;
+          font-size: 16px;
+        }
+}
+hr{
+    width: 62vw;
+}
+  }
