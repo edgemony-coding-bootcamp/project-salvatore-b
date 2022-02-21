@@ -1,7 +1,7 @@
 import styles from "./Footer.module.scss";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ handleSnorlaxModal }) => {
   return (
     <div className={styles.FooterWrapper}>
       <div className={styles.NavFooter}>
@@ -83,7 +83,19 @@ const Footer = () => {
         <p>Area Legale</p>
         <p>Cookie</p>
         <p>Pubblicità definita in base agli interessi</p>
-        <p>© 2022 Snorlax Team</p>
+        <div className={styles.ModalTeam}>
+          <p>
+            Created by © 2022{" "}
+            <span
+              className={styles.Snorlax}
+              placeholder="Click Me"
+              onClick={handleSnorlaxModal}
+            >
+              {" "}
+              Snorlax Team
+            </span>{" "}
+          </p>
+        </div>
       </div>
     </div>
   );
