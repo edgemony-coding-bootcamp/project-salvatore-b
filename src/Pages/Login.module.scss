@@ -32,11 +32,16 @@
 
     label {
       display: block;
-      margin: 15px auto 5px;
+      margin: 5px auto 5px;
     }
 
     p {
       font-size: small;
+    }
+
+    small {
+      color: red;
+      font-size: 12px;
     }
 
     input {
@@ -58,29 +63,13 @@
         box-shadow: 0 0 3pt 1pt orange;
         outline: none;
       }
-
-      &::placeholder {
-        /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: red;
-        opacity: 1; /* Firefox */
-      }
-
-      &:-ms-input-placeholder {
-        /* Internet Explorer 10-11 */
-        color: red;
-      }
-
-      &::-ms-input-placeholder {
-        /* Microsoft Edge */
-        color: red;
-      }
     }
 
     button {
       cursor: pointer;
       width: 100%;
       height: 30px;
-      margin-top: 20px;
+      margin-top: 7px;
       background-color: #f0c14b;
       border: 1px solid;
       border-color: #a88734 #9c7e31 #846a29;

@@ -23,7 +23,6 @@ const Login = () => {
       })
       .catch((error) => {
         setErrors(error.code);
-        if (error.code === "auth/user-not-found" || error.code === "auth/invalid-email") setEmail("");
         if (error.code === "auth/wrong-password") setPassword("");
       });
   }
@@ -49,9 +48,12 @@ const Login = () => {
             type="email"
             name="email"
             autoComplete="off"
-            placeholder={((errors === "auth/invalid-email" || errors === "auth/missing-email") ? "Email non valida" : "") || (errors === "auth/user-not-found" ? "Utente non trovato" : "")}
+            placeholder="Indirizzo Email"
             required
           />
+          {(errors === "auth/invalid-email" || errors === "auth/missing-email") && <small>Email non valida</small>}
+          {errors === "auth/user-not-found" && <small>Utente non trovato</small>}
+          {!(errors === "auth/invalid-email" || errors === "auth/missing-email" || errors === "auth/user-not-found") && <small><br /></small>}          
 
           <label htmlFor="password">Password</label>
           <input
@@ -60,9 +62,12 @@ const Login = () => {
             onChange={(event) => setPassword(event.target.value)}
             type="password"
             name="password"
-            placeholder={errors === "auth/wrong-password" ? "Password non corretta" : "" || errors === "auth/internal-error" ? "Inserisci la password" : "" }
+            placeholder="Password"
             required
           />
+          {errors === "auth/wrong-password" && <small>Password non corretta</small>}
+          {errors === "auth/internal-error" && <small>Inserisci la password</small>}
+          {!(errors === "auth/wrong-password" || errors === "auth/internal-error") && <small><br /></small>}
 
           <button
             type="submit"
