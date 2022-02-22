@@ -12,11 +12,14 @@ const SearchBar = () => {
 
   return (
     <form className={styles.searchDiv}>
+    <label>
       <input
+      
         className={styles.searchInput}
         onChange={handleChange}
         type="text"
-      />
+      />Cerca:
+      </label>
       <Search className={styles.iconSearch} />
     </form>
   );

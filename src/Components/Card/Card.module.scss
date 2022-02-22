@@ -63,33 +63,15 @@
       cursor: pointer;
     }
 
-    &:hover > img {
-      width: 0;
-    }
-
-    &:hover > .descCard {
-      position: relative;
-      color: black;
-      transition: all 0.45s;
-      overflow-y: scroll;
-      text-align: left;
-    }
 
     img {
+      min-width: 150px;
       max-height: 150px;
-      width: 100%;
+      width: 150px;
+      height: 150px;
       object-fit: contain;
     }
 
-    .descCard {
-      position: absolute;
-      background: transparent;
-      color: transparent;
-      height: 135px;
-      margin: 0;
-      padding: 0;
-      font-size: 14px;
-    }
 
     .title_card {
       min-height: 45px;
