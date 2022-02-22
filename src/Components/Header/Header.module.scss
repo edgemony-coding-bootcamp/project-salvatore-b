@@ -59,16 +59,20 @@
       }
     }
 
-    .imgLogoA {
-      width: 105px;
-      height: 30px;
-      padding-top: 10px;
-    }
+    // .imgLogoA {
+    //   width: 105px;
+    //   height: 50px;
+    // }
 
     .searchDiv {
       display: flex;
       flex: 1;
       min-width: 400px;
+
+      label{
+        width: 100%;
+        color: transparent;
+      }
 
       .searchInput {
         width: 100%;

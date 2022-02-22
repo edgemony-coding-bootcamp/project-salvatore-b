@@ -63,8 +63,7 @@ const Card = ({ category }) => {
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (
             <div key={items.id} className={styles.Card}>
-              {/* <p className={styles.descCard}>{items.descrizione}</p> */}
-              <Link to={`/prodotto/${items.id}`}><img src={items.image} alt="items-title" /></Link>
+              <Link to={`/prodotto/${items.id}`}><img src={items.image} alt="items-title" loading="lazy"/></Link>
               <h4 className={styles.title_card}>{items.titolo}</h4>
               <div className={styles.PrRaBtn}>
                 <div className={styles.Price_Rating}>

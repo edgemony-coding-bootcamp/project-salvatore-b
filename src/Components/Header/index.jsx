@@ -33,8 +33,9 @@ const Header = ({ handleSidebar }) => {
           <Link to="/">
             <img
               className={styles.imgLogoA}
-              src="https://www.pinclipart.com/picdir/big/358-3584545_amazon-web-services-logo-png-transparent-svg-vector.png"
-              alt=""
+              src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/snorlaxon%20B-N.png?alt=media&token=7c9602fd-5ca5-443a-a307-6ee321faec3d"
+              alt="snorlaxUp"
+              loading="lazy"
             />
           </Link>
         </div>
