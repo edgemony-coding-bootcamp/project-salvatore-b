@@ -4,6 +4,9 @@
   width: 100%;
   height: 108px;
   text-align: justify;
+   @media only screen and (max-width: 650px) {
+     height:auto;
+   }
 
   a {
     color: white;
@@ -143,13 +146,22 @@
     gap: 1vw;
     background: #232f3e;
     line-height: 30px;
-    align-items: center;
+   align-items: center;
   
  @media only screen and (max-width: 650px) {
-    width: 100%;
-    height:80px;
-    gap: 0;
-  overflow-x: scroll;
+      display: flex;
+    flex-direction: row;
+    height: 17px;
+    padding: 1vw 3vw 5vw 3vw;
+    overflow-x: scroll;
+
+    overflow-y: hidden;
+  
+    gap: 7vw;
+    background: #232f3e;
+    line-height: 17px;
+    margin: -1px;
+    z-index: 1;
         }
 
     .wrapper_header_section {

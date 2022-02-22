@@ -2,16 +2,13 @@
   position: relative;
   margin: auto;
   width: 1520px;
-    @media only screen and (max-width: 650px) {
-     top: 9vh; 
-    }
 
   .hero {
     overflow: hidden;
     width: 1520px;
     scroll-behavior: smooth;
       @media only screen and (max-width: 650px) {
-     width: 100%; 
+     width: 100vw; 
     }
 
     .heroImg {
@@ -34,7 +31,7 @@
             width: 1520px;
             pointer-events: none;
               @media only screen and (max-width: 650px) {
-                width: 650px;
+                width: 100vw;
               }
         }
       }
