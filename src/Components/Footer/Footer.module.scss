@@ -28,9 +28,11 @@
         cursor: pointer;
       }
 
-      h3 {
+      h4 {
         padding-bottom: 8px;
         font-size: 16px;
+        display: inline-block;
+        height: 18px;
       }
     }
   }
@@ -74,6 +76,217 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .FooterWrapper {
+    margin-top: 40px;
+
+    .Footer {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      gap: 20px;
+      background: #232f3e;
+      width: 100%;
+      color: white;
+
+      ul {
+        margin: 30px 0;
+        padding: 0;
+        max-width: 200px;
+      }
+
+      li {
+        text-align: left;
+        list-style: none;
+        padding-bottom: 8px;
+        font-size: 14px;
+
+        // &:hover {
+        //   text-decoration: underline;
+        //   cursor: pointer;
+        // }
+
+        h4 {
+          padding-bottom: 8px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 840px) and (min-width: 651px) {
+// }
+
+@media screen and (max-width: 650px) {
+  .FooterWrapper {
+    margin-top: 40px;
+
+    .Footer {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 20px;
+      background: #232f3e;
+      width: 100%;
+      color: white;
+
+      ul {
+        margin: 0 50px;
+        padding: 0;
+      }
+
+      li {
+        text-align: left;
+        list-style: none;
+        padding-bottom: 8px;
+        font-size: 14px;
+
+        // &:hover {
+        //   text-decoration: underline;
+        //   cursor: pointer;
+        // }
+
+        h4 {
+          padding-bottom: 8px;
+          font-size: 16px;
+        }
+      }
+    }
+    .Policy {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #131a22;
+      color: white;
+      margin: 0 auto;
+      padding: 0 8px;
+      gap: 20px;
+      font-size: 11px;
+
+      p {
+        flex-basis: 30%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 619px) {
+  .FooterWrapper {
+    margin-top: 40px;
+
+    .Footer {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      gap: 20px;
+      background: #232f3e;
+      width: 100%;
+      color: white;
+
+      ul {
+        margin: 0 10px;
+        padding: 0;
+      }
+
+      li {
+        text-align: left;
+        list-style: none;
+        padding-bottom: 8px;
+        font-size: 14px;
+
+        // &:hover {
+        //   text-decoration: underline;
+        //   cursor: pointer;
+        // }
+
+        h4 {
+          padding-bottom: 8px;
+          font-size: 16px;
+        }
+      }
+    }
+    .Policy {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #131a22;
+      color: white;
+      margin: 0 auto;
+      padding: 0 8px;
+      gap: 20px;
+      font-size: 11px;
+
+      p {
+        flex-basis: 30%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .FooterWrapper {
+    margin-top: 40px;
+
+    .Footer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #232f3e;
+      width: 100%;
+      color: white;
+
+      ul {
+        align-self: center;
+        margin: 0 10px;
+        padding: 0;
+        min-width: 196px;
+      }
+
+      ul:first-child {
+        padding-top: 16px;
+      }
+
+      ul:last-child {
+        padding-bottom: 16px;
+      }
+
+      li {
+        text-align: left;
+        list-style: none;
+        padding-bottom: 4px;
+        font-size: 12px;
+
+        // &:hover {
+        //   text-decoration: underline;
+        //   cursor: pointer;
+        // }
+
+        h4 {
+          font-size: 14px;
+          padding: 0;
+        }
+      }
+    }
+    .Policy {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background: #131a22;
+      color: white;
+      margin: 0 auto;
+      padding: 0 8px;
+      gap: 20px;
+      font-size: 11px;
+
+      p {
+        flex-basis: 30%;
+      }
     }
   }
 }

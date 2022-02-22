@@ -42,7 +42,7 @@ const Footer = ({ handleSnorlaxModal }) => {
           <li>
             <h4>Metodi di pagamento Amazon </h4>
           </li>
-          <li>Metodi di pagamento</li>
+          <li> Metodi di pagamento</li>
           <li>Convertitore di Valuta Amazon</li>
           <li>Buoni Regalo</li>
           <li>Ricarica online</li>
