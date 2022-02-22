@@ -42,7 +42,7 @@ const Header = ({ handleSidebar }) => {
           <div className={styles.wrapper_header_section}>
             <div className={styles.positionDiv} >
               <LocationOnOutlined className={styles.positionOn} />
-              <div>
+            <div className={styles.ship_in_italy}>
                 <span>Spediamo</span>
                 <br />
                 In Italia!

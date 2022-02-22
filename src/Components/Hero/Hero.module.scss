@@ -2,11 +2,17 @@
   position: relative;
   margin: auto;
   width: 1520px;
+    @media only screen and (max-width: 650px) {
+     top: 9vh; 
+    }
 
   .hero {
     overflow: hidden;
     width: 1520px;
     scroll-behavior: smooth;
+      @media only screen and (max-width: 650px) {
+     width: 100%; 
+    }
 
     .heroImg {
       .imgRef {
@@ -27,6 +33,9 @@
           img {
             width: 1520px;
             pointer-events: none;
+              @media only screen and (max-width: 650px) {
+                width: 650px;
+              }
         }
       }
     }
@@ -35,7 +44,10 @@
   .btnS {
     position: absolute;
     top: 0px;
-
+    
+    @media only screen and (max-width: 650px) {
+      display: none;
+    }
     .btn {
       position: absolute;
       color: #fff;
