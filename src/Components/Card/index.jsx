@@ -5,11 +5,10 @@ import { Rating } from "@mui/material";
 import { Context } from "../../Pages/Home";
 import { useStateValue } from "../../Libs/StateProvider";
 import { Link } from "react-router-dom";
-
 import styles from "./Card.module.scss";
 
 
-const Card = ({ category }) => {
+const Card = ({ category, pagElements, setMaxElements }) => {
 
   const [product, setProduct] = useState([]);
   const [{ basket }, dispatch] = useStateValue();
@@ -35,7 +34,8 @@ const Card = ({ category }) => {
         : setProduct(currentProdotti);
     };
     getData();
-  }, [category]);
+    setMaxElements(product.length);
+  }, [category, product.length, setMaxElements]);
 
   const addToCart = (items) => {
     dispatch({
@@ -59,7 +59,7 @@ const Card = ({ category }) => {
 
   return (
     <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "calc(50% - 660px)" }}>
-      {product.map(
+      {product.slice(0, pagElements).map(
         (items) =>
           items.titolo.toLowerCase().includes(value.toLowerCase()) && (
             <div key={items.id} className={styles.Card}>

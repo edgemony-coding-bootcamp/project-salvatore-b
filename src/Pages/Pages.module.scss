@@ -57,6 +57,27 @@
   flex-direction: column;  
 }
 
+.showMore {
+  cursor: pointer;
+  width: 130px;
+  height: 30px;
+  margin-top: 7px;
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-color: #a88734 #9c7e31 #846a29;
+  border-radius: 4px;
+  outline: none;
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+
+  &:hover {
+    background: linear-gradient(
+      to bottom,
+      darken(#f7dfa5, 5%),
+      darken(#f0c14b, 5%)
+    );
+  }
+}
+
 .cartPage {
   margin-top: 10px;
   .cartPage_wrap {
