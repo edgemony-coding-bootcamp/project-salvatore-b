@@ -1,8 +1,8 @@
 <div align="center">
 <h1>🎓 EDGEMONY FINAL PROJECT - TEAM SALVATORE B 📜 </h1>
 <h1> 🖥️ SNORLAXON, THE AMAZON CLONE 📱 </h1>
-<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/snorlaxon%20B-N.png?alt=media&token=7c9602fd-5ca5-443a-a307-6ee321faec3d"
-alt="snorlaxUp" height="75"/>
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-blu.png?alt=media&token=3d486d86-7171-4baa-93cb-6977140eb85e"
+alt="snorlaxUp" height="100"/>
 </div>&nbsp;
            
 Our ecommerce was created using the following technologies:
