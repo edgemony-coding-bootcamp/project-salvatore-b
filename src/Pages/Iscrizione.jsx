@@ -59,8 +59,9 @@ const Iscrizione = () => {
         <Link to="/">
           <img
             className={styles.logo}
-            src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/amazonlogo.png?alt=media&token=00fe6716-3b35-4c7f-92b2-1b5c9fcfa0c6"
-            alt="amazon"
+            src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/Snorlaxon%20(2).png?alt=media&token=e9732c2b-8565-4550-b014-7255f44f608e"
+            alt="snorlaxUp"
+            loading="lazy"
           />
         </Link>
       </div>
