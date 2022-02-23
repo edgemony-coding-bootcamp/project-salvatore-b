@@ -10,12 +10,15 @@
   box-sizing: border-box;
   justify-content: center;
   gap: 10px;
-
+  min-height: 105vh;
+  
   @media screen and (min-width: 1620px) {
     margin-right: calc(50% - 700px) !important;
+
   }
     @media only screen and (max-width: 650px) {
-      top: -90px ;
+      top: -120px ;
+      margin-bottom: 0;
     }
 
   .Card {
