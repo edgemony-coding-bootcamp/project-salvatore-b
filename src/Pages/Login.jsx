@@ -53,7 +53,7 @@ const Login = () => {
           />
           {(errors === "auth/invalid-email" || errors === "auth/missing-email") && <small>Email non valida</small>}
           {errors === "auth/user-not-found" && <small>Utente non trovato</small>}
-          {!(errors === "auth/invalid-email" || errors === "auth/missing-email" || errors === "auth/user-not-found") && <small><br /></small>}          
+          {!(errors === "auth/invalid-email" || errors === "auth/missing-email" || errors === "auth/user-not-found") && <small style={{ color:"transparent" }}>no error</small>}          
 
           <label htmlFor="password">Password</label>
           <input
@@ -67,7 +67,7 @@ const Login = () => {
           />
           {errors === "auth/wrong-password" && <small>Password non corretta</small>}
           {errors === "auth/internal-error" && <small>Inserisci la password</small>}
-          {!(errors === "auth/wrong-password" || errors === "auth/internal-error") && <small><br /></small>}
+          {!(errors === "auth/wrong-password" || errors === "auth/internal-error") && <small style={{ color:"transparent" }}>no error</small>}
 
           <button
             type="submit"
@@ -99,7 +99,7 @@ const Login = () => {
           <li>Informativa sulla privacy</li>
           <li>Aiuto</li>
           <li>Informativa sui Cookie</li>
-          <li>Informativa sulla Pubblicità definita in base agli interessi</li>
+          <li>Informativa sulla Pubblicità</li>
         </ul>
 
         <small>

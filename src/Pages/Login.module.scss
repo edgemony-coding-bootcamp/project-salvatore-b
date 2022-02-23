@@ -1,11 +1,8 @@
 .Login {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
-  height: 100%;
-  // overflow: hidden;
 
   .header {
     .logo {
@@ -22,8 +19,9 @@
   }
 
   .form {
+    box-sizing: border-box;    
     form {
-      width: 315px;
+      width: 300px;
       padding: 15px 25px;
       text-align: left;
       border: 1px solid rgba(0, 0, 0, 0.15);
@@ -42,11 +40,11 @@
     small {
       color: red;
       font-size: 12px;
+      user-select: none;
     }
 
     input {
       height: 30px;
-      // margin-bottom: 10px;
       background-color: white;
       width: 100%;
       border: 1px solid #a6a6a6;
@@ -144,20 +142,20 @@
 
   footer {
     margin-top: 30px;
-    width: 95%;
-    height: 100px;
+    width: 100%;
     display: block;
     background: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.14),
       rgba(0, 0, 0, 0.03) 3px,
-      transparent
+      transparent,
     );
 
     ul {
-      margin-top: 20px;
+      padding: 0;
+      margin: 20px auto;
       display: flex;
-      width: 100%;
+      width: 95%;
       justify-content: center;
       font-size: small;
       gap: 20px;
