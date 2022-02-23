@@ -1,120 +1,130 @@
-# EDGEMONY FINAL PROJECT - TEAM B
+<div align="center">
+<h1>🎓 EDGEMONY FINAL PROJECT - TEAM SALVATORE B 📜 </h1>
+<h1> 🖥️ SNORLAXON, THE AMAZON CLONE 📱 </h1>
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/snorlaxon%20B-N.png?alt=media&token=7c9602fd-5ca5-443a-a307-6ee321faec3d"
+alt="snorlaxUp" height="75"/>
+</div>&nbsp;
+           
+Our ecommerce was created using the following technologies:
 
-## Organizzazione
+- HTML, Javascript, React.js and React Router to develope the website and its logic;
+- Sass and Material UI library to provide a great touch of style;
+- Firebase for hosting and back-end work: authentication, sign-in and login with email and password; 
+- Firestore and storage for the product list database.
 
-- daily standup **lun-ven 9-9.30**
-- durante il daily si segnalano problemi, si discutono implementazioni e il team leader assegna i task
-- si lavora in maniera autonoma
-- se necessario potete creare e autosegnare nuovi task
+<section align="center">
+<img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge" />&nbsp;
+<img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=for-the-badge" /> &nbsp;
+<img alt="Sass" src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white&style=for-the-badge" />&nbsp;
+<img alt="Firebase" src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase" />&nbsp;
+</section>
 
-## Strumenti
 
-- Github
-  - repo
-  - issues
-  - board
-- Slack
-- hosting: **a vostra discrezione**
-- backend: **a vostra discrezione**
-  - json-server usato durante il corso
-  - Firebase Firestore DB
-  - altro...
+&nbsp;<div align="center">
+<h2> 💁🏽‍♂️💁🏻‍♂️ PROJECT PRESENTATION 💁🏼‍♀️💁🏻💁‍♀️ </h2>
+<p> This is <a href="clone-8164f.web.app/">Snorlaxon 🔗</a> a single page application inspired to Amazon.it</p> &nbsp;
 
-## Repository
 
-- il branch `main` è protetto
-- ogni task viene sviluppato in una branch con nomenclatura `feature/[task]` o `fix/[task]` in base alla tipologia
-- per mergiare il codice da una branch verso `main` si crea una PR assegnando tutti i membri del team come reviewer
-- le PR possono essere mergiate solo aver ricevuto **almeno 1 approvazione**
-- siete liberi di fare fork ma solo questo repo sarà quello preso in considerazione
+&nbsp;<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-banner.gif?alt=media&token=81f1670e-42dd-4807-a20d-8e5e82990894" />
+</div>&nbsp;
 
-## Obiettivo
+We welcome the viewers with a very impressive Carousel images in the main page; the different images can be slided with the ⬅️ and ➡️ arrows.
 
-- AMAZON CLONE!
-  - usiamo Amazon come riferimento per UI/UX
-- ogni prodotto ha delle categorie
-- home page con una lista di prodotti
-  - griglia di prodotti, ognuno di questi ha il task "aggiungi"
-  - filtrare per categoria
-  - visible sia da loggati che da non loggati
-  - se l'utente è loggato deve poter aggiungere e togliere i prodotti dal carrello
-- pagina di checkout
-- pagina profilo utente
+The home page is provided with the list of the available products in our online shop 🏬.
 
-- obiettivi extra:
-  - pagine dei singoli prodotti
-  - utente admin (può editare i prodotti)
-  - paginazione in home
+In order to speed up user's reseaches, we implemented:
 
----
+- a useful searchbar, in which the user can look directly for the product needed;
+- some category features (Choice, books, Electronic devices, beauty, gaming, home) that filter the related items up to their types and characteristics.
 
-# Getting Started with Create React App
+A detailed product presentation, that includes title, description, price, amount, image and rating, is available in the single product page, reachable by clicking on the card product.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Moreover, products can be added in and removed from the basket by clicking the relative buttons and, once added some, all items will be displayed into a side Navbar that will also report the relative subtotal, number of items selected and the "vai al carrello (checkout page)" button; by clicking on it, the customer will be redirected to the cart page where a summary of the purchase will be shown 🛒(product amount, increase or decrease section for the quantity) 🛒
 
-## Available Scripts
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-prodotti-modale.gif?alt=media&token=cb3aa358-7ff5-46b5-bad7-68447acfac3b" />
+</div>&nbsp;
 
-In the project directory, you can run:
+If the potential buyer is happy with his purchase, she/he'll proceed to the checkout page where a fake payment section will be avaibale 💳 
+After that, the confirmation message will appear into a new page 🚚
 
-### `npm start`
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fcarrello-acquisto.gif?alt=media&token=e02e0c86-8367-427f-afda-190941e7f101" />
+</div>&nbsp;
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Furthermore and in order to make our project more real, we also implemented the login and the registration section along with user's profile page with all her/his details saved during the registration process 👤☑️
 
-### `npm test`
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fregistrazione%20(2).gif?alt=media&token=c6eadd0c-e6e1-4b54-ad2e-3bb639e7eb3d" />
+</div>&nbsp;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+In conclusion, the footer section also hosts a modal that shows the members of team who made this project possible.
+If you want to know more about us just click the "Snorlax Team" link.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlax-modale.gif?alt=media&token=f12231ca-af64-434d-a4ee-d24e78495acd" />
+</div>&nbsp;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<div align="center"> 💤 </div>
+<div align="center">
+<img src="https://cdn.icon-icons.com/icons2/851/PNG/512/snorlax_icon-icons.com_67505.png" width="32px"/> 
+</div>
 
-### `npm run eject`
+<h3>Made with a lot of love, devotion and... a bit of magic by Snorlax Team:</h3>
+<ul>
+<li>
+    <a href="https://github.com/Francesca-Belfiore">
+      🦊 Francesca Belfiore 🌺
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/floriana83">
+     🍀 Floriana Domianello 🌷
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/MirMara">
+      ✨ Miriana Maranzano ❣️
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/Voldrak">
+     🏹 Marco Messina 🎯
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/Fablizio">
+      💰 Fabrizio Cottone 🤑
+    </a>
+  </li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3> This project was monitored and supported by our dear teacher <a href="https://github.com/moebiusmania"> Salvatore Laisa 👨‍🏫 </a></h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Flighthouse.png?alt=media&token=b78b373f-a731-4018-9ec1-f0ee0a66b8ca"/> 
+<p> <a href="./clone-8164f.web.app-20220223T183942.html"> Click here to see the full Lighthouse report</a></p>
+</div>&nbsp;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<div> <h3> Instructions </h3>
 
-## Learn More
+If you would like to use this code you need to have Node.js installed, after you installed node please fork it or download the zip file and open it in a folder and then run on your terminal
+&nbsp;
+The following command will install all the libraries you need to run it properly:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm i 
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+While this other command runs the app in the development mode:
 
-### Code Splitting
+```
+npm start 
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To see the project in your browser just open [http://localhost:3000](http://localhost:3000) 
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
