@@ -37,7 +37,7 @@ const Profilo = () => {
             <Header />
             <section className={styles.containerProfile}>
                 <div>
-                    <img src="https://www.globusvet.it/wp-content/uploads/2019/01/utente-blog-generico.png" alt="" width="250px" />
+                    <img src="https://www.globusvet.it/wp-content/uploads/2019/01/utente-blog-generico.png" alt="user-logo" width="250px"  loading="lazy"/>
                 </div>
                 <div >
                     <h3>Nome completo:</h3>

@@ -12,6 +12,7 @@ const Checkout = () => {
           src="https://png.pngtree.com/png-vector/20190114/ourlarge/pngtree-vector-delivery-truck-icon-png-image_314439.jpg"
           className={styles.Checkout__Icon}
           alt="checkout"
+          loading="lazy"
         />
         <h2>Grazie per aver Acquistato</h2>
         <h4>Spero che la tua esperienza in snorlaxon sia stata fantastica!</h4>

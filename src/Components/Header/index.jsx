@@ -73,7 +73,7 @@ const Header = ({ handleSidebar }) => {
         </Link>
         <Link to={user ? "/profilo" : "/login"}>
           <div className={styles.wrapper_header_section}>
-            <span>Il mio profilo</span> <br /> Amazon
+            <span>Il mio profilo</span> <br /> Snorlaxon
             <ArrowDropDownIcon
               className={styles.arrowDropDown}
               fontSize="small"
@@ -96,7 +96,7 @@ const Header = ({ handleSidebar }) => {
       </div>
       <div className={styles.secondLine}>
         <div className={styles.wrapper_header_section}>
-          <Link to="/">Amazon Choice</Link>
+          <Link to="/">Choice</Link>
         </div>
         <div className={styles.wrapper_header_section}>
           <Link to="/libri">Libri</Link>
