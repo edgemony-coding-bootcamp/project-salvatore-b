@@ -79,7 +79,7 @@ const Iscrizione = () => {
             placeholder="Nome Cognome"
             required
           />
-          {errors === "Nome non valido" ? <small>Inserisci il tuo nome</small> : <small><br /></small>}
+          {errors === "Nome non valido" ? <small>Inserisci il tuo nome</small> : <small style={{ color:"transparent" }}>no error</small>}
 
           <label htmlFor="Indirizzo">
             Inserisci il tuo indirizzo di spedizione
@@ -93,7 +93,7 @@ const Iscrizione = () => {
             placeholder="Es. Via Roma 123"
             required
           />
-          {errors === "Indirizzo non valido" ? <small>Indirizzo non valido</small> : <small><br /></small>}
+          {errors === "Indirizzo non valido" ? <small>Indirizzo non valido</small> : <small style={{ color:"transparent" }}>no error</small>}
 
           <label htmlFor="email">E-mail</label>
           <input
@@ -108,7 +108,7 @@ const Iscrizione = () => {
           />
           {errors === "auth/email-already-in-use" && <small>Email già in uso</small>}
           {(errors === "auth/invalid-email" || errors === "auth/missing-email") && <small>Email non valida</small>}
-          {!(errors === "auth/email-already-in-use" || errors === "auth/invalid-email" || errors === "auth/missing-email") && <small><br /></small>}
+          {!(errors === "auth/email-already-in-use" || errors === "auth/invalid-email" || errors === "auth/missing-email") && <small style={{ color:"transparent" }}>no error</small>}
 
           <label htmlFor="password">Password</label>
           <input
@@ -120,7 +120,7 @@ const Iscrizione = () => {
             placeholder="Almeno 6 caratteri"
             required
           />
-          {(errors === "auth/weak-password" ||  errors === "auth/internal-error") ? <small>Almeno 6 caratteri</small> : <small><br /></small>}
+          {(errors === "auth/weak-password" ||  errors === "auth/internal-error") ? <small>Almeno 6 caratteri</small> : <small style={{ color:"transparent" }}>no error</small>}
 
           <label htmlFor="ConfermaPass">Verifica password</label>
           <input
@@ -132,7 +132,7 @@ const Iscrizione = () => {
             placeholder="Conferma la password"
             required
           />
-          {errors === "Le password non corrispondono" ? <small>Le password non corrispondono</small> : <small><br /></small>}
+          {errors === "Le password non corrispondono" ? <small>Le password non corrispondono</small> : <small style={{ color:"transparent" }}>no error</small>}
 
           <button onClick={register}>Continua</button>
           <p>
@@ -150,7 +150,7 @@ const Iscrizione = () => {
           <li>Informativa sulla privacy</li>
           <li>Aiuto</li>
           <li>Informativa sui Cookie</li>
-          <li>Informativa sulla Pubblicità definita in base agli interessi</li>
+          <li>Informativa sulla Pubblicità</li>
         </ul>
 
         <small>© Snorlax Team - 2022</small>

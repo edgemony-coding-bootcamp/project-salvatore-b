@@ -55,12 +55,14 @@
 
     .login_section {
       width: 125px;
+
       .hellouser {
         display: inline-block;
         max-width: 124px;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        text-transform: capitalize; 
       }
     }
 
