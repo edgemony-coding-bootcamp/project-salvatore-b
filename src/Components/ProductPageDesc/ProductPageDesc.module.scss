@@ -1,17 +1,15 @@
 
 .Card {
     position: relative;
-    // align-items: center;
-    justify-content: space-around;
-    width: 100vw;
-    min-width: 270px;
     background-color: white;
-    padding: 20px;
-    height: auto;
-    padding: 10vh 0;
+    justify-content: space-around;
+    width: 98vw;
+    min-height: 30vh;
+    min-width: 270px;
     display: flex;
-    // margin: 1px auto 20px;
+    padding: 10vh 1vw;
     transition: all 0.45s;
+    
 
     &:nth-child(5) {
       min-width: 44%;
@@ -50,7 +48,6 @@
 
     img {
       max-height: 420px;
-    //   width: 100%;
       object-fit: contain;
       cursor:zoom-in;
       &:hover{
@@ -68,7 +65,9 @@
 
     .title_card {
         padding-bottom: 5px;
+        // width: 85vw;
       overflow: hidden;
+      text-align: justify;
     }
     
     .ratingStelle {
@@ -137,16 +136,43 @@
     }
       }
     }
-    .descCard {
+    .descCard{
         
         text-align: justify;
           height: auto;
           width: 60vw;
           padding: 0;
+          padding-top: 1vh;
           font-size: 16px;
         }
 }
 hr{
     width: 62vw;
 }
+  }
+
+  @media screen and (max-width: 650px) {
+    .Card{
+      flex-direction: column;
+
+      .parteDestra{
+
+        .title_card {
+          width: 85vw;
+          margin: 15px auto;
+      }
+        .ratingStelle {
+          padding: 0;
+          margin: auto;
+        }
+        .prezzoBtn{
+          padding: 0 15vw;
+
+        }
+        .descCard{
+          margin: auto;
+          width: 85vw;
+        }
+      }
+    }
   }
