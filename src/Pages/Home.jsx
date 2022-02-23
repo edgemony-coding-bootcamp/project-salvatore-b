@@ -14,6 +14,8 @@ export const Context = createContext({ value: "", setValue: () => {} });
 const Home = ({ category }) => {
   const [{ basket }] = useStateValue();
   const [value, setValue] = useState("");
+  const [pagElements, setPagElements] = useState(12);
+  const [maxElements, setMaxElements] = useState();
 
   //FOOTERMODALE
   const [isfootmod, setisfootmod] = useState(false);
@@ -35,7 +37,8 @@ const Home = ({ category }) => {
         <div onClick={closeFootModal}>
           <Header />
           <Hero />
-          <Card category={category} />
+          <Card category={category} pagElements={pagElements} setMaxElements={setMaxElements}/>
+          {pagElements < maxElements && <button className={styles.showMore} onClick={() => setPagElements(pagElements + 12)}>Mostra altri prodotti</button>}
         </div>
         <Footer handleSnorlaxModal={handleSnorlaxModal} />
         {isfootmod && <FooterModale closeFootModal={closeFootModal} />}

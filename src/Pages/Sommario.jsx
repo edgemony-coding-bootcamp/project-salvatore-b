@@ -89,7 +89,6 @@ const Sommario = () => {
                     <h2>Il tuo carrello:</h2>
                     <div>
                         {basket?.map((item) => (
-                            <>
                                 <div key={item.id} className={styles.productSection}>
                                     <img src={item.image} alt={item.titolo} />
                                     <div>
@@ -103,8 +102,6 @@ const Sommario = () => {
                                         <p>{(item.prezzo).toFixed(2)} € x {item.count}</p>
                                     </div>
                                 </div>
-                                {/* <hr /> */}
-                            </>
                         ))}
                     </div>
                 </div>
