@@ -8,9 +8,7 @@
   }
 
   .hero {
-    // overflow: hidden;
-    // width: 100vw;
-    // scroll-behavior: smooth;
+   
 
     .heroImg {
       .imgRef {
@@ -30,7 +28,7 @@
         img {
           height: 608px;
           pointer-events: none;
-          width: 1520vw;
+          width: 1520px;
           object-fit: cover;
           @media only screen and (max-width: 1520px) {
             width: 100vw;
