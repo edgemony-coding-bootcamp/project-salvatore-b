@@ -5,7 +5,11 @@
     margin-top: 20px;
     padding: 20px 40px;
     border-radius: 5px;
+    @media only screen and (max-width: 650px) {
+        width: auto;
+        margin-top: auto;
 
+        }
     button {
         cursor: pointer;
         width: 100%;
@@ -32,13 +36,24 @@
       }
 
     .addressSection {
-        width: 30vw;
+        // width: 30vw;
         display: flex;
         flex-direction: row;
         gap: 125px;
+        @media only screen and (max-width: 650px) {
+        display:inline;
+           
+            
+            }
 
         p {
             margin-top: 25px;
+            @media only screen and (max-width: 650px) {
+            text-align: center;
+            
+                
+                 
+                 }
         }
     }
 
@@ -47,9 +62,17 @@
         display: flex;
         flex-direction: row;
         gap: 125px;
+        @media only screen and (max-width: 900px) {
+            width: auto;
+            text-align: center;
+            flex-direction: column;
+            gap:2vh;
+            
+            }
 
         h2 {
             white-space: nowrap;
+
         }
 
         .productSection {
@@ -60,6 +83,12 @@
             white-space: normal;
             gap: 20px;
             border-bottom: 1px solid rgba($color: #000000, $alpha: 0.12);
+            @media only screen and (max-width: 650px) {
+                width: auto;
+                text-align: center;
+                flex-direction: column;
+                
+                }
 
             &:last-child {
                 border: none;
@@ -70,14 +99,25 @@
                 width: 130px;
                 height: 130px;
                 object-fit: contain;
+                @media only screen and (max-width: 650px) {
+                    justify-content: center;
+                    width: auto;
+                    }
             }
 
             h3 {
                 margin-bottom: 5px;
+                font-size:medium;
+                @media only screen and (max-width: 650px) {
+                    font-size:small;
+                    text-align:justify;
+                    
+                    }
             }
 
             p {
                 margin: 5px auto auto 4px;
+              
             }
         }
     }
@@ -88,7 +128,13 @@
         flex-direction: row;
         text-align: left;
         white-space: normal;
-        gap: 20px;
+        gap: 20px; 
+        
+        @media only screen and (max-width: 650px) {
+            display:inline;
+            text-align: center;
+                 
+                 }
 
         small {
             user-select: none;
@@ -97,6 +143,11 @@
         .card {
             display: inline-block;
             font-size: 18px;
+            @media only screen and (max-width: 650px) {
+                display: block;
+                
+                     
+                     }
         }
 
         input {
@@ -106,20 +157,31 @@
             
             &:nth-child(2) {
                 margin-right: 15px;
+               @media only screen and (max-width: 650px) {
+                    width: 32vw; 
+                    margin-left: 15px;
+                     
+                }
             }
 
             &:nth-child(3) {
                 width: 22px;
+                // @media only screen and (max-width: 650px) {
+                //     width: 30px;  
+                     
+                // }
             }
 
             &:nth-child(4) {
                 width: 20px;
                 margin-right: 15px;
+               
             }
             
             &:nth-child(5) {
                 width: 30px;
                 margin-right: 15px;
+              
             }
         }
     }
