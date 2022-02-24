@@ -114,4 +114,28 @@
   width: 600px;
   padding: 50px 0;
   border-radius:20px;
+  .imgProfile{
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+        .centered {
+          position: relative;
+          font-size: 10px;
+          line-height:0.2;
+        }
+
+        .containerProfile{
+          flex-direction: column;
+          width: 80vw;
+          margin: 80px auto;
+          .imgProfile{
+            width: 150px;
+          }
+          .datiProfile{
+            text-align: left;
+            margin: auto;
+          }
+        }
 }

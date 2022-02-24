@@ -37,9 +37,9 @@ const Profilo = () => {
             <Header />
             <section className={styles.containerProfile}>
                 <div>
-                    <img src="https://www.globusvet.it/wp-content/uploads/2019/01/utente-blog-generico.png" alt="user-logo" width="250px"  loading="lazy"/>
+                    <img className={styles.imgProfile} src="https://www.globusvet.it/wp-content/uploads/2019/01/utente-blog-generico.png" alt="user-logo" loading="lazy"/>
                 </div>
-                <div >
+                <div className={styles.datiProfile}>
                     <h3>Nome completo:</h3>
                     <p>{profUser.nome}</p>
                     <h3>Email:</h3>
