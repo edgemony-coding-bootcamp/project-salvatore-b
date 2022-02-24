@@ -69,3 +69,35 @@
     }
   }
 }
+
+@media screen and (max-width: 650px) {
+  .Cart{
+    display: flex;
+    flex-direction: column;
+    .product_image {
+      margin: auto;
+    }
+    .titleQuantity {
+      .product_title {
+        text-align: justify; 
+        padding-bottom: 10px;
+        font-size: 14px;
+
+      }
+      .counter{
+        text-align: center;
+        padding-bottom: 10px;
+
+      }
+    }
+    
+    .RaCoRi {
+      gap: 20px;
+      .price_rating{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
