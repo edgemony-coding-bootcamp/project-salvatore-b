@@ -40,59 +40,57 @@ const Header = ({ handleSidebar }) => {
           </Link>
         </div>
 
-          <div className={styles.wrapper_header_section}>
-            <div className={styles.positionDiv} >
-              <LocationOnOutlined className={styles.positionOn} />
+        <div className={styles.wrapper_header_section}>
+          <div className={styles.positionDiv} >
+            <LocationOnOutlined className={styles.positionOn} />
             <div className={styles.ship_in_italy}>
-                <span>Spediamo</span>
-                <br />
-                In Italia!
-              </div>
+              <span>Spediamo</span>
+              <br />
+              <span style={{whiteSpace: "nowrap", fontWeight:"600"}}>In Italia!</span>
             </div>
           </div>
+        </div>
 
         <SearchBar />
 
-        <Link to={!user && "/login"}>
-          <div onClick={login} className={styles.wrapper_header_section}>
-            <div className={styles.login_section}>
-              <span className={styles.hellouser}>
-                Ciao,{" "}
-                {user
-                  ? user?.email.substring(0, user?.email.indexOf("@"))
-                  : "Visitatore"}
-              </span>{" "}
-              <br />
-              {user ? "Disconnettiti" : "Accedi adesso"}
-              {/* <ArrowDropDownIcon
+        <span className={styles.links}>
+          <Link to={!user && "/login"}>
+            <div onClick={login} className={styles.wrapper_header_section}>
+              <div className={styles.login_section}>
+                <span className={styles.hellouser}>
+                  Ciao,{" "}
+                  {user
+                    ? user?.email.substring(0, user?.email.indexOf("@"))
+                    : "Visitatore"}
+                </span>{" "}
+                <br />
+                {user ? "Disconnettiti" : "Accedi adesso"}
+              </div>
+            </div>
+          </Link>
+          <Link to={user ? "/profilo" : "/login"}>
+            <div className={styles.wrapper_header_section}>
+              <span>Il mio profilo</span> <br /> Snorlaxon
+              <ArrowDropDownIcon
                 className={styles.arrowDropDown}
                 fontSize="small"
-              /> */}
+              />
             </div>
-          </div>
-        </Link>
-        <Link to={user ? "/profilo" : "/login"}>
-          <div className={styles.wrapper_header_section}>
-            <span>Il mio profilo</span> <br /> Snorlaxon
-            <ArrowDropDownIcon
-              className={styles.arrowDropDown}
-              fontSize="small"
-            />
-          </div>
-        </Link>
-        <Link to="/carrello">
-          <div
-            className={styles.wrapper_header_section}
-            onMouseOver={handleSidebar}
-          >
-            <IconButton aria-label="cart">
-              <Badge badgeContent={getTotalItems()} className={styles.cartIcon}>
-                <ShoppingBagOutlinedIcon fontSize="large" />
-              </Badge>
-            </IconButton>
-            Carrello
-          </div>
-        </Link>
+          </Link>
+          <Link to="/carrello">
+            <div
+              className={styles.wrapper_header_section}
+              onMouseOver={handleSidebar}
+            >
+              <IconButton aria-label="cart">
+                <Badge badgeContent={getTotalItems()} className={styles.cartIcon}>
+                  <ShoppingBagOutlinedIcon fontSize="large" />
+                </Badge>
+              </IconButton>
+              <p className={styles.carrello}>Carrello</p>
+            </div>
+          </Link>
+        </span>
       </div>
       <div className={styles.secondLine}>
         <div className={styles.wrapper_header_section}>

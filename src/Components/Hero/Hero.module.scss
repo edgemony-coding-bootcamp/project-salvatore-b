@@ -1,21 +1,21 @@
 .containerHero {
   position: relative;
   margin: auto;
-  width: 1520px;
+  width: 100vw;
+  
   @media only screen and (max-width: 650px) {
- width: 100vw; 
-}
- 
+    width: 100vw;
+  }
+
   .hero {
     overflow: hidden;
-    width: 1520px;
+    width: 100vw;
     scroll-behavior: smooth;
 
     .heroImg {
       .imgRef {
-        width: 7600px;
         overflow: hidden;
-        position: relative;
+        // position: relative;
         display: flex;
         flex-wrap: nowrap;
         background-repeat: none;
@@ -25,16 +25,18 @@
           rgba(0, 0, 0, 1),
           rgba(0, 0, 0, 0.75),
           rgba(0, 0, 0, 0)
-          );
-          
-          img {
-            width: 1520px;
-            height: 608px;
-            pointer-events: none;
-              @media only screen and (max-width: 650px) {
-                width: 100vw;
-                height:200px
-              }
+        );
+
+        img {
+          height: 608px;
+          pointer-events: none;
+          width: 100vw;
+          object-fit: cover;
+
+          @media only screen and (max-width: 650px) {
+            width: 100vw;
+            height: 250px;
+          }
         }
       }
     }
@@ -43,10 +45,9 @@
   .btnS {
     position: absolute;
     top: 0px;
-    
+
     @media only screen and (max-width: 650px) {
       display: none;
-      
     }
     .btn {
       position: absolute;
@@ -72,5 +73,4 @@
       }
     }
   }
-
 }
