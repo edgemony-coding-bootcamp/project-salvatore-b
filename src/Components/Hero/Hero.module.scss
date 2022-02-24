@@ -1,21 +1,21 @@
 .containerHero {
   position: relative;
-  margin: auto;
-  width: 100vw;
+  margin: auto; 
+  width: 1520px;
   
-  @media only screen and (max-width: 650px) {
+  @media only screen and (max-width: 1520px) {
     width: 100vw;
   }
 
   .hero {
-    overflow: hidden;
-    width: 100vw;
-    scroll-behavior: smooth;
+    // overflow: hidden;
+    // width: 100vw;
+    // scroll-behavior: smooth;
 
     .heroImg {
       .imgRef {
         overflow: hidden;
-        // position: relative;
+        position: relative;
         display: flex;
         flex-wrap: nowrap;
         background-repeat: none;
@@ -30,9 +30,11 @@
         img {
           height: 608px;
           pointer-events: none;
-          width: 100vw;
+          // width: 100vw;
           object-fit: cover;
-
+          @media only screen and (max-width: 1520px) {
+            width: 100vw;
+          }
           @media only screen and (max-width: 650px) {
             width: 100vw;
             height: 250px;

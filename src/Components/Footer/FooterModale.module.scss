@@ -1,6 +1,7 @@
 .footerModal {
   position: fixed;
-  height: 420px;
+  min-height: 40vh;
+  height: auto;
   background-color: white;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/Snorlaxon%20(2).png?alt=media&token=e9732c2b-8565-4550-b014-7255f44f608e");
   background-repeat: no-repeat;

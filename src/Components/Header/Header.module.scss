@@ -8,6 +8,7 @@
   @media only screen and (max-width: 650px) {
     height: auto;
   }
+  
 
   a {
     color: white;
@@ -36,12 +37,17 @@
     color: white;
     gap: 1vw;
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 910px) {
       flex-wrap: wrap;
       height: auto;
-      width: auto;
+      width: 100vw;
       justify-content: space-around;
     }
+
+    @media only screen and (max-width: 360px) {
+      justify-content: space-between;
+    }
+    
 
     .wrapper_header_section {
       padding: 5px 5px 0 5px;
@@ -73,6 +79,15 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         text-transform: capitalize;
+        
+      }
+      @media only screen and (max-width: 280px) {
+        width: 70px;
+      }
+    }
+    .ilMioProfilo{
+      @media only screen and (max-width: 360px) {
+        display: none;
       }
     }
 
@@ -93,8 +108,12 @@
       width: 126px;
       height: 50px;
 
-      @media only screen and (max-width: 520px) {
+      @media only screen and (min-width: 360px) and (max-width: 490px) {
         margin-left: -90px;
+      }
+      
+      @media only screen and (max-width: 280px) {
+        margin-left: -18px;
       }
     }
 
@@ -116,16 +135,32 @@
         outline: none;
         border: none;
         border-radius: 6px 0 0 6px;
-
+        
         &:focus {
           border: #cd9142ea solid 2px;
           box-shadow: 0 0 0 100000px rgba(0, 0, 0, 0.5);
           height: 16px;
         }
-        @media only screen and (max-width: 650px) {
-          flex: 1;
+        @media only screen and (max-width: 910px) {
+          padding: 11px 20px;
         }
       }
+      @media only screen and (max-width: 910px) {
+        max-width: 60vw;
+        padding: 0 5vw;
+      }
+      
+      @media only screen and (max-width: 450px) {
+        margin-right: 1vw;
+        min-width: 335px;
+
+      }
+      @media only screen and (max-width: 370px) {
+        min-width: 300px;
+        padding: 11px 1vw;
+      }
+      
+
 
       .iconSearch {
         color: black;
@@ -136,6 +171,10 @@
         margin-top: 3px;
         border-radius: 0 6px 6px 0;
         cursor: pointer;
+        
+      }
+      @media only screen and (max-width: 280px) {
+        min-width: 240px;
       }
     }
 
@@ -147,6 +186,10 @@
         top: 10px;
         right: 0;
       }
+      // @media only screen and (max-width: 415px) {
+      //   top: 55px;
+        
+      // }
 
       .cartIcon {
         margin-top: -8px;
