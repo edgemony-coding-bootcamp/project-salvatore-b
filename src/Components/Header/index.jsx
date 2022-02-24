@@ -8,7 +8,6 @@ import SearchBar from "./searchBar";
 import styles from "./Header.module.scss";
 import { useStateValue } from "../../Libs/StateProvider";
 import { getAuth } from "firebase/auth";
-import { fontWeight } from "@mui/system";
 
 const Header = ({ handleSidebar }) => {
   const auth = getAuth();
