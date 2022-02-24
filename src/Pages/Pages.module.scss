@@ -10,7 +10,7 @@
     rgba(214, 214, 214, 1) 0%,
     rgba(136, 223, 223, 1) 100%
   );
-  padding: 20vh;
+  padding: 20vw;
   z-index: 0;
   mask-image: linear-gradient(
     to bottom,
@@ -24,7 +24,37 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+@media only screen and (max-width: 650px) {
+   height: 25vh;
+  margin-top: 25px ;
+   mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1)
+  );
+ .Checkout__Block {
+   @media only screen and (max-width: 650px) {
+    display:relative;
+    margin:0;
+    width:100%;
 
+   }
+ }
+}
+.Checkout__text {
+@media only screen and (max-width: 650px) {
+ font-size: medium;
+ 
+}
+}
+.Checkout__text2 {
+@media only screen and (max-width: 650px) {
+ font-size: medium;
+ font-weight:normal;
+ 
+}
+}
   .Checkout__Button {
     cursor: pointer;
     width: 100%;
@@ -49,6 +79,7 @@
   .Checkout__Icon {
     border-radius: 50%;
     height: 100px;
+    
   }
 }
 
