@@ -54,7 +54,7 @@
 
 .Wrapper_Home {
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
 .showMore {
@@ -80,16 +80,18 @@
 
 .cartPage {
   margin-top: 10px;
+  
   .cartPage_wrap {
     display: flex;
     flex-wrap: nowrap;
-    margin: auto 2.5%;
+    margin: auto;
     gap: 50px;
     padding: 0 20px;
-     @media only screen and (max-width: 650px) {
-    flex-wrap: wrap;
-    }
 
+    @media only screen and (max-width: 1080px) {
+      flex-wrap: wrap;
+      gap: 0px;
+    }
 
     .yourCart {
       text-align: left;
@@ -104,38 +106,38 @@
   }
 }
 
-.containerProfile{
+.containerProfile {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   margin: 150px auto;
   gap: 60px;
   background-color: rgba(255, 255, 255, 0.623);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.381);
   width: 600px;
   padding: 50px 0;
-  border-radius:20px;
-  .imgProfile{
+  border-radius: 20px;
+  .imgProfile {
     width: 250px;
   }
 }
 
 @media screen and (max-width: 650px) {
-        .centered {
-          position: relative;
-          font-size: 10px;
-          line-height:0.2;
-        }
+  .centered {
+    position: relative;
+    font-size: 10px;
+    line-height: 0.2;
+  }
 
-        .containerProfile{
-          flex-direction: column;
-          width: 80vw;
-          margin: 80px auto;
-          .imgProfile{
-            width: 150px;
-          }
-          .datiProfile{
-            text-align: left;
-            margin: auto;
-          }
-        }
+  .containerProfile {
+    flex-direction: column;
+    width: 80vw;
+    margin: 80px auto;
+    .imgProfile {
+      width: 150px;
+    }
+    .datiProfile {
+      text-align: left;
+      margin: auto;
+    }
+  }
 }

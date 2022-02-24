@@ -11,15 +11,18 @@
   justify-content: center;
   gap: 20px;
   min-height: 105vh;
-  
+
   @media screen and (min-width: 1620px) {
     margin-right: calc(50% - 700px) !important;
-
   }
-    @media only screen and (max-width: 650px) {
-      top: -120px ;
-      margin-bottom: 0;
-    }
+  @media only screen and (max-width: 1300px) {
+    margin-right: auto !important;
+  }
+  @media only screen and (max-width: 650px) {
+    margin: auto !important;
+    top: -120px;
+    margin-bottom: -120px !important;
+  }
 
   .Card {
     position: relative;
@@ -48,29 +51,27 @@
     }
 
     @media screen and (max-width: 1500px) {
-    
-        &:nth-child(5) {
-          width: 280px;
-          min-width: 280px;
-        }
-        &:nth-child(8) {
-          max-width: 270px;
-        }
-        &:nth-child(15) {
-          width: 280px;
-          min-width: 280px;
-        }
-        &:nth-child(24) {
-          min-width: 270px;
-        }
+      &:nth-child(5) {
+        width: 280px;
+        min-width: 280px;
       }
-    
+      &:nth-child(8) {
+        max-width: 280px;
+      }
+      &:nth-child(15) {
+        width: 280px;
+        min-width: 280px;
+      }
+      &:nth-child(24) {
+        max-width: 280px;
+      }
+    }
+
     &:hover {
       z-index: 2;
       // background-color: rgba(37, 37, 37, 0.226);
       cursor: pointer;
     }
-
 
     img {
       min-width: 150px;
@@ -79,7 +80,6 @@
       height: 150px;
       object-fit: contain;
     }
-
 
     .title_card {
       min-height: 45px;
@@ -110,7 +110,7 @@
         border-color: #a88734 #9c7e31 #846a29;
         border-radius: 4px;
         outline: none;
-        
+
         a {
           text-decoration: none;
           color: black;

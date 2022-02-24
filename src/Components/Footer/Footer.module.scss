@@ -33,6 +33,11 @@
         font-size: 16px;
         display: inline-block;
         height: 18px;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -52,6 +57,7 @@
   }
 
   .logo {
+    padding-top: 10px;
     background: #131a22;
 
     .imgLogoA {
@@ -105,11 +111,6 @@
         padding-bottom: 8px;
         font-size: 14px;
 
-        // &:hover {
-        //   text-decoration: underline;
-        //   cursor: pointer;
-        // }
-
         h4 {
           padding-bottom: 8px;
           font-size: 16px;
@@ -146,14 +147,14 @@
         padding-bottom: 8px;
         font-size: 14px;
 
-        // &:hover {
-        //   text-decoration: underline;
-        //   cursor: pointer;
-        // }
-
         h4 {
           padding-bottom: 8px;
           font-size: 16px;
+
+          &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -241,6 +242,7 @@
       color: white;
 
       ul {
+        display: none;
         align-self: center;
         margin: 0 10px;
         padding: 0;
@@ -256,7 +258,6 @@
       }
 
       li {
-        text-align: left;
         list-style: none;
         padding-bottom: 4px;
         font-size: 12px;
@@ -273,18 +274,23 @@
       }
     }
     .Policy {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-around;
       background: #131a22;
       color: white;
       margin: 0 auto;
       padding: 0 8px;
       gap: 20px;
       font-size: 11px;
-
+      
       p {
         flex-basis: 30%;
+        display: none;
+
+        &:last-child {
+          display: block;  
+        }
       }
     }
   }
