@@ -9,7 +9,7 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
   min-height: 105vh;
   
   @media screen and (min-width: 1620px) {
@@ -31,32 +31,34 @@
     padding: 20px;
     height: 285px;
     display: block;
-    margin: 1px auto 20px;
+    margin: 0 0 20px;
     transition: all 0.45s;
 
     &:nth-child(5) {
       min-width: 44%;
     }
     &:nth-child(8) {
-      width: 94%;
+      width: 1300px;
     }
     &:nth-child(15) {
       min-width: 44%;
     }
     &:nth-child(24) {
-      width: 94%;
+      width: 1300px;
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1500px) {
     
         &:nth-child(5) {
-          min-width: 270px;
+          width: 280px;
+          min-width: 280px;
         }
         &:nth-child(8) {
           max-width: 270px;
         }
         &:nth-child(15) {
-          min-width: 270px;
+          width: 280px;
+          min-width: 280px;
         }
         &:nth-child(24) {
           min-width: 270px;
