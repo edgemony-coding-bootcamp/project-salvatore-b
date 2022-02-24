@@ -106,13 +106,13 @@ If you want to know more about us just click the "Snorlax Team" link.
 
 &nbsp;<div align="center">
 <img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Flighthouse.png?alt=media&token=b78b373f-a731-4018-9ec1-f0ee0a66b8ca"/> 
-<p> <a href="./clone-8164f.web.app-20220223T183942.html"> Click here to see the full Lighthouse report</a></p>
+<p> <a href="https://htmlpreview.github.io/?https://github.com/edgemony-coding-bootcamp/project-salvatore-b/blob/main/clone-8164f.web.app-20220223T183942.html"> Click here to see the full Lighthouse report</a></p>
 </div>&nbsp;
 
 
 <div> <h3> Instructions </h3>
 
-If you would like to use this code you need to have Node.js installed, after you installed node please fork it or download the zip file and open it in a folder and then run on your terminal
+If you would like to use this code you need to have Node.js installed, after you installed node please fork it or download the zip file and open it in a folder and then run on your terminal.
 &nbsp;
 The following command will install all the libraries you need to run it properly:
 

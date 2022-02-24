@@ -1,6 +1,7 @@
 import styles from "./FooterModale.module.scss";
 import team from "../Team/index.json";
 import { useState } from "react";
+import CloseIcon from '@mui/icons-material/Close';
 
 const FooterModal = ({ closeFootModal }) => {
   const [snorlax] = useState(team);
@@ -9,7 +10,7 @@ const FooterModal = ({ closeFootModal }) => {
     <div className={styles.footerModal}>
       <div className={styles.headerMod}>
         <div className={styles.titleMod}>
-          <h1>Snorlax Team</h1>
+          <h4>Made with 💖 by Snorlax Team</h4>
         </div>
       </div>
 
@@ -52,15 +53,8 @@ const FooterModal = ({ closeFootModal }) => {
           </section>
         ))}
       </form>
-      <div className={styles.imgCloseMod}>
-        <img
-          src={
-            "https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/Snorlaxon%20(2).png?alt=media&token=e9732c2b-8565-4550-b014-7255f44f608e"
-          }
-          alt="logo"
-          onClick={closeFootModal}
-          className={styles.imgModal}
-        ></img>
+      <div className={styles.closeMod}>
+        <CloseIcon onClick={closeFootModal} />
       </div>
     </div>
   );
