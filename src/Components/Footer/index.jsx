@@ -19,31 +19,31 @@ const Footer = ({ handleSnorlaxModal }) => {
           </li>
           <li>Opportunità di lavoro</li>
           <li>Sostenibilità</li>
-          <li>AGCM - Impegni Amazon Procedimento PS 11716</li>
-          <li>Amazon Science</li>
+          <li>AGCM - Impegni Snorlaxon Procedimento PS 11716</li>
+          <li>Snorlaxon Science</li>
         </ul>
 
         <ul>
           <li>
-            <h4>Guadagna con Amazon</h4>
+            <h4>Guadagna con Snorlaxon</h4>
           </li>
-          <li>Vendi su Amazon</li>
-          <li>Vendi su Amazon Business</li>
-          <li>Vendi su Amazon Handmade</li>
+          <li>Vendi su Snorlaxon</li>
+          <li>Vendi su Snorlaxon Business</li>
+          <li>Vendi su Snorlaxon Handmade</li>
           <li>Diventa affiliato</li>
-          <li>Logistica Amazon</li>
+          <li>Logistica Snorlaxon</li>
           <li>Pubblica con noi da indipendente</li>
           <li>Promuovi i tuoi prodotti</li>
-          <li>Ospita un hun Amazon</li>
+          <li>Ospita un hun Snorlaxon</li>
           <li>Scopri di più su Make Money with Us</li>
         </ul>
 
         <ul>
           <li>
-            <h4>Metodi di pagamento Amazon </h4>
+            <h4>Metodi di pagamento Snorlaxon </h4>
           </li>
           <li> Metodi di pagamento</li>
-          <li>Convertitore di Valuta Amazon</li>
+          <li>Convertitore di Valuta Snorlaxon</li>
           <li>Buoni Regalo</li>
           <li>Ricarica online</li>
           <li>Ricarica in cassa</li>
@@ -55,12 +55,12 @@ const Footer = ({ handleSnorlaxModal }) => {
           </li>
           <li>Visualizza o traccia un ordine</li>
           <li>Costi e modalità di spedizione</li>
-          <li>Amazon Prime</li>
+          <li>Snorlaxon Prime</li>
           <li>Restituisci o sostituisci articoli</li>
           <li>Riciclo</li>
           <li>I miei contenuti e dispositivi</li>
-          <li>App Amazon Mobile </li>
-          <li>Amazon Assistant</li>
+          <li>App Snorlaxon Mobile </li>
+          <li>Snorlaxon Assistant</li>
           <li>Servizio Clienti</li>
           <li>IVA e fatturazione</li>
           <li>Garanzia legale</li>
