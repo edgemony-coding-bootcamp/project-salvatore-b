@@ -81,6 +81,10 @@
     height: 100px;
     
   }
+  @media only screen and (max-width: 500px) {
+    min-height: 50vh;
+    margin-top: 30px;
+  }
 }
 
 .Wrapper_Home {
@@ -99,6 +103,7 @@
   border-radius: 4px;
   outline: none;
   background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  white-space: nowrap;
 
   &:hover {
     background: linear-gradient(
@@ -111,6 +116,10 @@
 
 .cartPage {
   margin-top: 10px;
+  @media only screen and (max-width: 500px) {
+    min-height: 60vh;
+    margin-top: 30px;
+  }
   
   .cartPage_wrap {
     display: flex;
@@ -147,6 +156,7 @@
   width: 600px;
   padding: 50px 0;
   border-radius: 20px;
+  min-height: 25vh;
   .imgProfile {
     width: 250px;
   }
