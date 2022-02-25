@@ -6,13 +6,14 @@ import { Context } from "../../Pages/Home";
 import { useStateValue } from "../../Libs/StateProvider";
 import { Link } from "react-router-dom";
 import styles from "./Card.module.scss";
-
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ category, pagElements, setMaxElements }) => {
-
+  
   const [product, setProduct] = useState([]);
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ user, basket }, dispatch] = useStateValue();
   const { value } = useContext(Context);
+  let navigate = useNavigate();
 
   const checkInclusi = (valore) =>
     basket.find((prod) => prod.titolo.includes(valore));
@@ -37,6 +38,13 @@ const Card = ({ category, pagElements, setMaxElements }) => {
     setMaxElements(product.length);
   }, [category, product.length, setMaxElements]);
 
+  const buyNow = () => {
+    if (!user){navigate("/login")
+  } else {
+    navigate("/checkout")
+  }
+};
+
   const addToCart = (items) => {
     dispatch({
       type: "AGGIUNGI-CARRELLO",
@@ -51,11 +59,6 @@ const Card = ({ category, pagElements, setMaxElements }) => {
     });
   };
 
-  const svuotacart = () => {
-    dispatch({
-      type: "SVUOTA-CARRELLO"
-    });
-  };
 
   return (
     <div className={styles.Wrapper} style={{marginRight: (basket?.length > 0) && "calc(50% - 660px)" }}>
@@ -85,8 +88,8 @@ const Card = ({ category, pagElements, setMaxElements }) => {
                       ? "Aggiungi al carrello"
                       : "Già nel carrello"}
                   </button>
-                  <button className={styles.btnBuy} onClick={svuotacart}>
-                    <Link to="/checkout">Acquista ora</Link>
+                  <button className={styles.btnBuy} onClick={buyNow}>
+                  Acquista ora
                   </button>
                 </div>
               </div>

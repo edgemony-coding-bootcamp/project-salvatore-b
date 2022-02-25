@@ -129,5 +129,5 @@ npm start
 To see the project in your browser just open [http://localhost:3000](http://localhost:3000) 
 
 &nbsp;<div align="center">
-<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2FStats.png?alt=media&token=f6b4a571-7fe9-40d8-80b7-4f72f312b547" width=450px /> 
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2FSTATS%20(2).png?alt=media&token=7765011b-e8ce-49ed-93c7-67958488f18e" width=450px /> 
 </div>

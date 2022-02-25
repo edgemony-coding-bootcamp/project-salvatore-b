@@ -85,11 +85,11 @@ const Login = () => {
 
 
         <div className={styles.divider}>
-          <p>Sei nuovo su amazon?</p>
+          <p>Sei nuovo su Snorlaxon?</p>
         </div>
 
         <button className={styles.register}>
-          <Link to="/iscrizione">Crea il tuo Account Amazon</Link>
+          <Link to="/iscrizione">Crea il tuo Account Snorlaxon</Link>
         </button>
 
       </div>
