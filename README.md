@@ -1,5 +1,5 @@
 <div align="center">
-<h1>🎓 EDGEMONY FINAL PROJECT - TEAM SALVATORE B 📜 </h1>
+<h1>🎓EDGEMONY FINAL PROJECT - TEAM SALVATORE B📜</h1>
 <h1> 🖥️ SNORLAXON, THE AMAZON CLONE 📱 </h1>
 <img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-blu.png?alt=media&token=3d486d86-7171-4baa-93cb-6977140eb85e"
 alt="snorlaxUp" height="100"/>
@@ -25,7 +25,7 @@ Our ecommerce was created using the following technologies:
 <p> This is <a href="clone-8164f.web.app/">Snorlaxon 🔗</a> a single page application inspired to Amazon.it</p> &nbsp;
 
 
-&nbsp;<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-banner.gif?alt=media&token=81f1670e-42dd-4807-a20d-8e5e82990894" />
+&nbsp;<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fpresentazione.gif?alt=media&token=53806677-aaf6-41af-accb-d82bca51e1c5" />
 </div>&nbsp;
 
 We welcome the viewers with a very impressive Carousel images in the main page; the different images can be slided with the ⬅️ and ➡️ arrows.
@@ -42,14 +42,14 @@ A detailed product presentation, that includes title, description, price, amount
 Moreover, products can be added in and removed from the basket by clicking the relative buttons and, once added some, all items will be displayed into a side Navbar that will also report the relative subtotal, number of items selected and the "vai al carrello (checkout page)" button; by clicking on it, the customer will be redirected to the cart page where a summary of the purchase will be shown 🛒(product amount, increase or decrease section for the quantity) 🛒
 
 &nbsp;<div align="center">
-<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlaxon-prodotti-modale.gif?alt=media&token=cb3aa358-7ff5-46b5-bad7-68447acfac3b" />
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fcarosello-searchbar-prodotto.gif?alt=media&token=014e612d-89a9-40d3-8335-26a5a1f18e69" />
 </div>&nbsp;
 
 If the potential buyer is happy with his purchase, she/he'll proceed to the checkout page where a fake payment section will be avaibale 💳 
 After that, the confirmation message will appear into a new page 🚚
 
 &nbsp;<div align="center">
-<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fcarrello-acquisto.gif?alt=media&token=e02e0c86-8367-427f-afda-190941e7f101" />
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fcarrello.gif?alt=media&token=cb5ce0c1-fa8d-4c1f-8220-d833d166860b" />
 </div>&nbsp;
 
 
@@ -60,12 +60,12 @@ Furthermore and in order to make our project more real, we also implemented the 
 </div>&nbsp;
 
 
-In conclusion, the footer section also hosts a modal that shows the members of team who made this project possible.
+In conclusion, the footer section also hosts a modal that shows the members of the team who made this project possible.
 If you want to know more about us just click the "Snorlax Team" link.
 
 
 &nbsp;<div align="center">
-<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Fsnorlax-modale.gif?alt=media&token=f12231ca-af64-434d-a4ee-d24e78495acd" />
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2Ffooter-modal.gif?alt=media&token=8b530ee6-3e19-4896-9c72-f47eb483d3a1" />
 </div>&nbsp;
 
 <div align="center"> 💤 </div>
@@ -128,3 +128,6 @@ npm start
 
 To see the project in your browser just open [http://localhost:3000](http://localhost:3000) 
 
+&nbsp;<div align="center">
+<img src="https://firebasestorage.googleapis.com/v0/b/clone-8164f.appspot.com/o/readme%20img%2FStats.png?alt=media&token=f6b4a571-7fe9-40d8-80b7-4f72f312b547" width=450px /> 
+</div>
