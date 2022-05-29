@@ -46,7 +46,9 @@ i dati esposti seguono questo schema:
 }
 ```
 
-su richiesta è possibile modificare lo schema per aggiungere nuovi dati.
+L'utilizzo degli endpoint con autenticazione è documento nel [relativo repository](https://github.com/edgemony-coding-bootcamp/edgemony-course-backend).
+
+> NB: su richiesta è possibile modificare lo schema per aggiungere nuovi dati.
 
 ## Repository
 
