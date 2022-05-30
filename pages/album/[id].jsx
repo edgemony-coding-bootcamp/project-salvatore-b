@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 export default function AlbumId({ album }) {
   return (
     <>
-      <div className={styles.hero}>
+      <div className={styles.hero} >
         <div className={styles.all}>
           <div className={styles.img_container}>
             <img src={album.cover} />
@@ -40,14 +40,14 @@ export default function AlbumId({ album }) {
           <div className={styles.info}>
             <h1>{album.title}</h1>
             <p>
-              {album.artist}, {album.featuring.join(", ")}
+              {album.artist} ft. {album.featuring.join(", ")}
             </p>
             <p>{album.year}</p>
             <p>{album.genres.join(" ")}</p>
           </div>
         </div>
       </div>
-      <SongList album={album }/>
+      <SongList album={album } />
     </>
   );
 }
