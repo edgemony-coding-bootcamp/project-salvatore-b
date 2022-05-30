@@ -8,6 +8,7 @@ import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
 
+import Navbar from '../components/Navbar'
 
 export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
