@@ -1,5 +1,6 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
+import StarRating from '../../components/StarRating';
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
@@ -44,6 +45,7 @@ export default function AlbumId({ album }) {
             </p>
             <p>{album.year}</p>
             <p>{album.genres.join(" ")}</p>
+            <StarRating album={album}/>
           </div>
         </div>
       </div>
