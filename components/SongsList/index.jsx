@@ -7,7 +7,7 @@ export default function SongList({ album }) {
     <div>
       <ol >
         {album.songs.map((song) => (
-          <li className={styles.song_container} key={song.id}>{song}</li>
+          <li className={styles.song_container} key={song}>{song}</li>
         ))}
       </ol>
     </div>

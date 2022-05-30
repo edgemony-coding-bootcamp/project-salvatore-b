@@ -1,0 +1,28 @@
+.input_container {
+
+    display: flex;
+    input {
+        border-radius: 20px 0 0 20px;
+        border: 0px transparent;
+        width:50%;
+        height: 40px;
+        padding-left: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: #F2F3F7;
+    }
+
+    input:focus-visible {
+        outline: 0px solid #cccccc;
+        outline-offset: -2px;
+    }
+
+    button {
+        all: unset;
+        background-color: #F2F3F7;
+        height: 40px;
+        border-radius: 0 20px 20px 0;
+        padding-right: 1rem;
+
+    }
+}
