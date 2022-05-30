@@ -5,11 +5,17 @@ export default function CardAlbum({ albumsData, inputSearchValue }) {
     <div className={styles.all}>
       {albumsData &&
         albumsData
-          .filter((album) =>
-            album.title
-              .toLowerCase()
-              .trim()
-              .includes(inputSearchValue.toLowerCase().trim())
+          .filter(
+            (album) =>
+              album.title
+                .toLowerCase()
+                .trim()
+                .includes(inputSearchValue.toLowerCase().trim()) ||
+              album.genres
+                .toString()
+                .toLowerCase()
+                .trim()
+                .includes(inputSearchValue.toLowerCase().trim())
           )
 
           .map((album) => (
