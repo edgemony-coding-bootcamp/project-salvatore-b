@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
+import CardAlbum from '../components/CardAlbum'
 import Navbar from '../components/Navbar'
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
 
       <main className={styles.main}>
       <h1>edgify</h1>
+      <CardAlbum/>
       </main>
 
 
