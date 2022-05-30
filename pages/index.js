@@ -1,10 +1,19 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import CardAlbum from '../components/CardAlbum'
-import Navbar from '../components/Navbar'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import CardAlbum from "../components/CardAlbum";
+import Navbar from "../components/Navbar";
+import { useEffect } from "react";
+import { getAlbum } from "../utils";
+import { useState } from "react";
 
 export default function Home() {
+  const [albumsData, setAlbumsData] = useState([]);
+
+  useEffect(() => {
+    getAlbum().then((data) => setAlbumsData(data));
+  });
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,20 +25,13 @@ export default function Home() {
       <Navbar />
 
       <main className={styles.main}>
-      <h1>edgify</h1>
-      <CardAlbum/>
+        <h1>edgify</h1>
+        <div className={styles.albums_container}>
+          <CardAlbum albumsData={albumsData} />
+        </div>
       </main>
 
-
-
-      <footer className={styles.footer}>
-
-      </footer>
-
-
-
-
-
+      <footer className={styles.footer}></footer>
     </div>
-  )
+  );
 }
