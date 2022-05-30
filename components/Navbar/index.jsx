@@ -6,6 +6,8 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
 
+    <h1>Edgify</h1>
+
       <ul>
 
         <li>
