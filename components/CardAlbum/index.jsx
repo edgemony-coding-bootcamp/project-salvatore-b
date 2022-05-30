@@ -1,6 +1,6 @@
 
 export default function CardAlbum() {
   return (
-    <div>index</div>
+    <div>index ajhfajfhuheguiwehgriuerhgierhigheriugheiurghieuhrgieuhg</div>
   )
 }
