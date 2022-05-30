@@ -4,15 +4,18 @@ import styles from "../styles/Home.module.css";
 import CardAlbum from "../components/CardAlbum";
 import Navbar from "../components/Navbar";
 import { useEffect } from "react";
-import { getAlbum } from "../utils";
+import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 
 export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
+  const [playlistData, setPlaylistData] = useState([]);
 
   useEffect(() => {
     getAlbum().then((data) => setAlbumsData(data));
-  });
+    getPlaylist().then((data) => setPlaylistData(data));
+  }, []);
+
 
   return (
     <div className={styles.container}>
@@ -27,7 +30,12 @@ export default function Home() {
       <main className={styles.main}>
         <h1>edgify</h1>
         <div className={styles.albums_container}>
+          <h2>Album</h2>
           <CardAlbum albumsData={albumsData} />
+        </div>
+        <div className={styles.playlist_container}>
+          <h2>Playlist</h2>
+          {/* <CardAlbum playlistData={playlistData} /> */}
         </div>
       </main>
 
