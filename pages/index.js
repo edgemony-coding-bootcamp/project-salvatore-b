@@ -8,6 +8,8 @@ import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
 
+import Navbar from '../components/Navbar'
+
 export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
@@ -29,6 +31,8 @@ export default function Home() {
 
       <Navbar />
 
+          
+
       <main className={styles.main}>
         <h1>edgify</h1>
         <InputSearch setinputSearchValue={setinputSearchValue}/>
@@ -43,6 +47,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}></footer>
+
     </div>
   );
 }

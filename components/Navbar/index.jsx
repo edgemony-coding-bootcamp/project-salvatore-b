@@ -1,32 +1,31 @@
 import Link from "next/link";
+import { AiOutlineHome,AiOutlineSearch} from 'react-icons/ai';
+import styles from "./styles.module.scss"
 
 const Navbar = () => {
-    return (
-        <div>
-            <h1>
-                Navbar
-            </h1>
+  return (
+    <div className={styles.Navbar}>
 
-            <ul> 
+    <h1>Edgify</h1>
 
-            <li>
-                <Link href="/">
-                    <a>Homepage</a>
-                </Link> 
-            </li> 
-            <li>
-                <Link href="/search">
-                    <a>Search</a>
-                </Link> 
-            </li>
-            <li>
-                <Link href="/">
-                    <a>Homepage</a>
-                </Link> 
-            </li>
-            </ul>
-        </div>
-    )
-}
+      <ul>
+
+        <li>
+          <Link href="/">
+            <a><AiOutlineHome />Homepage</a>
+          </Link>
+        </li>
+
+        <li>
+          <Link href="/search">
+            <a><AiOutlineSearch />Search</a>
+          </Link>
+        </li>
+
+      </ul>
+
+    </div>
+  );
+};
 
 export default Navbar;
