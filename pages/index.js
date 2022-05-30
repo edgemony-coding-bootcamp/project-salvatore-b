@@ -6,10 +6,12 @@ import Navbar from "../components/Navbar";
 import { useEffect } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
+import InputSearch from "../components/InputSearch";
 
 export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
+  const [inputSearchValue, setinputSearchValue] = useState('');
 
   useEffect(() => {
     getAlbum().then((data) => setAlbumsData(data));
@@ -29,9 +31,10 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1>edgify</h1>
+        <InputSearch setinputSearchValue={setinputSearchValue}/>
         <div className={styles.albums_container}>
           <h2>Album</h2>
-          <CardAlbum albumsData={albumsData} />
+          <CardAlbum albumsData={albumsData} inputSearchValue={inputSearchValue}/>
         </div>
         <div className={styles.playlist_container}>
           <h2>Playlist</h2>
