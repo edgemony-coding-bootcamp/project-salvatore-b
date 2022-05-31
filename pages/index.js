@@ -26,9 +26,14 @@ export default function Home() {
         <title>Edgify</title>
         <meta name="description" content="Edgify" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
       </Head>
 
-      <Navbar />
+      <div className={styles.navbar}>
+        <Navbar />
+      </div>
 
           
 
@@ -45,7 +50,20 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}></footer>
+
+      <footer className={styles.footer}>
+
+        <p>Made with Next.JS by</p>
+        
+        <ul>
+          <li><a target="_blank" href="https://www.linkedin.com/in/">Martina</a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/">Valeria</a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/">Muriel</a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/">Claudio</a></li>
+          <li><a target="_blank" href="https://www.linkedin.com/in/">Giuseppe</a></li>
+        </ul>
+        
+      </footer>
 
     </div>
   );
