@@ -13,10 +13,14 @@ export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
   const [inputSearchValue, setinputSearchValue] = useState('');
+  const [allData, setallData] = useState([]);
 
   useEffect(() => {
     getAlbum().then((data) => setAlbumsData(data));
     getPlaylist().then((data) => setPlaylistData(data));
+    const newArr = albumsData.concat(playlistData);
+    setallData(newArr);
+    console.log(allData)
   }, []);
 
 
@@ -42,7 +46,7 @@ export default function Home() {
         <InputSearch setinputSearchValue={setinputSearchValue}/>
         <div className={styles.albums_container}>
           <h2>Album</h2>
-          <CardAlbum albumsData={albumsData} inputSearchValue={inputSearchValue}/>
+          <CardAlbum allData={allData} inputSearchValue={inputSearchValue}/>
         </div>
         <div className={styles.playlist_container}>
           <h2>Playlist</h2>
