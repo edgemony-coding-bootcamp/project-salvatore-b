@@ -7,7 +7,8 @@ import { useEffect } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
-
+import FilterButtonAlbum from "../components/FilterButtonAlbum";
+import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -15,11 +16,34 @@ export default function Home() {
   const [inputSearchValue, setinputSearchValue] = useState('');
   const [allData, setallData] = useState([]);
 
+  //const [isAlbum, setisAlbum] = useState([]);
+
+  const [isPopped, setPop] = useState(false);
+
+  const albumFilterFunc = (isPopped) => {
+    if ( isPopped ) {
+      console.log("Caso 1")
+      const arr2 = allData.filter(item => item.iam === "album")
+      setallData(arr2);
+    } else {
+      console.log("Caso 2")
+      return allData;
+    }
+
+  }
+
+  const playlistFilterFunc = () => {
+    const arr2 = allData.filter(item => item.iam === "playlist")
+    setallData(arr2);
+}
+
   useEffect(() => {
     Promise.all([getAlbum(), getPlaylist()]).then((values) => 
       setallData([...values[0], ...values[1]])
     );
   }, []);
+
+
 
   return (
     <div className={styles.container}>
@@ -40,9 +64,13 @@ export default function Home() {
 
       <main className={styles.main}>
         <InputSearch setinputSearchValue={setinputSearchValue}/>
+
+        <FilterButtonAlbum setPop={setPop} isPopped={isPopped} albumFilterFunc={albumFilterFunc} />
+        <FilterButtonPlaylist playlistFilterFunc={playlistFilterFunc} />
+
         <div className={styles.albums_container}>
           <h2>All</h2>
-          <CardAlbum allData={allData} inputSearchValue={inputSearchValue}/>
+          <CardAlbum allData={allData}  inputSearchValue={inputSearchValue}/>
         </div>
       </main>
 
