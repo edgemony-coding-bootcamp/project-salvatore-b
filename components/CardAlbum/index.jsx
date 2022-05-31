@@ -4,6 +4,18 @@ import Link from "next/link";
 
 export default function CardAlbum({ allData, inputSearchValue }) {
   return (
+
+
+    // {isAlbum &&              
+    // (allData.filter(
+    //   album => {
+    //     return album.iam === "album"
+    //   }
+    // ))}
+
+
+
+
     <div className={styles.all}>
       {allData &&
         allData
