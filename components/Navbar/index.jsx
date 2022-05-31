@@ -1,15 +1,20 @@
 import Link from "next/link";
 import { AiOutlineHome,AiOutlineSearch} from 'react-icons/ai';
 import styles from "./styles.module.scss"
+import Image from 'next/image';
+import logo from "../../public/logo.png"
 
 const Navbar = () => {
   return (
     <div className={styles.Navbar}>
 
-    <h1>Edgify</h1>
+    <Link href="/">
+      <a>
+        <Image src={logo} alt="Edgify" width="130px" height="42px" />
+      </a>
+    </Link>
 
       <ul>
-
         <li>
           <Link href="/">
             <a><AiOutlineHome />Homepage</a>
@@ -21,7 +26,6 @@ const Navbar = () => {
             <a><AiOutlineSearch />Search</a>
           </Link>
         </li>
-
       </ul>
 
     </div>

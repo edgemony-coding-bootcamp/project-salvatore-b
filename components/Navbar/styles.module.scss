@@ -2,13 +2,18 @@
 
     font-size: 14px;
 
+    ul {
+        margin-top: 20px;
+
+    }
+
     li {
-        margin-bottom: 20px;
-        list-style: none;
+        margin-bottom: 15px;
     }
 
     li a {
-        color: #666979;
+        font-size: 17px;
+        font-weight: 700;
         display: flex;
         align-items: center;
     }
@@ -18,7 +23,27 @@
     }
 
     li a svg {
-        margin-right: 5px
+        margin-right: 5px;
+        font-size: 18px;
+    }
+
+
+
+    @media all and (max-width: 767px) {
+
+
+        text-align: center;
+
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+     
     }
 
 }
