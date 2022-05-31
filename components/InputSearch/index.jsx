@@ -1,8 +1,17 @@
+import styles from "./styles.module.scss";
+import { BiSearch } from "react-icons/bi";
 
-export default function InputSearch({setinputSearchValue, inputSearchValue}) {
+export default function InputSearch({ setinputSearchValue, inputSearchValue }) {
   return (
-    <div>
-        <input type="text" value={inputSearchValue} onChange={(e) => setinputSearchValue(e.target.value)} name="search_input" placeholder="cerca"/>
+    <div className={styles.input_container}>
+      <input
+        type="text"
+        value={inputSearchValue}
+        onChange={(e) => setinputSearchValue(e.target.value)}
+        name="search_input"
+        placeholder="cerca"
+      />
+      <button><BiSearch size="1.5rem"/></button>
     </div>
-  )
+  );
 }
