@@ -7,20 +7,20 @@ export default function CardAlbum({ allData, inputSearchValue }) {
     <div className={styles.all}>
       {allData &&
         allData
-          .filter(
+          ?.filter(
             (el) =>
-              el.title
+              el?.title
                 .toLowerCase()
                 .trim()
                 .includes(inputSearchValue.toLowerCase().trim()) ||
-              el.genres
+              el?.genres
                 .toString()
                 .toLowerCase()
                 .trim()
                 .includes(inputSearchValue.toLowerCase().trim())  
           )
 
-          .map((album) => (
+          .map((el) => (
             <div className={styles.CardAlbum} key={el.id}>
 
               <Link href={`album/${el.id}`} key={el.id}>
@@ -29,8 +29,8 @@ export default function CardAlbum({ allData, inputSearchValue }) {
                     <img></img>
                   </div>
                   <div className={styles.info_container}>
-                    <h2>{album.title}</h2>
-                    <p className={styles.year}>{el.year}</p>
+                    <h2>{el?.title}</h2>
+                    <p className={styles.year}>{el?.year}</p>
                   </div>
                 </a>
               </Link>
