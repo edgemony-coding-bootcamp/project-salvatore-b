@@ -1,0 +1,24 @@
+.Navbar {
+
+    font-size: 14px;
+
+    li {
+        margin-bottom: 20px;
+        list-style: none;
+    }
+
+    li a {
+        color: #666979;
+        display: flex;
+        align-items: center;
+    }
+
+    li a:hover {
+        color: #373946;
+    }
+
+    li a svg {
+        margin-right: 5px
+    }
+
+}
