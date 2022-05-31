@@ -22,11 +22,12 @@ export default function Home() {
 
   const albumFilterFunc = (isPopped) => {
     if ( isPopped ) {
-      console.log("Caso 1")
+      console.log("è true quindi Caso 1")
       const arr2 = allData.filter(item => item.iam === "album")
       setallData(arr2);
-    } else {
-      console.log("Caso 2")
+    } else if (isPopped === false){
+      console.log("è false quindi Caso 2")
+      console.log('il tuo array',allData);
       return allData;
     }
 
