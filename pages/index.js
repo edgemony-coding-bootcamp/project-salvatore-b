@@ -10,19 +10,16 @@ import InputSearch from "../components/InputSearch";
 
 
 export default function Home() {
-  const [albumsData, setAlbumsData] = useState([]);
-  const [playlistData, setPlaylistData] = useState([]);
+  // const [albumsData, setAlbumsData] = useState([]);
+  // const [playlistData, setPlaylistData] = useState([]);
   const [inputSearchValue, setinputSearchValue] = useState('');
   const [allData, setallData] = useState([]);
 
   useEffect(() => {
-    getAlbum().then((data) => setAlbumsData(data));
-    getPlaylist().then((data) => setPlaylistData(data));
-    const newArr = albumsData.concat(playlistData);
-    setallData(newArr);
-    console.log(allData)
+    Promise.all([getAlbum(), getPlaylist()]).then((values) => 
+      setallData([...values[0], ...values[1]])
+    );
   }, []);
-
 
   return (
     <div className={styles.container}>
@@ -42,15 +39,10 @@ export default function Home() {
           
 
       <main className={styles.main}>
-        <h1>edgify</h1>
         <InputSearch setinputSearchValue={setinputSearchValue}/>
         <div className={styles.albums_container}>
-          <h2>Album</h2>
+          <h2>All</h2>
           <CardAlbum allData={allData} inputSearchValue={inputSearchValue}/>
-        </div>
-        <div className={styles.playlist_container}>
-          <h2>Playlist</h2>
-          {/* <CardAlbum playlistData={playlistData} /> */}
         </div>
       </main>
 
