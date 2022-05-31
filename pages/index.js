@@ -8,7 +8,6 @@ import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
 
-
 export default function Home() {
   const [albumsData, setAlbumsData] = useState([]);
   const [playlistData, setPlaylistData] = useState([]);
@@ -29,8 +28,6 @@ export default function Home() {
       </Head>
 
       <Navbar />
-
-          
 
       <main className={styles.main}>
         <h1>edgify</h1>
