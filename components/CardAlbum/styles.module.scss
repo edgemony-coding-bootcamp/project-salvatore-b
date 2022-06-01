@@ -1,20 +1,18 @@
-    .all {
+@import '../../styles/palette.module.scss';
+
+.all {
 
         display: flex;
         gap: 10px;
 
         .CardAlbum{
         border:1px solid rgba(0, 0, 0, 0.080);
-        // background-color: rgba(0, 0, 0, 0.055);
-        width: 170px;
+        // background-image: linear-gradient( to top right, red , yellow);        width: 170px;
         border-radius: 10px;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
-
-
         
         .img_container {
         width: 140px;
@@ -53,4 +51,8 @@
         }
 
     }
+
+    // .CardAlbum:hover {
+    //     background-color: $primary-color;
+    // }
 }
