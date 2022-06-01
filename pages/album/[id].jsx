@@ -1,7 +1,7 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
-import { useState, useEffect } from "react";
+import { useState} from "react";
 
 import {putAlbum} from "../../utils";
 
@@ -38,11 +38,7 @@ export default function AlbumId({ album }) {
 
 const [isPopped, setPopped] = useState(false);
 
-useEffect(() => {
 
-  console.log("Lo stato è cambiato")
-
-},[isPopped])
 
 
   const AddFavorite = async () => {
