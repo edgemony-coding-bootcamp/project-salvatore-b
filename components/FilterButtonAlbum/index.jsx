@@ -1,11 +1,11 @@
-const FilterButtonAlbum = ({albumFilterFunc, setPop, isPopped}) => {
+const FilterButtonAlbum = ({ albumFilterFunc, setPopAlbum, isPoppedAlbum }) => {
+  
+  function booleanValuefunc() {
+    setPopAlbum(!isPoppedAlbum)
+      albumFilterFunc(isPoppedAlbum);
+  }
 
-
-    return (
-        <button onClick={() => albumFilterFunc(setPop(!isPopped)) }>
-            FilterButtonAlbum
-        </button>
-    )
-}
+return <button onClick={() => booleanValuefunc()}>FilterButtonAlbum</button>;
+};
 
 export default FilterButtonAlbum;

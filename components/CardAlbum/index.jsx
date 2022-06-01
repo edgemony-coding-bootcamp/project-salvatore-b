@@ -5,17 +5,6 @@ import Link from "next/link";
 export default function CardAlbum({ allData, inputSearchValue }) {
   return (
 
-
-    // {isAlbum &&              
-    // (allData.filter(
-    //   album => {
-    //     return album.iam === "album"
-    //   }
-    // ))}
-
-
-
-
     <div className={styles.all}>
       {allData &&
         allData
@@ -34,8 +23,8 @@ export default function CardAlbum({ allData, inputSearchValue }) {
 
           .map((el) => (
             <div className={styles.CardAlbum} key={el.id}>
-
-              <Link href={`album/${el.id}`} key={el.id}>
+              
+              <Link href= {el.iam === 'album' ? `album/${el.id}` : `playlist/${el.id}`}  key={el.id}>
                 <a>
                   <div className={styles.img_container}>
                     <img></img>
