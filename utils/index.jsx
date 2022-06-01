@@ -22,3 +22,14 @@ export const getPlaylist = async () => {
     console.log('playlist',data);
     return data
 }
+
+
+
+export const putAlbum =  (id, body) =>
+    fetch(`https://edgemony-backend.herokuapp.com/albums/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-type" : "application/json"
+    },
+    body: JSON.stringify(body),
+});

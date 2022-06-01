@@ -1,8 +1,22 @@
-.song_container {
-    padding: 20px 0;
 
-    
-}
-.song_container:hover {
+
+.SongList {
+    margin: 40px;
+
+    ol {
+        list-style-position:inside;
+    }
+
+    li {
+        border-bottom: 1px solid #CFD8DC;
+        padding: 20px 0;
+    }
+    li:last-child {
+        border-bottom: 0;
+    }
+
+    li:hover {
         background-color: rgba(128, 128, 128, 0.100);
     }
+    
+}

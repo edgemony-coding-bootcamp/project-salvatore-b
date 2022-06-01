@@ -26,6 +26,12 @@ const Navbar = () => {
             <a><AiOutlineSearch />Search</a>
           </Link>
         </li>
+
+        <li>
+          <Link href="/favorite">
+            <a><AiOutlineSearch />Favorite</a>
+          </Link>
+        </li>
       </ul>
 
     </div>
