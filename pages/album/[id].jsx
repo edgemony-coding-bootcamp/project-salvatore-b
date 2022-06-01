@@ -4,6 +4,10 @@ import StarRating from '../../components/StarRating';
 import { useState} from "react";
 
 import {putAlbum} from "../../utils";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+
+import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
 
 
 export const getStaticProps = async (context) => {
@@ -45,20 +49,20 @@ const [isPopped, setPopped] = useState(false);
 
     if(album.favorite === true) { // Caso 1: favorite è true dall' API. Settalo a false
 
+      setPopped(!isPopped);
       await putAlbum(album.id , {
         favorite: false
       })
 
-      setPopped(!isPopped);
       console.log("Caso 1: favorite è true dall' API. Settalo a false")
 
     } else { // Caso 2: favorite è false favorite dall' API. Settalo a true
 
+      setPopped(!isPopped);
       await putAlbum(album.id , {
         favorite: true
       })
 
-      setPopped(!isPopped);
       console.log("Caso 2: favorite è false favorite dall' API. Settalo a true")
 
     }
@@ -69,26 +73,56 @@ const [isPopped, setPopped] = useState(false);
 
   return (
     <>
-      <div className={styles.hero} >
-        <div className={styles.all}>
-          <div className={styles.img_container}>
-            <img src={album.cover} />
-          </div>
-          <div className={styles.info}>
-            <h1>{album.title}</h1>
-            <p>
+
+      <header className={styles.navbar}>
+        <Navbar />
+      </header>
+
+
+
+      <main className={styles.main}>
+        <div className={styles.wrapper}>
+
+          <div className={styles.box}>
+            <div className={styles.box__cover}>
+              <img src={album.cover} alt={album.title} width="200" height="200" />
+            </div>
+
+            <div className={styles.box__info}>
+              <h1>{album.title}</h1>
+              <p>
               {album.artist} ft. {album.featuring.join(", ")}
-            </p>
-            <p>{album.year}</p>
-            <p>{album.genres.join(" ")}</p>
-            <StarRating album={album}/>
+              </p>
+              <p>{album.year}</p>
+              <p>{album.genres.join(" ")}</p>
+
+              <button onClick={() => AddFavorite()}>{isPopped ? <AiFillHeart/> : <AiOutlineHeart/>  }</button>
+            </div>
+
+            <div className={styles.box__rating}>
+              <StarRating album={album}/>
+            </div>
+
+   
+
           </div>
+
+
+          
+
+          <SongList album={album } />
         </div>
-      </div>
+      </main>
 
-      <button className={isPopped ? `${styles.selected}` : null  } onClick={() => AddFavorite()}>Favorite</button>
 
-      <SongList album={album}/>
+
+      <footer className={styles.footer}>
+        <Footer />        
+      </footer>
+
+
+
+
     </>
   );
 }

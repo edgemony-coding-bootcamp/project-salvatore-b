@@ -27,7 +27,7 @@ export default function CardAlbum({ allData, inputSearchValue }) {
               <Link href= {el.iam === 'album' ? `album/${el.id}` : `playlist/${el.id}`}  key={el.id}>
                 <a>
                   <div className={styles.img_container}>
-                    <img></img>
+                    <img src={el?.cover} alt={el?.title}></img>
                   </div>
                   <div className={styles.info_container}>
                     <h2>{el?.title}</h2>
