@@ -5,22 +5,22 @@ import StarRating from '../../components/StarRating';
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await fetch(
-    `https://edgemony-backend.herokuapp.com/albums/${id}`
+    `https://edgemony-backend.herokuapp.com/playlist/${id}`
   );
   const data = await res.json();
 
   return {
-    props: { album: data },
+    props: { playlist: data },
   };
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://edgemony-backend.herokuapp.com/albums/`);
+  const res = await fetch(`https://edgemony-backend.herokuapp.com/playlist/`);
   const data = await res.json();
 
-  const paths = data.map((album) => {
+  const paths = data.map((playlist) => {
     return {
-      params: { id: album.id.toString() },
+      params: { id: playlist.id.toString() },
     };
   });
 
@@ -30,26 +30,26 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default function AlbumId({ album }) {
+export default function PlaylistId({ playlist }) {
   return (
     <>
       <div className={styles.hero} >
         <div className={styles.all}>
           <div className={styles.img_container}>
-            <img src={album.cover} />
+            <img src={playlist.cover} />
           </div>
           <div className={styles.info}>
-            <h1>{album.title}</h1>
+            <h1>{playlist.title}</h1>
             <p>
-              {album.artist} ft. {album.featuring.join(", ")}
+              {playlist.artist} ft. {playlist.featuring.join(", ")}
             </p>
-            <p>{album.year}</p>
-            <p>{album.genres.join(" ")}</p>
-            <StarRating album={album}/>
+            <p>{playlist.year}</p>
+            <p>{playlist.genres.join(" ")}</p>
+            <StarRating playlist={playlist}/>
           </div>
         </div>
       </div>
-      <SongList album={album}/>
+      <SongList playlist={playlist}/>
     </>
   );
 }

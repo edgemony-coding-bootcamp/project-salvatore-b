@@ -13,38 +13,38 @@ import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
   // const [playlistData, setPlaylistData] = useState([]);
-  const [inputSearchValue, setinputSearchValue] = useState('');
+  const [inputSearchValue, setinputSearchValue] = useState("");
   const [allData, setallData] = useState([]);
+  const [displayData, setdisplayData] = useState([]);
 
-  //const [isAlbum, setisAlbum] = useState([]);
+  const [isPoppedAlbum, setPopAlbum] = useState(true);
+  const [isPoppedPlaylist, setPoppedPlaylist] = useState(true);
 
-  const [isPopped, setPop] = useState(false);
-
-  const albumFilterFunc = (isPopped) => {
-    if ( isPopped ) {
-      console.log("è true quindi Caso 1")
-      const arr2 = allData.filter(item => item.iam === "album")
-      setallData(arr2);
-    } else if (isPopped === false){
-      console.log("è false quindi Caso 2")
-      console.log('il tuo array',allData);
-      return allData;
+  const albumFilterFunc = (isPoppedAlbum) => {
+    if (isPoppedAlbum) {
+      console.log("è", isPoppedAlbum, "quindi Caso 1");
+      const arr2 = allData.filter((item) => item.iam === "album");
+      setdisplayData(arr2);
+    } else {
+      setdisplayData(allData);
     }
+  };
 
-  }
-
-  const playlistFilterFunc = () => {
-    const arr2 = allData.filter(item => item.iam === "playlist")
-    setallData(arr2);
-}
+  const playlistFilterFunc = (isPoppedPlaylist) => {
+    if (isPoppedPlaylist) {
+      const arr2 = allData.filter((item) => item.iam === "playlist");
+      setdisplayData(arr2);
+    } else {
+      setdisplayData(allData);
+    }
+  };
 
   useEffect(() => {
-    Promise.all([getAlbum(), getPlaylist()]).then((values) => 
-      setallData([...values[0], ...values[1]])
-    );
+    Promise.all([getAlbum(), getPlaylist()]).then((values) => {
+      setallData([...values[0], ...values[1]]);
+      setdisplayData([...values[0], ...values[1]]);
+    });
   }, []);
-
-
 
   return (
     <div className={styles.container}>
@@ -54,42 +54,70 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
       <div className={styles.navbar}>
         <Navbar />
       </div>
 
-          
-
       <main className={styles.main}>
-        <InputSearch setinputSearchValue={setinputSearchValue}/>
+        <InputSearch setinputSearchValue={setinputSearchValue} />
 
-        <FilterButtonAlbum setPop={setPop} isPopped={isPopped} albumFilterFunc={albumFilterFunc} />
-        <FilterButtonPlaylist playlistFilterFunc={playlistFilterFunc} />
+        <FilterButtonAlbum
+          setPopAlbum={setPopAlbum}
+          isPoppedAlbum={isPoppedAlbum}
+          albumFilterFunc={albumFilterFunc}
+        />
+        <FilterButtonPlaylist
+          playlistFilterFunc={playlistFilterFunc}
+          setPoppedPlaylist={setPoppedPlaylist}
+          isPoppedPlaylist={isPoppedPlaylist}
+        />
 
         <div className={styles.albums_container}>
           <h2>All</h2>
-          <CardAlbum allData={allData}  inputSearchValue={inputSearchValue}/>
+          <CardAlbum
+            allData={displayData}
+            inputSearchValue={inputSearchValue}
+          />
         </div>
       </main>
 
-
       <footer className={styles.footer}>
-
         <p>Made with Next.JS by</p>
-        
-        <ul>
-          <li><a target="_blank" href="https://www.linkedin.com/in/">Martina</a></li>
-          <li><a target="_blank" href="https://www.linkedin.com/in/">Valeria</a></li>
-          <li><a target="_blank" href="https://www.linkedin.com/in/">Muriel</a></li>
-          <li><a target="_blank" href="https://www.linkedin.com/in/">Claudio</a></li>
-          <li><a target="_blank" href="https://www.linkedin.com/in/">Giuseppe</a></li>
-        </ul>
-        
-      </footer>
 
+        <ul>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/">
+              Martina
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/">
+              Valeria
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/">
+              Muriel
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/">
+              Claudio
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/">
+              Giuseppe
+            </a>
+          </li>
+        </ul>
+      </footer>
     </div>
   );
 }

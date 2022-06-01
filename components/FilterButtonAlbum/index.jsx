@@ -1,9 +1,8 @@
-const FilterButtonAlbum = ({ albumFilterFunc, setPop, isPopped }) => {
+const FilterButtonAlbum = ({ albumFilterFunc, setPopAlbum, isPoppedAlbum }) => {
   
   function booleanValuefunc() {
-      setPop(!isPopped)
-      albumFilterFunc(isPopped);
-      console.log('il tuo valore nel bottone',isPopped);
+    setPopAlbum(!isPoppedAlbum)
+      albumFilterFunc(isPoppedAlbum);
   }
 
 return <button onClick={() => booleanValuefunc()}>FilterButtonAlbum</button>;
