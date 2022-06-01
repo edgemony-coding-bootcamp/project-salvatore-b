@@ -1,6 +1,10 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
+import { useState, useEffect } from "react";
+
+import {putAlbum} from "../../utils";
+
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
@@ -31,6 +35,42 @@ export const getStaticPaths = async () => {
 };
 
 export default function AlbumId({ album }) {
+
+const [isPopped, setPopped] = useState(false);
+
+useEffect(() => {
+
+  console.log("Lo stato è cambiato")
+
+},[isPopped])
+
+
+  const AddFavorite = async () => {
+
+    if(album.favorite === true) { // Caso 1: favorite è true dall' API. Settalo a false
+
+      await putAlbum(album.id , {
+        favorite: false
+      })
+
+      setPopped(!isPopped);
+      console.log("Caso 1: favorite è true dall' API. Settalo a false")
+
+    } else { // Caso 2: favorite è false favorite dall' API. Settalo a true
+
+      await putAlbum(album.id , {
+        favorite: true
+      })
+
+      setPopped(!isPopped);
+      console.log("Caso 2: favorite è false favorite dall' API. Settalo a true")
+
+    }
+
+  }
+
+
+
   return (
     <>
       <div className={styles.hero} >
@@ -49,6 +89,9 @@ export default function AlbumId({ album }) {
           </div>
         </div>
       </div>
+
+      <button className={isPopped ? `${styles.selected}` : null  } onClick={() => AddFavorite()}>Favorite</button>
+
       <SongList album={album}/>
     </>
   );

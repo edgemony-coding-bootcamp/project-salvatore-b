@@ -1,3 +1,6 @@
+import styles from "./styles.module.scss"
+
+
 const FilterButtonPlaylist = ({playlistFilterFunc, setPoppedPlaylist, isPoppedPlaylist}) => {
 
     function booleanPlaylistValue() {
@@ -6,7 +9,7 @@ const FilterButtonPlaylist = ({playlistFilterFunc, setPoppedPlaylist, isPoppedPl
     }
 
     return (
-        <button onClick={() => booleanPlaylistValue() }>
+        <button className={isPoppedPlaylist ? null : `${styles.selected}` } onClick={() => booleanPlaylistValue() }>
             FilterButtonPlaylist
         </button>
     )
