@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { putRatingAlbum } from '../../utils';
+import { putRatingAlbum, putRatingPlaylist } from '../../utils';
 
-export default function StarRating({ album }) {
-  const [rating, setRating] = useState(album.rating);
+export default function StarRating({ album, playlist }) {
+  console.log('il tuo rating album è', album?.rating);
+  console.log('il tuo rating playlist è', playlist?.rating);
+  const InitialRating = album ? album?.rating : playlist?.rating;
+  const [rating, setRating] = useState(InitialRating);
   const [hover, setHover] = useState(0);
-
+  
   useEffect(()=>{
-    putRatingAlbum(album.id, {
-      rating: rating
-    })
+    {album ?
+      putRatingAlbum(album?.id, {
+        rating: rating
+      })
+     :
+      putRatingPlaylist(playlist?.id, {
+        rating: rating
+      })
+    }
   },[rating])
 
   return (

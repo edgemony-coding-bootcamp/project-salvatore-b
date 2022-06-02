@@ -42,3 +42,13 @@ export const putRatingAlbum =  (id, body) =>
     },
     body: JSON.stringify(body),
 });
+
+
+export const putRatingPlaylist =  (id, body) =>
+    fetch(`https://edgemony-backend.herokuapp.com/playlist/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-type" : "application/json"
+    },
+    body: JSON.stringify(body),
+});
