@@ -3,7 +3,7 @@ import { AiOutlineHome, AiFillHome, AiOutlineSearch } from "react-icons/ai";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import styles from "./styles.module.scss";
 import Image from "next/image";
-import logo from "../../public/logo.png";
+import logo from "../../public/logo_soundwave.png";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className={styles.Navbar}>
       <Link href="/">
         <a>
-          <Image src={logo} alt="Edgify" width="130px" height="42px" />
+          <Image src={logo} alt="SoundWave" />
         </a>
       </Link>
 
