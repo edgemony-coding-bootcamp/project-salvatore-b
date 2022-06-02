@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Edgify</title>
+        <title>SoundWave</title>
         <meta name="description" content="Edgify" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

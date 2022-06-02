@@ -31,7 +31,7 @@ export default function CardAlbum({ allData, inputSearchValue }) {
                   </div>
                   <div className={styles.info_container}>
                     <h2>{el?.title}</h2>
-                    <p className={styles.year}>{el?.year}</p>
+                    {/* <p className={styles.year}>{el?.year}</p> */}
                   </div>
                 </a>
               </Link>
