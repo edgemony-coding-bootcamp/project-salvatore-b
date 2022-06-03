@@ -1,3 +1,22 @@
+@import '../../styles/palette.module.scss';
+
 .selected {
-    border: 2px solid red;
+    all: unset;
+    color: white;
+    border-radius: 20px;
+    height: 40px;
+    width:5%;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, $primary-color, yellow);
+}
+
+.btn {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    height: 40px;
+    width:5%;
+    text-align: center;
+    color: rgb(154, 154, 154);
+    border: none;
+    box-shadow: inset -5px -5px 9px #F2F3F7, inset 5px 5px 9px rgba(94,104,121,0.3);
 }
