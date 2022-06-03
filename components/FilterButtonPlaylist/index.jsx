@@ -8,10 +8,19 @@ const FilterButtonPlaylist = ({playlistFilterFunc, setPoppedPlaylist, isPoppedPl
         playlistFilterFunc(isPoppedPlaylist)
     }
 
+    const classes = [
+        styles.btn,
+        isPoppedPlaylist ? null : styles.selected
+      ];
+
     return (
-        <button className={isPoppedPlaylist ? null : `${styles.selected}` } onClick={() => booleanPlaylistValue() }>
-            FilterButtonPlaylist
-        </button>
+        <button
+      className= {classes.join(' ')}
+      onClick={() => booleanPlaylistValue()}
+    >
+      Playlist
+    </button>
+      
     )
 }
 

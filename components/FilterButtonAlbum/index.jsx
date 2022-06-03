@@ -1,19 +1,24 @@
-import styles from "./styles.module.scss"
+import styles from "./styles.module.scss";
 
 const FilterButtonAlbum = ({ albumFilterFunc, setPopAlbum, isPoppedAlbum }) => {
-  
   function booleanValuefunc() {
-    setPopAlbum(!isPoppedAlbum)
-      albumFilterFunc(isPoppedAlbum);
+    setPopAlbum(!isPoppedAlbum);
+    albumFilterFunc(isPoppedAlbum);
   }
 
-return <button className={isPoppedAlbum ? null : `${styles.selected}` } onClick={() => booleanValuefunc() }>
+  const classes = [
+    styles.btn,
+    isPoppedAlbum ? null : styles.selected
+  ];
 
-FilterButtonAlbum
-</button>
-
-
-
+  return (
+    <button
+      className= {classes.join(' ')}
+      onClick={() => booleanValuefunc()}
+    >
+      Album
+    </button>
+  );
 };
 
 export default FilterButtonAlbum;
