@@ -21,6 +21,12 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .user {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
   
   .footer {
     position: fixed;

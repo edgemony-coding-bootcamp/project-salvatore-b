@@ -8,6 +8,7 @@ import InputSearch from "../components/InputSearch";
 import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
+import ModalSignup from "../components/ModalSignup";
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -18,6 +19,8 @@ export default function Home() {
 
   const [isPoppedAlbum, setPopAlbum] = useState(true);
   const [isPoppedPlaylist, setPoppedPlaylist] = useState(true);
+
+  
 
   const albumFilterFunc = (isPoppedAlbum) => {
     if (isPoppedAlbum) {
@@ -45,6 +48,17 @@ export default function Home() {
     });
   }, []);
 
+  const [viewModalSignup, setViewModalSignUp] = useState({
+    visible:false,
+  })
+
+  function parloadHome() {
+    console.log('sei in home bitch');
+    setViewModalSignUp({
+      visible: true,
+    })
+  }
+
   return (
     <>
       <Head>
@@ -53,9 +67,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDefault>
-
-      <div>
+      <LayoutDefault parloadHome={parloadHome}>
+      <ModalSignup viewModalSignup={viewModalSignup}/>
+      <div className={styles.wrapper}>
+        <div className={styles.input_wrapper_main}>
         <InputSearch setinputSearchValue={setinputSearchValue} />
 
         <FilterButtonAlbum
@@ -68,7 +83,7 @@ export default function Home() {
           setPoppedPlaylist={setPoppedPlaylist}
           isPoppedPlaylist={isPoppedPlaylist}
         />
-
+</div>
         <div className={styles.albums_container}>
           <h2>All</h2>
           <CardAlbum
