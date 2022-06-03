@@ -1,14 +1,13 @@
 import Head from "next/head";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import CardAlbum from "../components/CardAlbum";
-import Navbar from "../components/Navbar";
 import { useEffect } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
 import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
+import LayoutDefault from "../components/LayoutDefault";
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -47,18 +46,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>SoundWave</title>
         <meta name="description" content="Edgify" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.navbar}>
-        <Navbar />
-      </div>
+      <LayoutDefault>
 
-      <main className={styles.main}>
+      <div>
         <InputSearch setinputSearchValue={setinputSearchValue} />
 
         <FilterButtonAlbum
@@ -79,39 +76,10 @@ export default function Home() {
             inputSearchValue={inputSearchValue}
           />
         </div>
-      </main>
+      </div>
 
-      <footer className={styles.footer}>
-        <p>Made with Next.JS by</p>
+      </LayoutDefault>
 
-        <ul>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/">
-              Martina
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/">
-              Valeria
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/">
-              Muriel
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/">
-              Claudio
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="https://www.linkedin.com/in/">
-              Giuseppe
-            </a>
-          </li>
-        </ul>
-      </footer>
-    </div>
+    </>
   );
 }

@@ -1,13 +1,12 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
-import { useState} from "react";
+import { useState, useEffect} from "react";
 
 import {putAlbum} from "../../utils";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
+import LayoutDefault from "../../components/LayoutDefault";
 
 
 export const getStaticProps = async (context) => {
@@ -38,91 +37,69 @@ export const getStaticPaths = async () => {
   };
 };
 
+
+
+
 export default function AlbumId({ album }) {
 
-const [isPopped, setPopped] = useState(false);
+
+  const [albumLocal,setAlbumLocal] = useState(album);
 
 
+  const AddDelFavorite = () => { 
 
-
-  const AddFavorite = async () => {
-
-    if(album.favorite === true) { // Caso 1: favorite è true dall' API. Settalo a false
-
-      setPopped(!isPopped);
-      await putAlbum(album.id , {
-        favorite: false
-      })
-
-      console.log("Caso 1: favorite è true dall' API. Settalo a false")
-
-    } else { // Caso 2: favorite è false favorite dall' API. Settalo a true
-
-      setPopped(!isPopped);
-      await putAlbum(album.id , {
-        favorite: true
-      })
-
-      console.log("Caso 2: favorite è false favorite dall' API. Settalo a true")
-
-    }
+    setAlbumLocal({...album, favorite: !albumLocal.favorite});
 
   }
 
 
 
+  useEffect(() => {
+
+    if (albumLocal !== undefined) {
+      
+      putAlbum(album.id , albumLocal);
+
+    } 
+
+  },[albumLocal])
+
+
+
   return (
     <>
+    
+  <LayoutDefault>
 
-      <header className={styles.navbar}>
-        <Navbar />
-      </header>
+  <div className={styles.wrapper}>
 
+    <div className={styles.box}>
+      <div className={styles.box__cover}>
+        <img src={album.cover} alt={album.title} width="200" height="200" />
+      </div>
 
+      <div className={styles.box__info}>
+        <h1>{album.title}</h1>
+        <p>
+        {album.artist} ft. {album.featuring.join(", ")}
+        </p>
+        <p>{album.year}</p>
+        <p>{album.genres.join(" ")}</p>
 
-      <main className={styles.main}>
-        <div className={styles.wrapper}>
+        <button onClick={() => AddDelFavorite()}>{albumLocal.favorite ? <AiFillHeart/> : <AiOutlineHeart/> }</button>
+      </div>
 
-          <div className={styles.box}>
-            <div className={styles.box__cover}>
-              <img src={album.cover} alt={album.title} width="200" height="200" />
-            </div>
+      <div className={styles.box__rating}>
+        <StarRating album={album}/>
+      </div>
+    </div>
 
-            <div className={styles.box__info}>
-              <h1>{album.title}</h1>
-              <p>
-              {album.artist} ft. {album.featuring.join(", ")}
-              </p>
-              <p>{album.year}</p>
-              <p>{album.genres.join(" ")}</p>
+    <SongList album={album} />
+  </div>
 
-              <button onClick={() => AddFavorite()}>{isPopped ? <AiFillHeart/> : <AiOutlineHeart/>  }</button>
-            </div>
-
-            <div className={styles.box__rating}>
-              <StarRating album={album}/>
-            </div>
-
-   
-
-          </div>
-
-
-          
-
-          <SongList album={album } />
-        </div>
-      </main>
-
-
-
-      <footer className={styles.footer}>
-        <Footer />        
-      </footer>
-
-
-
+  </LayoutDefault>
 
     </>
   );
 }
+

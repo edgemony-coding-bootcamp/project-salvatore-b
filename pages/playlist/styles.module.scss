@@ -1,13 +1,52 @@
-.hero {   
-    
-    .all {
-        display: flex;
-        gap: 20px;
-    } 
+.wrapper {
+    width: 100%;
 
-    .img_container {
-        background-color: red;
-        width: 200px;
-        height: 200px;
+    .box {
+
+        display: flex;
+        padding: 20px;
+        background: #000;
+        background: linear-gradient(to right, #2c3e50, #bdc3c7);
+        border-radius: 10px;
+        margin-bottom: 30px;
+        position: relative;
+      
+
+            
+            &__cover {
+                margin-right: 20px;      
+            }
+            
+            &__rating {
+                position: absolute;
+                bottom: 30px;
+                right: 30px;
+               
+            }
+            
+            &__info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: #fff;
+                position: relative;
+            
+            }
+            
+            &__info h1 {
+                margin-bottom: 20px;
+                font-size: 50px;
+            }
+            
+            &__info button {
+                all: unset;
+                font-size: 30px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                cursor: pointer;
+            }
+
     }
+
 }
