@@ -2,6 +2,14 @@ import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
 
+import { useState, useEffect } from "react";
+
+import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
+
+import {putPlaylist} from "../../utils";
+
+import LayoutDefault from "../../components/LayoutDefault";
+
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await fetch(
@@ -31,25 +39,60 @@ export const getStaticPaths = async () => {
 };
 
 export default function PlaylistId({ playlist }) {
+
+  const [playlistLocal,setPlaylistLocal] = useState(playlist);
+
+  const AddDelFavorite = () => { 
+
+    setPlaylistLocal({...playlist, favorite: !playlistLocal.favorite});
+  }
+
+  useEffect(() => {
+
+    if (playlistLocal !== undefined) {
+      
+      putPlaylist(playlist.id , playlistLocal);
+
+    } 
+
+  },[playlistLocal])
+
+
+
+  
   return (
     <>
-      <div className={styles.hero} >
-        <div className={styles.all}>
-          <div className={styles.img_container}>
-            <img src={playlist.cover} />
-          </div>
-          <div className={styles.info}>
-            <h1>{playlist.title}</h1>
-            <p>
-              {playlist.artist} ft. {playlist.featuring.join(", ")}
-            </p>
-            <p>{playlist.year}</p>
-            <p>{playlist.genres.join(" ")}</p>
-            <StarRating playlist={playlist}/>
-          </div>
-        </div>
+    
+  <LayoutDefault>
+
+  <div className={styles.wrapper}>
+
+    <div className={styles.box}>
+      <div className={styles.box__cover}>
+        <img src={playlist.cover} alt={playlist.title} width="200" height="200" />
       </div>
-      <SongList playlist={playlist}/>
+
+      <div className={styles.box__info}>
+        <h1>{playlist.title}</h1>
+        <p>
+        {playlist.artist} ft. {playlist.featuring.join(", ")}
+        </p>
+        <p>{playlist.year}</p>
+        <p>{playlist.genres.join(" ")}</p>
+
+        <button onClick={() => AddDelFavorite()}>{playlistLocal.favorite ? <AiFillHeart/> : <AiOutlineHeart/> }</button>
+      </div>
+
+      <div className={styles.box__rating}>
+        <StarRating playlist={playlist}/>
+      </div>
+    </div>
+
+    <SongList playlist={playlist} />
+  </div>
+
+  </LayoutDefault>
+
     </>
   );
 }
