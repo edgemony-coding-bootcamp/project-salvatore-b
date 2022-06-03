@@ -1,3 +1,5 @@
+@import '../../styles/palette.module.scss';
+
 .Navbar {
 
     font-size: 14px;
@@ -16,10 +18,16 @@
         font-weight: 700;
         display: flex;
         align-items: center;
+
+        
+    }
+
+    .activebutton {
+        color: $primary-color;
     }
 
     li a:hover {
-        color: #373946;
+        color: $secondary-color;
     }
 
     li a svg {

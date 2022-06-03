@@ -24,9 +24,28 @@ export const getPlaylist = async () => {
 }
 
 
-
 export const putAlbum =  (id, body) =>
     fetch(`https://edgemony-backend.herokuapp.com/albums/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-type" : "application/json"
+    },
+    body: JSON.stringify(body),
+});
+
+
+export const putRatingAlbum =  (id, body) =>
+    fetch(`https://edgemony-backend.herokuapp.com/albums/${id}`, {
+    method: "PUT",
+    headers: {
+        "Content-type" : "application/json"
+    },
+    body: JSON.stringify(body),
+});
+
+
+export const putRatingPlaylist =  (id, body) =>
+    fetch(`https://edgemony-backend.herokuapp.com/playlist/${id}`, {
     method: "PUT",
     headers: {
         "Content-type" : "application/json"
