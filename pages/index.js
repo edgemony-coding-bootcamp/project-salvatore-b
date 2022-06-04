@@ -82,7 +82,7 @@ export default function Home() {
 
   useEffect(()=>{
     if(token?.length > 0 ) {
-      fetch("https://edgemony-backend.herokuapp.com/440/albums", {
+      fetch("https://edgemony-backend.herokuapp.com/albums", {
         headers: {
           Authorization: `Bearer ${token}`,
         }
