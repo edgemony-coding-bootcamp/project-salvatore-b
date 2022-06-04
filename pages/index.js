@@ -9,6 +9,9 @@ import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 import ModalSignup from "../components/ModalSignup";
+import MostLiked from "../components/MostLiked";
+import { AiFillStar } from 'react-icons/ai';
+
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -111,9 +114,9 @@ export default function Home() {
           getCredentials={getCredentials}
         />
         <div className={styles.wrapper}>
-          <div className={styles.input_wrapper_main}>
+          
             <InputSearch setinputSearchValue={setinputSearchValue} />
-
+            
             <FilterButtonAlbum
               setPopAlbum={setPopAlbum}
               isPoppedAlbum={isPoppedAlbum}
@@ -124,7 +127,7 @@ export default function Home() {
               setPoppedPlaylist={setPoppedPlaylist}
               isPoppedPlaylist={isPoppedPlaylist}
             />
-          </div>
+
           <div className={styles.albums_container}>
             <h2>All</h2>
             <CardAlbum
@@ -132,6 +135,9 @@ export default function Home() {
               inputSearchValue={inputSearchValue}
             />
           </div>
+          <div className={styles.mostliked_container}>
+          <h2>Most Liked <span className={styles.star_icon}><AiFillStar/></span></h2>
+          <MostLiked allData={allData}/></div>
         </div>
       </LayoutDefault>
     </>

@@ -23,6 +23,12 @@
         flex-direction: column;
         text-align: center;
 
+        .closemodal {
+            all: unset;
+            text-align: end;
+            margin: 1rem 1rem 0 0;
+        }
+
         .form {
             display: flex;
             flex-direction: column;

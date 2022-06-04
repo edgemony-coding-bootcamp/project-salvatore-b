@@ -2,7 +2,6 @@
     width: 100%;  
 }
 
-.input_wrapper_main {
-    display: flex;
-    justify-content: flex-start;
+.star_icon {
+    color: #FFC371;
 }

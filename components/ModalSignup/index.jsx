@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
+import { RiCloseCircleFill } from 'react-icons/ri';
 // import { postUserCredentials } from '../../utils';
 
 export default function ModalSignup({ viewModalSignup, setViewModalSignUp, getCredentials }) {
@@ -20,10 +21,17 @@ export default function ModalSignup({ viewModalSignup, setViewModalSignUp, getCr
     })
   };
 
+  const closeModal = () => {
+    setViewModalSignUp({
+      visible: false,
+    })
+  }
+
 
   return (
     <div className={classes.join(" ")}>
       <div className={styles.modal}>
+      <button className={styles.closemodal} onClick={()=> closeModal()}><RiCloseCircleFill/></button>
         <h2>Sign Up</h2>
         <form onSubmit={onSubmit} className={styles.form}>
           <input
