@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
+// import { postUserCredentials } from '../../utils';
 
 export default function ModalSignup({ viewModalSignup, getCredentials }) {
   const [inputMailValue, setInputMailValue] = useState("");
@@ -15,6 +16,7 @@ export default function ModalSignup({ viewModalSignup, getCredentials }) {
     getCredentials(inputMailValue, inputPasswordValue);
     console.log("credenziali in modale", inputMailValue, inputPasswordValue);
   };
+
 
   return (
     <div className={classes.join(" ")}>

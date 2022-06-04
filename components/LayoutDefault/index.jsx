@@ -4,11 +4,13 @@ import Player from "../../components/Player";
 import UserLogged from "../../components/UserLogged";
 import styles from "./styles.module.scss";
 
-const LayoutDefault = ({ children, parloadHome }) => {
+const LayoutDefault = ({ children, parloadHome, credentials }) => {
   function parloaLayout() {
     console.log("sei in layout");
     parloadHome()
   }
+
+  console.log('credenziali in layout default', credentials);
 
   return (
     <>
@@ -19,7 +21,7 @@ const LayoutDefault = ({ children, parloadHome }) => {
       <main className={styles.main}>{children}</main>
 
       <div className={styles.user}>
-        <UserLogged parloaLayout={parloaLayout} />
+        <UserLogged parloaLayout={parloaLayout} title={credentials ? credentials.email :"Sign up"} credentials={credentials}/>
       </div>
 
       {/* <footer className={styles.footer}>

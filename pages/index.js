@@ -58,12 +58,30 @@ export default function Home() {
   }
 
   const [credentials, setCredentials] = useState({});
+  const [token, setToken] = useState('');
 
   function getCredentials(inputMailValue, inputPasswordValue) {
     setCredentials({ email: inputMailValue, password: inputPasswordValue });
   }
 
   console.log("credenziali in home", credentials);
+
+  useEffect(() => {
+
+    if (credentials) {
+      fetch("https://edgemony-backend.herokuapp.com/users", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(credentials),
+      })
+        .then((response) => response.json())
+        .then((data) => setToken(data.accessToken));
+    }
+  }, [credentials]);
+
+  console.log(token);
+  console.log('cred', credentials);
+
 
   return (
     <>
@@ -73,7 +91,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDefault parloadHome={parloadHome}>
+      <LayoutDefault parloadHome={parloadHome} credentials={credentials}>
         <ModalSignup
           viewModalSignup={viewModalSignup}
           getCredentials={getCredentials}
