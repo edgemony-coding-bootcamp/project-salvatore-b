@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 // import { postUserCredentials } from '../../utils';
 
-export default function ModalSignup({ viewModalSignup, getCredentials }) {
+export default function ModalSignup({ viewModalSignup, setViewModalSignUp, getCredentials }) {
   const [inputMailValue, setInputMailValue] = useState("");
   const [inputPasswordValue, setInputPasswordValue] = useState("");
 
@@ -15,6 +15,9 @@ export default function ModalSignup({ viewModalSignup, getCredentials }) {
 
     getCredentials(inputMailValue, inputPasswordValue);
     console.log("credenziali in modale", inputMailValue, inputPasswordValue);
+    setViewModalSignUp({
+      visible: false,
+    })
   };
 
 

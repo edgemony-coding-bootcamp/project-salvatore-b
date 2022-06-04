@@ -59,6 +59,7 @@ export default function Home() {
 
   const [credentials, setCredentials] = useState({});
   const [token, setToken] = useState('');
+  const [nonloso, setNonloso] = useState([]);
 
   function getCredentials(inputMailValue, inputPasswordValue) {
     setCredentials({ email: inputMailValue, password: inputPasswordValue });
@@ -79,8 +80,20 @@ export default function Home() {
     }
   }, [credentials]);
 
+  useEffect(()=>{
+    if(token?.length > 0 ) {
+      fetch("https://edgemony-backend.herokuapp.com/440/albums", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      }).then((response) => response.json())
+      .then((data) => setNonloso(data))
+    }
+  },[token])
+
   console.log(token);
   console.log('cred', credentials);
+  console.log('i tuoi non lo so',nonloso);
 
 
   return (
@@ -94,6 +107,7 @@ export default function Home() {
       <LayoutDefault parloadHome={parloadHome} credentials={credentials}>
         <ModalSignup
           viewModalSignup={viewModalSignup}
+          setViewModalSignUp={setViewModalSignUp}
           getCredentials={getCredentials}
         />
         <div className={styles.wrapper}>

@@ -21,7 +21,7 @@ const LayoutDefault = ({ children, parloadHome, credentials }) => {
       <main className={styles.main}>{children}</main>
 
       <div className={styles.user}>
-        <UserLogged parloaLayout={parloaLayout} title={credentials ? credentials.email :"Sign up"} credentials={credentials}/>
+        <UserLogged parloaLayout={parloaLayout} credentials={credentials}/>
       </div>
 
       {/* <footer className={styles.footer}>
