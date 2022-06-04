@@ -20,8 +20,6 @@ export default function Home() {
   const [isPoppedAlbum, setPopAlbum] = useState(true);
   const [isPoppedPlaylist, setPoppedPlaylist] = useState(true);
 
-  
-
   const albumFilterFunc = (isPoppedAlbum) => {
     if (isPoppedAlbum) {
       console.log("è", isPoppedAlbum, "quindi Caso 1");
@@ -49,52 +47,61 @@ export default function Home() {
   }, []);
 
   const [viewModalSignup, setViewModalSignUp] = useState({
-    visible:false,
-  })
+    visible: false,
+  });
 
   function parloadHome() {
-    console.log('sei in home bitch');
+    console.log("sei in home bitch");
     setViewModalSignUp({
       visible: true,
-    })
+    });
   }
+
+  const [credentials, setCredentials] = useState({});
+
+  function getCredentials(inputMailValue, inputPasswordValue) {
+    setCredentials({ email: inputMailValue, password: inputPasswordValue });
+  }
+
+  console.log("credenziali in home", credentials);
 
   return (
     <>
       <Head>
         <title>SoundWave</title>
-        <meta name="description" content="Edgify" />
+        <meta name="description" content="SoundWave" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <LayoutDefault parloadHome={parloadHome}>
-      <ModalSignup viewModalSignup={viewModalSignup}/>
-      <div className={styles.wrapper}>
-        <div className={styles.input_wrapper_main}>
-        <InputSearch setinputSearchValue={setinputSearchValue} />
+        <ModalSignup
+          viewModalSignup={viewModalSignup}
+          getCredentials={getCredentials}
+        />
+        <div className={styles.wrapper}>
+          <div className={styles.input_wrapper_main}>
+            <InputSearch setinputSearchValue={setinputSearchValue} />
 
-        <FilterButtonAlbum
-          setPopAlbum={setPopAlbum}
-          isPoppedAlbum={isPoppedAlbum}
-          albumFilterFunc={albumFilterFunc}
-        />
-        <FilterButtonPlaylist
-          playlistFilterFunc={playlistFilterFunc}
-          setPoppedPlaylist={setPoppedPlaylist}
-          isPoppedPlaylist={isPoppedPlaylist}
-        />
-</div>
-        <div className={styles.albums_container}>
-          <h2>All</h2>
-          <CardAlbum
-            allData={displayData}
-            inputSearchValue={inputSearchValue}
-          />
+            <FilterButtonAlbum
+              setPopAlbum={setPopAlbum}
+              isPoppedAlbum={isPoppedAlbum}
+              albumFilterFunc={albumFilterFunc}
+            />
+            <FilterButtonPlaylist
+              playlistFilterFunc={playlistFilterFunc}
+              setPoppedPlaylist={setPoppedPlaylist}
+              isPoppedPlaylist={isPoppedPlaylist}
+            />
+          </div>
+          <div className={styles.albums_container}>
+            <h2>All</h2>
+            <CardAlbum
+              allData={displayData}
+              inputSearchValue={inputSearchValue}
+            />
+          </div>
         </div>
-      </div>
-
       </LayoutDefault>
-
     </>
   );
 }
