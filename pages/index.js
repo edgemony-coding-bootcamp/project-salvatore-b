@@ -10,8 +10,7 @@ import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 import ModalSignup from "../components/ModalSignup";
 import MostLiked from "../components/MostLiked";
-import { AiFillStar } from 'react-icons/ai';
-
+import { AiFillStar } from "react-icons/ai";
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -61,7 +60,7 @@ export default function Home() {
   }
 
   const [credentials, setCredentials] = useState({});
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState("");
   const [nonloso, setNonloso] = useState([]);
 
   function getCredentials(inputMailValue, inputPasswordValue) {
@@ -71,7 +70,6 @@ export default function Home() {
   console.log("credenziali in home", credentials);
 
   useEffect(() => {
-
     if (credentials) {
       fetch("https://edgemony-backend.herokuapp.com/users", {
         method: "POST",
@@ -83,21 +81,21 @@ export default function Home() {
     }
   }, [credentials]);
 
-  useEffect(()=>{
-    if(token?.length > 0 ) {
-      fetch("https://edgemony-backend.herokuapp.com/albums", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        }
-      }).then((response) => response.json())
-      .then((data) => setNonloso(data))
-    }
-  },[token])
+  // useEffect(() => {
+  //   if (token?.length > 0) {
+  //     fetch("https://edgemony-backend.herokuapp.com/440/albums", {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => setNonloso(data));
+  //   }
+  // }, [token]);
 
   console.log(token);
-  console.log('cred', credentials);
-  console.log('i tuoi non lo so',nonloso);
-
+  console.log("cred", credentials);
+  console.log("i tuoi non lo so", nonloso);
 
   return (
     <>
@@ -114,19 +112,18 @@ export default function Home() {
           getCredentials={getCredentials}
         />
         <div className={styles.wrapper}>
-          
-            <InputSearch setinputSearchValue={setinputSearchValue} />
-            
-            <FilterButtonAlbum
-              setPopAlbum={setPopAlbum}
-              isPoppedAlbum={isPoppedAlbum}
-              albumFilterFunc={albumFilterFunc}
-            />
-            <FilterButtonPlaylist
-              playlistFilterFunc={playlistFilterFunc}
-              setPoppedPlaylist={setPoppedPlaylist}
-              isPoppedPlaylist={isPoppedPlaylist}
-            />
+          <InputSearch setinputSearchValue={setinputSearchValue} />
+
+          <FilterButtonAlbum
+            setPopAlbum={setPopAlbum}
+            isPoppedAlbum={isPoppedAlbum}
+            albumFilterFunc={albumFilterFunc}
+          />
+          <FilterButtonPlaylist
+            playlistFilterFunc={playlistFilterFunc}
+            setPoppedPlaylist={setPoppedPlaylist}
+            isPoppedPlaylist={isPoppedPlaylist}
+          />
 
           <div className={styles.albums_container}>
             <h2>All</h2>
@@ -136,8 +133,14 @@ export default function Home() {
             />
           </div>
           <div className={styles.mostliked_container}>
-          <h2>Most Liked <span className={styles.star_icon}><AiFillStar/></span></h2>
-          <MostLiked allData={allData}/></div>
+            <h2>
+              Most Liked
+              <span className={styles.star_icon}>
+                <AiFillStar />
+              </span>
+            </h2>
+            <MostLiked allData={allData} />
+          </div>
         </div>
       </LayoutDefault>
     </>

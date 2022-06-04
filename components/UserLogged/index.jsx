@@ -14,7 +14,7 @@ export default function UserLogged({ parloaLayout, credentials }) {
       <div className={styles.img_user}>
         <HiOutlineUserCircle />
       </div>
-      <div className={styles.info_user}>{credentials.email != undefined ? credentials.email : "Sign up"}</div>
+      <div className={styles.info_user}>{credentials?.email != undefined ? credentials.email : "Sign up"}</div>
     </button>
   );
 }

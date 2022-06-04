@@ -1,13 +1,14 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
-import StarRating from '../../components/StarRating';
-import { useState, useEffect} from "react";
+import StarRating from "../../components/StarRating";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 
-import {putAlbum} from "../../utils";
 
-import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
+import { putAlbum } from "../../utils";
+
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import LayoutDefault from "../../components/LayoutDefault";
-
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
@@ -37,69 +38,57 @@ export const getStaticPaths = async () => {
   };
 };
 
-
-
-
 export default function AlbumId({ album }) {
+  const [albumLocal, setAlbumLocal] = useState(album);
 
-
-  const [albumLocal,setAlbumLocal] = useState(album);
-
-
-  const AddDelFavorite = () => { 
-
-    setAlbumLocal({...album, favorite: !albumLocal.favorite});
-
-  }
-
-
+  const AddDelFavorite = () => {
+    setAlbumLocal({ ...album, favorite: !albumLocal.favorite });
+  };
 
   useEffect(() => {
-
     if (albumLocal !== undefined) {
-      
-      putAlbum(album.id , albumLocal);
+      putAlbum(album.id, albumLocal);
+    }
+  }, [albumLocal]);
 
-    } 
-
-  },[albumLocal])
-
-
+  console.log(album.cover);
 
   return (
     <>
-    
-  <LayoutDefault>
+      <LayoutDefault>
+        <div className={styles.wrapper}>
+          <div className={styles.box}>
+            <div className={styles.box__cover}>
+              <Image
+                src={album.cover}
+                alt={album.title}
+                width={200}
+                height={200}
+                layout="responsive"
+              />
+            </div>
 
-  <div className={styles.wrapper}>
+            <div className={styles.box__info}>
+              <h1>{album.title}</h1>
+              <p>
+                {album.artist} ft. {album.featuring.join(", ")}
+              </p>
+              <p>{album.year}</p>
+              <p>{album.genres.join(" ")}</p>
 
-    <div className={styles.box}>
-      <div className={styles.box__cover}>
-        <img src={album.cover} alt={album.title} width="200" height="200" />
-      </div>
+              <button onClick={() => AddDelFavorite()}>
+                {albumLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
+              </button>
+            </div>
 
-      <div className={styles.box__info}>
-        <h1>{album.title}</h1>
-        <p>
-        {album.artist} ft. {album.featuring.join(", ")}
-        </p>
-        <p>{album.year}</p>
-        <p>{album.genres.join(" ")}</p>
+            <div className={styles.box__rating}>
+              <StarRating album={album} />
+            </div>
+          </div>
 
-        <button onClick={() => AddDelFavorite()}>{albumLocal.favorite ? <AiFillHeart/> : <AiOutlineHeart/> }</button>
-      </div>
-
-      <div className={styles.box__rating}>
-        <StarRating album={album}/>
-      </div>
-    </div>
-
-    <SongList album={album} />
-  </div>
-
-  </LayoutDefault>
-
+          <SongList album={album} />
+        </div>
+      </LayoutDefault>
     </>
   );
 }
-
