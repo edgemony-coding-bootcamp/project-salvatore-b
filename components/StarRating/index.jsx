@@ -20,6 +20,7 @@ export default function StarRating({ album, playlist }) {
         rating: rating
       })
     }
+  // eslint-disable-next-line
   },[rating])
 
   return (

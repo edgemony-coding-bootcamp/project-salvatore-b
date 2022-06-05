@@ -1,9 +1,8 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
-
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
 
 import {putPlaylist} from "../../utils";
@@ -54,7 +53,7 @@ export default function PlaylistId({ playlist }) {
       putPlaylist(playlist.id , playlistLocal);
 
     } 
-
+  // eslint-disable-next-line
   },[playlistLocal])
 
 
@@ -69,7 +68,12 @@ export default function PlaylistId({ playlist }) {
 
     <div className={styles.box}>
       <div className={styles.box__cover}>
-        <img src={playlist.cover} alt={playlist.title} width="200" height="200" />
+        <Image
+          src={playlist.cover}
+          alt={playlist.title}
+          width={200}
+          height={200}
+        />
       </div>
 
       <div className={styles.box__info}>

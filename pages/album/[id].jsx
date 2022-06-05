@@ -49,6 +49,7 @@ export default function AlbumId({ album }) {
     if (albumLocal !== undefined) {
       putAlbum(album.id, albumLocal);
     }
+  // eslint-disable-next-line
   }, [albumLocal]);
 
   console.log(album.cover);
@@ -64,7 +65,6 @@ export default function AlbumId({ album }) {
                 alt={album.title}
                 width={200}
                 height={200}
-                layout="responsive"
               />
             </div>
 

@@ -13,14 +13,14 @@ export default function SongList({ album, playlist }) {
     <div className={styles.SongList} >
       <ol>
         {album?.songs.map((song) => (
-          <li className={styles.song_container} key={song}>
+          <li key={song}>
             {song}
           </li>
         ))}
       </ol>
     </div>
    : (
-    <div>
+    <div className={styles.SongList}>
       <ol>
         {playlist?.songs.map((song) => (
           <li key={song}>
