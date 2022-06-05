@@ -76,21 +76,29 @@ export default function PlaylistId({ playlist }) {
         />
       </div>
 
+
       <div className={styles.box__info}>
+
         <h1>{playlist.title}</h1>
         <p>
-        {playlist.artist} ft. {playlist.featuring.join(", ")}
+          {playlist.artist} ft. {playlist.featuring.join(", ")}
         </p>
         <p>{playlist.year}</p>
         <p>{playlist.genres.join(" ")}</p>
 
-        <button onClick={() => AddDelFavorite()}>{playlistLocal.favorite ? <AiFillHeart/> : <AiOutlineHeart/> }</button>
+        <div className={styles.box__info__actions}>
+          <button onClick={() => AddDelFavorite()}>
+            {playlistLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
+          </button>
+          <StarRating playlist={playlist} />
+        </div>
+
       </div>
 
-      <div className={styles.box__rating}>
-        <StarRating playlist={playlist}/>
-      </div>
-    </div>
+
+  </div>
+
+
 
     <SongList playlist={playlist} />
   </div>

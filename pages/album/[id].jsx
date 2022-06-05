@@ -69,6 +69,7 @@ export default function AlbumId({ album }) {
             </div>
 
             <div className={styles.box__info}>
+
               <h1>{album.title}</h1>
               <p>
                 {album.artist} ft. {album.featuring.join(", ")}
@@ -76,14 +77,18 @@ export default function AlbumId({ album }) {
               <p>{album.year}</p>
               <p>{album.genres.join(" ")}</p>
 
-              <button onClick={() => AddDelFavorite()}>
-                {albumLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
-              </button>
-            </div>
+              <div className={styles.box__info__actions}>
+                <button onClick={() => AddDelFavorite()}>
+                  {albumLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
+                </button>
+                <StarRating album={album} />
+              </div>
 
-            <div className={styles.box__rating}>
-              <StarRating album={album} />
+              
+           
             </div>
+            
+
           </div>
 
           <SongList album={album} />

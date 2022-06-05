@@ -9,14 +9,14 @@
     }
 
     button:hover {
-      color: red;
+      color: red !important;
     }
 
       .on {
         color: rgb(255, 255, 255);
       }
       .off {
-        color: #ccc;
+        color: #ccc !important;
       }
 
 }
