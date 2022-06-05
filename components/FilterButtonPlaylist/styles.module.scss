@@ -1,3 +1,20 @@
+@import '../../styles/palette.module.scss';
+
+.btn {
+    // box-shadow: inset -5px -5px 9px rgba(255,255,255,0.45), inset 5px 5px 9px rgba(94,104,121,0.3);    background-color: rgb(226, 224, 222);
+    border-radius: 20px;
+    height: 40px;
+    width: 15%;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid rgb(223, 223, 223);
+    margin: 20px 8px 40px 5px;
+    
+}
+
 .selected {
-    border: 2px solid red;
+    box-shadow: none;
+    color: white;
+    border: $primary-color;
+    background-image: linear-gradient(to bottom right, $primary-color, $yellow);
 }

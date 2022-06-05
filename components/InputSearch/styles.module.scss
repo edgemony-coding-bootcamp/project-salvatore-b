@@ -1,6 +1,11 @@
+@import '../../styles/palette.module.scss';
+
 .input_container {
 
     display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    
     input {
         border-radius: 20px 0 0 20px;
         border: 0px transparent;
@@ -23,6 +28,7 @@
         height: 40px;
         border-radius: 0 20px 20px 0;
         padding-right: 1rem;
+        color: $primary-color;
 
     }
 }

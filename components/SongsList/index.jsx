@@ -3,6 +3,11 @@ import styles from "./styles.module.scss";
 import React from "react";
 
 export default function SongList({ album, playlist }) {
+
+  function viewPlayer(){
+    speaktoDinamicPage()
+  }
+
   return (
     album ? 
     <div className={styles.SongList} >

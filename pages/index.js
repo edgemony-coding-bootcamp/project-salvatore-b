@@ -8,6 +8,9 @@ import InputSearch from "../components/InputSearch";
 import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
+import ModalSignup from "../components/ModalSignup";
+import MostLiked from "../components/MostLiked";
+import { AiFillStar } from "react-icons/ai";
 
 export default function Home() {
   // const [albumsData, setAlbumsData] = useState([]);
@@ -45,41 +48,101 @@ export default function Home() {
     });
   }, []);
 
+  const [viewModalSignup, setViewModalSignUp] = useState({
+    visible: false,
+  });
+
+  function parloadHome() {
+    console.log("sei in home bitch");
+    setViewModalSignUp({
+      visible: true,
+    });
+  }
+
+  const [credentials, setCredentials] = useState({});
+  const [token, setToken] = useState("");
+  const [nonloso, setNonloso] = useState([]);
+
+  function getCredentials(inputMailValue, inputPasswordValue) {
+    setCredentials({ email: inputMailValue, password: inputPasswordValue });
+  }
+
+  console.log("credenziali in home", credentials);
+
+  useEffect(() => {
+    if (credentials) {
+      fetch("https://edgemony-backend.herokuapp.com/users", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify(credentials),
+      })
+        .then((response) => response.json())
+        .then((data) => setToken(data.accessToken));
+    }
+  }, [credentials]);
+
+  // useEffect(() => {
+  //   if (token?.length > 0) {
+  //     fetch("https://edgemony-backend.herokuapp.com/440/albums", {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => setNonloso(data));
+  //   }
+  // }, [token]);
+
+  console.log(token);
+  console.log("cred", credentials);
+  console.log("i tuoi non lo so", nonloso);
+
   return (
     <>
       <Head>
         <title>SoundWave</title>
-        <meta name="description" content="Edgify" />
+        <meta name="description" content="SoundWave" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDefault>
-
-      <div>
-        <InputSearch setinputSearchValue={setinputSearchValue} />
-
-        <FilterButtonAlbum
-          setPopAlbum={setPopAlbum}
-          isPoppedAlbum={isPoppedAlbum}
-          albumFilterFunc={albumFilterFunc}
+      <LayoutDefault parloadHome={parloadHome} credentials={credentials}>
+        <ModalSignup
+          viewModalSignup={viewModalSignup}
+          setViewModalSignUp={setViewModalSignUp}
+          getCredentials={getCredentials}
         />
-        <FilterButtonPlaylist
-          playlistFilterFunc={playlistFilterFunc}
-          setPoppedPlaylist={setPoppedPlaylist}
-          isPoppedPlaylist={isPoppedPlaylist}
-        />
+        <div className={styles.wrapper}>
+          <InputSearch setinputSearchValue={setinputSearchValue} />
 
-        <div className={styles.albums_container}>
-          <h2>All</h2>
-          <CardAlbum
-            allData={displayData}
-            inputSearchValue={inputSearchValue}
+          <FilterButtonAlbum
+            setPopAlbum={setPopAlbum}
+            isPoppedAlbum={isPoppedAlbum}
+            albumFilterFunc={albumFilterFunc}
           />
+          <FilterButtonPlaylist
+            playlistFilterFunc={playlistFilterFunc}
+            setPoppedPlaylist={setPoppedPlaylist}
+            isPoppedPlaylist={isPoppedPlaylist}
+          />
+
+          <div className={styles.albums_container}>
+            <h2>All</h2>
+            <CardAlbum
+              allData={displayData}
+              inputSearchValue={inputSearchValue}
+            />
+          </div>
+          <div className={styles.mostliked_container}>
+            <h2>
+              Most Liked
+              <span className={styles.star_icon}>
+                <AiFillStar />
+              </span>
+            </h2>
+            <MostLiked allData={allData} />
+          </div>
         </div>
-      </div>
-
       </LayoutDefault>
-
     </>
   );
 }

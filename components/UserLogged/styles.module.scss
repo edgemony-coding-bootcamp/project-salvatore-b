@@ -1,0 +1,15 @@
+.user_log {
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid rgb(223, 223, 223);
+    height: 40px;
+    display: flex;
+    gap: 10px;
+    padding: 0 1rem 0 1rem;
+    align-items: center;
+
+    .img_user {
+        font-size: 18px;
+    }
+    
+}

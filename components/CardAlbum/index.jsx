@@ -1,4 +1,5 @@
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 import Link from "next/link";
 
@@ -27,7 +28,9 @@ export default function CardAlbum({ allData, inputSearchValue }) {
               <Link href= {el.iam === 'album' ? `album/${el.id}` : `playlist/${el.id}`}  key={el.id}>
                 <a>
                   <div className={styles.img_container}>
-                    <img src={el?.cover} alt={el?.title}></img>
+                    <Image src={el?.cover} alt={el?.title} width={140}
+                        height={140}
+                        layout="responsive"/>
                   </div>
                   <div className={styles.info_container}>
                     <h2>{el?.title}</h2>

@@ -9,7 +9,7 @@ export default function InputSearch({ setinputSearchValue, inputSearchValue }) {
         value={inputSearchValue}
         onChange={(e) => setinputSearchValue(e.target.value)}
         name="search_input"
-        placeholder="cerca"
+        placeholder="search"
       />
       <button><BiSearch size="1.5rem"/></button>
     </div>
