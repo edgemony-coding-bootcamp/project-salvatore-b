@@ -11,10 +11,13 @@ import LayoutDefault from "../components/LayoutDefault";
 import ModalSignup from "../components/ModalSignup";
 import MostLiked from "../components/MostLiked";
 import { AiFillStar } from "react-icons/ai";
+import { useRouter } from "next/router";
+
 
 export default function Home() {
-  // const [albumsData, setAlbumsData] = useState([]);
-  // const [playlistData, setPlaylistData] = useState([]);
+
+  const router = useRouter();
+
   const [inputSearchValue, setinputSearchValue] = useState("");
   const [allData, setallData] = useState([]);
   const [displayData, setdisplayData] = useState([]);
@@ -46,7 +49,20 @@ export default function Home() {
       setallData([...values[0], ...values[1]]);
       setdisplayData([...values[0], ...values[1]]);
     });
+
+
+    //controllo localstorage
+    if (!localStorage.getItem('token')) {
+      router.push("/login")
+    }
+    
+
+
   }, []);
+
+
+
+
 
   const [viewModalSignup, setViewModalSignUp] = useState({
     visible: false,
@@ -99,6 +115,8 @@ export default function Home() {
 
   return (
     <>
+
+
       <Head>
         <title>SoundWave</title>
         <meta name="description" content="SoundWave" />

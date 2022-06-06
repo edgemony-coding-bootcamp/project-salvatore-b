@@ -5,12 +5,15 @@ import InputLogin from "../../components/InputLogin";
 
 import styles from "./styles.module.scss";
 
-
+import { useRouter } from "next/router";
 
 const Login = () => {
 
+    const router = useRouter();
+
     const [credentials,setCredentials] = useState({})
     const [token,setToken] = useState("");
+    
 
     useEffect(() => {
 
@@ -39,7 +42,8 @@ const Login = () => {
         localStorage.setItem("token", token);
 
         if (localStorage.getItem('token')) {
-            window.location.href = "/";
+            // window.location.href = "/";
+            router.push("/")
         }
     },[token])
 

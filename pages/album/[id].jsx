@@ -54,6 +54,10 @@ export default function AlbumId({ album }) {
 
   console.log(album.cover);
 
+  // console.log("Pagina dinamica token", localStorage.getItem('token'))
+
+
+
   return (
     <>
       <LayoutDefault>
