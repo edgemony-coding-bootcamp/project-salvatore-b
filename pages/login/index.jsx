@@ -13,7 +13,7 @@ const Login = () => {
 
     const [credentials,setCredentials] = useState({})
     const [token,setToken] = useState("");
-    
+
 
     useEffect(() => {
 
@@ -42,8 +42,10 @@ const Login = () => {
         localStorage.setItem("token", token);
 
         if (localStorage.getItem('token')) {
+
             // window.location.href = "/";
             router.push("/")
+
         }
     },[token])
 
