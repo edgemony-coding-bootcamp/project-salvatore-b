@@ -1,9 +1,8 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from '../../components/StarRating';
-
 import { useState, useEffect } from "react";
-
+import Image from "next/image";
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
 
 import {putPlaylist} from "../../utils";
@@ -54,7 +53,7 @@ export default function PlaylistId({ playlist }) {
       putPlaylist(playlist.id , playlistLocal);
 
     } 
-
+  // eslint-disable-next-line
   },[playlistLocal])
 
 
@@ -69,24 +68,37 @@ export default function PlaylistId({ playlist }) {
 
     <div className={styles.box}>
       <div className={styles.box__cover}>
-        <img src={playlist.cover} alt={playlist.title} width="200" height="200" />
+        <Image
+          src={playlist.cover}
+          alt={playlist.title}
+          width={200}
+          height={200}
+        />
       </div>
 
+
       <div className={styles.box__info}>
+
         <h1>{playlist.title}</h1>
         <p>
-        {playlist.artist} ft. {playlist.featuring.join(", ")}
+          {playlist.artist} ft. {playlist.featuring.join(", ")}
         </p>
         <p>{playlist.year}</p>
         <p>{playlist.genres.join(" ")}</p>
 
-        <button onClick={() => AddDelFavorite()}>{playlistLocal.favorite ? <AiFillHeart/> : <AiOutlineHeart/> }</button>
+        <div className={styles.box__info__actions}>
+          <button onClick={() => AddDelFavorite()}>
+            {playlistLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
+          </button>
+          <StarRating playlist={playlist} />
+        </div>
+
       </div>
 
-      <div className={styles.box__rating}>
-        <StarRating playlist={playlist}/>
-      </div>
-    </div>
+
+  </div>
+
+
 
     <SongList playlist={playlist} />
   </div>

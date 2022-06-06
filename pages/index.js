@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Home.module.scss";
 import CardAlbum from "../components/CardAlbum";
 import { useEffect } from "react";
 import { getAlbum, getPlaylist } from "../utils";
@@ -111,6 +111,7 @@ export default function Home() {
           setViewModalSignUp={setViewModalSignUp}
           getCredentials={getCredentials}
         />
+
         <div className={styles.wrapper}>
           <InputSearch setinputSearchValue={setinputSearchValue} />
 
@@ -125,14 +126,15 @@ export default function Home() {
             isPoppedPlaylist={isPoppedPlaylist}
           />
 
-          <div className={styles.albums_container}>
+          <div className={styles.wrapper__container}>
             <h2>All</h2>
             <CardAlbum
               allData={displayData}
               inputSearchValue={inputSearchValue}
             />
           </div>
-          <div className={styles.mostliked_container}>
+
+          <div className={styles.wrapper__container}>
             <h2>
               Most Liked
               <span className={styles.star_icon}>
@@ -141,6 +143,8 @@ export default function Home() {
             </h2>
             <MostLiked allData={allData} />
           </div>
+
+
         </div>
       </LayoutDefault>
     </>
