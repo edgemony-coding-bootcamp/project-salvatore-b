@@ -8,7 +8,7 @@ import InputSearch from "../components/InputSearch";
 import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
-import ModalSignup from "../components/ModalSignup";
+
 import MostLiked from "../components/MostLiked";
 import { AiFillStar } from "react-icons/ai";
 import { useRouter } from "next/router";
@@ -55,35 +55,20 @@ export default function Home() {
     if (!localStorage.getItem('token')) {
       router.push("/login")
     }
-    
-
+ 
 
   }, []);
 
 
-
-
-
-  const [viewModalSignup, setViewModalSignUp] = useState({
-    visible: false,
-  });
-
-  function parloadHome() {
-    console.log("sei in home bitch");
-    setViewModalSignUp({
-      visible: true,
-    });
-  }
-
   const [credentials, setCredentials] = useState({});
   const [token, setToken] = useState("");
-  const [nonloso, setNonloso] = useState([]);
+
 
   function getCredentials(inputMailValue, inputPasswordValue) {
     setCredentials({ email: inputMailValue, password: inputPasswordValue });
   }
 
-  console.log("credenziali in home", credentials);
+
 
   useEffect(() => {
     if (credentials) {
@@ -97,38 +82,18 @@ export default function Home() {
     }
   }, [credentials]);
 
-  // useEffect(() => {
-  //   if (token?.length > 0) {
-  //     fetch("https://edgemony-backend.herokuapp.com/440/albums", {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //       .then((response) => response.json())
-  //       .then((data) => setNonloso(data));
-  //   }
-  // }, [token]);
 
-  console.log(token);
-  console.log("cred", credentials);
-  console.log("i tuoi non lo so", nonloso);
 
   return (
     <>
-
-
       <Head>
         <title>SoundWave</title>
         <meta name="description" content="SoundWave" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <LayoutDefault parloadHome={parloadHome} credentials={credentials}>
-        <ModalSignup
-          viewModalSignup={viewModalSignup}
-          setViewModalSignUp={setViewModalSignUp}
-          getCredentials={getCredentials}
-        />
+      <LayoutDefault credentials={credentials}>
+       
 
         <div className={styles.wrapper}>
           <InputSearch setinputSearchValue={setinputSearchValue} />

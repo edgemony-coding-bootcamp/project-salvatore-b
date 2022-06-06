@@ -12,7 +12,7 @@ import LayoutDefault from "../../components/LayoutDefault";
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const res = await fetch(
-    `https://edgemony-backend.herokuapp.com/440/playlist/${id}`
+    `https://edgemony-backend.herokuapp.com/playlist/${id}`
   );
   const data = await res.json();
 
@@ -22,7 +22,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await fetch(`https://edgemony-backend.herokuapp.com/440/playlist/`);
+  const res = await fetch(`https://edgemony-backend.herokuapp.com/playlist/`);
   const data = await res.json();
 
   const paths = data.map((playlist) => {

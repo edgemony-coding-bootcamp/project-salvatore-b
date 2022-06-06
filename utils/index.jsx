@@ -38,6 +38,7 @@ export const putAlbum = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify(body),
   });
@@ -47,6 +48,7 @@ export const putPlaylist = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify(body),
   });
@@ -56,6 +58,7 @@ export const putRatingAlbum = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify(body),
   });
@@ -65,6 +68,7 @@ export const putRatingPlaylist = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
     body: JSON.stringify(body),
   });
