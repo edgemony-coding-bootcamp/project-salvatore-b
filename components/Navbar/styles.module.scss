@@ -5,8 +5,10 @@
     font-size: 14px;
 
     ul {
-        margin-top: 20px;
-
+        margin: 40px 0 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     li {
@@ -15,11 +17,10 @@
 
     li a {
         font-size: 17px;
-        font-weight: 700;
+        font-weight: 600;
         display: flex;
         align-items: center;
         gap: 10px;
-
         
     }
 
@@ -45,6 +46,7 @@
 
         ul {
             margin-top: 10px;
+            flex-direction: row;
         }
 
         li {
