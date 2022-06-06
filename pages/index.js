@@ -13,8 +13,16 @@ import MostLiked from "../components/MostLiked";
 import { AiFillStar } from "react-icons/ai";
 
 export default function Home() {
-  // const [albumsData, setAlbumsData] = useState([]);
-  // const [playlistData, setPlaylistData] = useState([]);
+
+  useEffect(()=>{
+    if(localStorage.token){
+      
+    } else {
+      window.location.href = "/login"
+    }
+  },[])
+
+  
   const [inputSearchValue, setinputSearchValue] = useState("");
   const [allData, setallData] = useState([]);
   const [displayData, setdisplayData] = useState([]);
