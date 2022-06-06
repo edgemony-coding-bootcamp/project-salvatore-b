@@ -1,0 +1,25 @@
+.loginpage {
+    display: flex;
+    
+
+    .img_container {
+        width: 50%;
+        background-color: red;
+    }
+
+    .allinfo {
+        margin: 0 auto;
+
+        .logo_container {
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+}

@@ -1,39 +1,33 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 import styles from "./styles.module.scss";
 
+const InputLogin = ({ setCredentials }) => {
+  const [inputMailValue, setInputMailValue] = useState("");
+  const [inputPasswordValue, setInputPasswordValue] = useState("");
 
+  const onSubmit = (e) => {
+    e.preventDefault();
 
+    setCredentials({
+      email: inputMailValue,
+      password: inputPasswordValue,
+    });
 
-const InputLogin = ({setCredentials}) => {
+    // if (localStorage.getItem('token')) {
+    //     window.location.href = "/";
+    // }
+  };
 
-    const [inputMailValue, setInputMailValue] = useState("");
-    const [inputPasswordValue, setInputPasswordValue] = useState("");
+  // useEffect(() => {
+  //     if (localStorage.getItem('token')) {
+  //         window.location.href = "/";
+  //     }
+  // },[])
 
-    const onSubmit = (e) =>{
-        e.preventDefault();
+  return (
 
-        setCredentials({
-            email: inputMailValue,
-            password: inputPasswordValue
-        })
-
-        // if (localStorage.getItem('token')) {
-        //     window.location.href = "/";
-        // } 
-
-    }
-
-    // useEffect(() => {
-    //     if (localStorage.getItem('token')) {
-    //         window.location.href = "/";
-    //     }
-    // },[])
-
-
-
-    return (
-    <form onSubmit={onSubmit}  className={styles.form}>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <label for="email">Email</label>
         <input
           type="email"
           id="email"
@@ -42,6 +36,7 @@ const InputLogin = ({setCredentials}) => {
           onChange={(e) => setInputMailValue(e.target.value)}
           required
         />
+        <label for="password">Password</label>
         <input
           type="password"
           id="password"
@@ -51,10 +46,8 @@ const InputLogin = ({setCredentials}) => {
           onChange={(e) => setInputPasswordValue(e.target.value)}
         />
         <input type="submit" value="Login" />
-    </form>
-    )
-
-
-}
+      </form>
+  );
+};
 
 export default InputLogin;
