@@ -41,18 +41,38 @@ export const getStaticPaths = async () => {
 export default function AlbumId({ album }) {
   const [albumLocal, setAlbumLocal] = useState(album);
 
+  // useEffect (() => {
+  
+  //   console.log("aoaposdopajsdoajsdi j ==>>>>", localStorage.getItem('token'))
+
+
+  // },[])
+
+
+
+
   const AddDelFavorite = () => {
     setAlbumLocal({ ...album, favorite: !albumLocal.favorite });
   };
 
   useEffect(() => {
     if (albumLocal !== undefined) {
-      putAlbum(album.id, albumLocal);
+
+      console.log("Il token nello stato pagina dinamica ==>>>>>>", localStorage.getItem('token'))
+
+      putAlbum( album.id, albumLocal);
+
+
     }
   // eslint-disable-next-line
   }, [albumLocal]);
 
   console.log(album.cover);
+
+
+
+
+
 
   return (
     <>
