@@ -2,11 +2,13 @@
 
     
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // gap: 1px;
     margin-top: 2rem;
+    padding: 5rem;
+
 
     label {
         text-align: left;
@@ -20,6 +22,7 @@
     input {
         width: 100%;
         font-weight: 600;
+        min-width: 400px;
         
     }
 
@@ -32,6 +35,7 @@
         padding-left: 1rem;
         margin-bottom: 1.5rem;
         color: $text-general-color;
+        width: 100%;
     }
 
     input:focus-visible {

@@ -46,9 +46,10 @@ const Login = () => {
       <div className={styles.img_container}>
         <Image
           src={imgLogin}
-          width={500}
-          height={500}
+          width={1000}
+          height={1000}
           alt="ragazza soundwave"
+          layout="responsive"
         />
       </div>
       <div className={styles.allinfo}>
