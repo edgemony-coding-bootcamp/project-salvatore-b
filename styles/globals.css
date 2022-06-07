@@ -4,8 +4,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap');
 /* @import '../styles/palette.module.scss'; */
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +15,6 @@ body {
   line-height: 26px;
   color: #34373b;
   background:  #f7fafc;
-  position: relative;
-  min-height: 100vh;
 }
 img {
   display: block;

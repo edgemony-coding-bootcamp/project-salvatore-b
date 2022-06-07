@@ -33,8 +33,8 @@ const Favorite = () => {
     return (
         <>  
         <LayoutDefault>
-            <div>
-                <h1>Favoriti:</h1>
+            <div className={styles.wrapper}>
+                <h2>Favoriti:</h2>
                 {allData.length > 0 ? <CardAlbum allData={allData} inputSearchValue="" /> : <p>Non ci sono ancora favoriti</p> }
             </div>
 
