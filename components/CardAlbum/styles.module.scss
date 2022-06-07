@@ -1,12 +1,12 @@
 @import '../../styles/palette.module.scss';
 
 .all {
-
         display: flex;
+        flex-wrap: wrap;
         gap: 10px;
 
         .CardAlbum{
-        border:1px solid rgba(0, 0, 0, 0.080);
+        // border:1px solid rgba(0, 0, 0, 0.080);
         // background-image: linear-gradient( to top right, red , yellow);        width: 170px;
         border-radius: 10px;
         padding: 1rem;
@@ -14,13 +14,18 @@
         flex-direction: column;
         align-items: center;
         transition: 0.2s ease-in;
+
+        width: 32%;
+       
+
         
         .img_container {
         width: 140px;
         height: 140px;
-        background-color: red;
+
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.346);
         border-radius: 10px;
+
         
 
             img {

@@ -39,9 +39,10 @@ const LayoutDefault = ({ children, credentials }) => {
       {/* <footer className={styles.footer}>
             <Footer />
         </footer>  */}
-      <div className={styles.player}>
+
+      {/* <div className={styles.player}>
         <Player />
-      </div>
+      </div> */}
     </>
   );
 };

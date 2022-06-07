@@ -10,11 +10,13 @@ const Navbar = () => {
   const router = useRouter();
   return (
     <div className={styles.Navbar}>
+      <div className={styles.Navbar__logo}>
       <Link href="/">
         <a>
           <Image width={210} height={43} src={logo} alt="SoundWave" />
         </a>
       </Link>
+      </div>
 
       <ul>
         <li>

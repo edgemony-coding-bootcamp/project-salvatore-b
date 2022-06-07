@@ -42,17 +42,33 @@
     @media all and (max-width: 767px) {
 
 
-        text-align: center;
+
+
+        &__logo {
+            display: none;
+        }
 
         ul {
             margin-top: 10px;
             flex-direction: row;
+            justify-content: space-around;
+        }
+
+        
+        li a {
+            display: inline-block;
         }
 
         li {
-            display: inline-block;
             margin-right: 10px;
             margin-bottom: 0;
+      
+        }
+
+        li a svg {
+            display: block;
+            margin: 0 auto;
+            font-size: 30px
         }
      
     }
