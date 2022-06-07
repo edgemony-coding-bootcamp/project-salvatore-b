@@ -8,9 +8,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 body {
-  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   line-height: 26px;
   color: #34373b;

@@ -16,7 +16,7 @@ export const getStaticProps = async (context) => {
     `https://edgemony-backend.herokuapp.com/440/albums/${id}`,
     {
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1ODk2OTksImV4cCI6MTY1NDU5MzI5OSwic3ViIjoiMSJ9.XKl8EzXcGonMkV8PBW54hI4phWsMfgD6Z8mFuN9VLn0"}`,
+        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
       },
     }
   );
@@ -31,7 +31,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1ODk2OTksImV4cCI6MTY1NDU5MzI5OSwic3ViIjoiMSJ9.XKl8EzXcGonMkV8PBW54hI4phWsMfgD6Z8mFuN9VLn0"}`,
+        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
       },
     }
 
@@ -70,8 +70,6 @@ export default function AlbumId({ album }) {
 
   useEffect(() => {
     if (albumLocal !== undefined) {
-
-      console.log("Il token nello stato pagina dinamica ==>>>>>>", localStorage.getItem('token'))
 
       putAlbum( album.id, albumLocal);
 

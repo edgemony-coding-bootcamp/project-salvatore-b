@@ -7,15 +7,17 @@
     width: 15%;
     text-align: center;
     background-color: transparent;
-    border: 1px solid rgb(223, 223, 223);
+    border: 1.5px solid rgb(223, 223, 223);
     margin: 20px 8px 40px 5px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
+
+
 .selected {
+    font-weight: 600;
     box-shadow: none;
     color: white;
-    border: $primary-color;
+    border: 1px solid $orange;
     background-image: linear-gradient(to bottom right, $primary-color, $yellow);
 }
