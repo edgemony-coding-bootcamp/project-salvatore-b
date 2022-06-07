@@ -10,7 +10,7 @@ import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 
 import MostLiked from "../components/MostLiked";
-import { AiFillStar } from "react-icons/ai";
+// import { AiFillStar } from "react-icons/ai";
 import { useRouter } from "next/router";
 
 
@@ -118,7 +118,7 @@ export default function Home() {
             />
           </div>
 
-          <div className={styles.wrapper__container}>
+          {/* <div className={styles.wrapper__container}>
             <h2>
               Most Liked
               <span className={styles.star_icon}>
@@ -126,7 +126,7 @@ export default function Home() {
               </span>
             </h2>
             <MostLiked allData={allData} />
-          </div>
+          </div> */}
 
 
         </div>
