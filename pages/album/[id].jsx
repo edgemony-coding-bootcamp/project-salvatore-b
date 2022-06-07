@@ -1,10 +1,11 @@
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from "../../components/StarRating";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import {TOKEN} from "../../utils/token"
 
+import { MyContext } from "../../Context/context";
 
 import { putAlbum } from "../../utils";
 
@@ -17,7 +18,7 @@ export const getStaticProps = async (context) => {
     `https://edgemony-backend.herokuapp.com/440/albums/${id}`,
     {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${tokenForAll}`,
       },
     }
   );
@@ -32,7 +33,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${tokenForAll}`,
       },
     }
 
@@ -55,14 +56,9 @@ export const getStaticPaths = async () => {
 export default function AlbumId({ album }) {
   const [albumLocal, setAlbumLocal] = useState(album);
 
-  // useEffect (() => {
-  
-  //   console.log("aoaposdopajsdoajsdi j ==>>>>", localStorage.getItem('token'))
+  const {tokenForAll, setTokenForAll} = useContext(MyContext);
 
-
-  // },[])
-
-
+  console.log("Siamo nella dinanima token ==>", tokenForAll)
 
 
   const AddDelFavorite = () => {

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import CardAlbum from "../components/CardAlbum";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
@@ -9,14 +9,20 @@ import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 
-import MostLiked from "../components/MostLiked";
-import { AiFillStar } from "react-icons/ai";
+
+
 import { useRouter } from "next/router";
+
+import { MyContext } from "../Context/context";
 
 
 export default function Home() {
 
   const router = useRouter();
+
+  const {tokenForAll, setTokenForAll} = useContext(MyContext);
+
+  console.log("Cosa c'è? ===>", tokenForAll)
 
   const [inputSearchValue, setinputSearchValue] = useState("");
   const [allData, setallData] = useState([]);

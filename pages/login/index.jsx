@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext} from "react";
 import Image from "next/image";
 import imgLogin from "../../public/img_login.png";
 import logo from "../../public/logo_soundwave.png";
@@ -9,11 +9,20 @@ import styles from "./styles.module.scss";
 
 import { useRouter } from "next/router";
 
+import { MyContext } from "../../Context/context";
+
+
+
+
 const Login = () => {
   const router = useRouter();
 
   const [credentials, setCredentials] = useState({});
   const [token, setToken] = useState("");
+
+
+  const {tokenForAll, setTokenForAll} = useContext(MyContext);
+
 
   useEffect(() => {
     console.log("qui credentials ===>>", credentials);
@@ -26,17 +35,19 @@ const Login = () => {
         .then((response) => response.json())
         .then((data) => setToken(data.accessToken));
     }
-
-    // if (localStorage.getItem('token')) {
-    //     window.location.href = "/";
-    // }
   }, [credentials]);
 
   useEffect(() => {
+
+    // console.log("Cosa c'è? ===>", tokenForAll)
+
+    setTokenForAll(token);
+
+    console.log("Cosa c'è? ===>", tokenForAll)
+
     localStorage.setItem("token", token);
 
     if (localStorage.getItem("token")) {
-      // window.location.href = "/";
       router.push("/");
     }
   }, [token]);

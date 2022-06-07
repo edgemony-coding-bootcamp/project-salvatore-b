@@ -1,11 +1,16 @@
-import {TOKEN} from "./token" 
+//import { useContext } from "react";
+//import { MyContext } from "../Context/context";
+
+//import {TOKEN} from "./token" 
+
+//const {tokenForAll, setTokenForAll} = useContext(MyContext);
 
 export const getAlbum = async () => {
   const response = await fetch(
     `https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }
   );
@@ -25,7 +30,7 @@ export const getPlaylist = async () => {
     `https://edgemony-backend.herokuapp.com/440/playlist/`,
     {
       headers: {
-        Authorization: `Bearer ${TOKEN}`,
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }
   );
@@ -46,7 +51,7 @@ export const putAlbum = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(body),
   });
@@ -56,7 +61,7 @@ export const putPlaylist = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(body),
   });
@@ -66,7 +71,7 @@ export const putRatingAlbum = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(body),
   });
@@ -76,7 +81,7 @@ export const putRatingPlaylist = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     body: JSON.stringify(body),
   });
