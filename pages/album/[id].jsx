@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import StarRating from "../../components/StarRating";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import {TOKEN} from "../../utils/token"
 
 
 import { putAlbum } from "../../utils";
@@ -16,7 +17,7 @@ export const getStaticProps = async (context) => {
     `https://edgemony-backend.herokuapp.com/440/albums/${id}`,
     {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+        Authorization: `Bearer ${TOKEN}`,
       },
     }
   );
@@ -31,7 +32,7 @@ export const getStaticPaths = async () => {
   const res = await fetch(`https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+        Authorization: `Bearer ${TOKEN}`,
       },
     }
 

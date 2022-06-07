@@ -118,16 +118,6 @@ export default function Home() {
             />
           </div>
 
-          <div className={styles.wrapper__container}>
-            <h2>
-              Most Liked
-              <span className={styles.star_icon}>
-                <AiFillStar />
-              </span>
-            </h2>
-            <MostLiked allData={allData} />
-          </div>
-
 
         </div>
       </LayoutDefault>

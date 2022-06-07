@@ -1,9 +1,11 @@
+import {TOKEN} from "./token" 
+
 export const getAlbum = async () => {
   const response = await fetch(
     `https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+        Authorization: `Bearer ${TOKEN}`,
       },
     }
   );
@@ -23,7 +25,7 @@ export const getPlaylist = async () => {
     `https://edgemony-backend.herokuapp.com/440/playlist/`,
     {
       headers: {
-        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+        Authorization: `Bearer ${TOKEN}`,
       },
     }
   );
@@ -40,49 +42,41 @@ export const getPlaylist = async () => {
 };
 
 export const putAlbum = (id, body) =>
-  fetch(`https://edgemony-backend.herokuapp.com/440/albums/${id}`, {
+  fetch(`https://edgemony-backend.herokuapp.com/660/albums/${id}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify(body),
   });
 
 export const putPlaylist = (id, body) =>
-  fetch(`https://edgemony-backend.herokuapp.com/440/playlist/${id}`, {
+  fetch(`https://edgemony-backend.herokuapp.com/660/playlist/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+      "Content-type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify(body),
   });
 
 export const putRatingAlbum = (id, body) =>
-  fetch(`https://edgemony-backend.herokuapp.com/440/albums/${id}`, {
+  fetch(`https://edgemony-backend.herokuapp.com/660/albums/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+      "Content-type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify(body),
   });
 
 export const putRatingPlaylist = (id, body) =>
-  fetch(`https://edgemony-backend.herokuapp.com/440/playlist/${id}`, {
+  fetch(`https://edgemony-backend.herokuapp.com/660/playlist/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
+      "Content-type": "application/json",
+      Authorization: `Bearer ${TOKEN}`,
     },
     body: JSON.stringify(body),
   });
-
-// export const postUserCredentials = (credentials) => {
-//   fetch(`https://edgemony-backend.herokuapp.com/users`),
-//     {
-//       method: "POST",
-//       header: { "Content-type": "application/json" },
-//       body: JSON.stringify(credentials)
-//         .then((response) => response.json())
-//         .then((data) => console.log(data)),
-//     };
-// };
