@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { AiOutlineHome, AiFillHome, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlineHome,
+  AiFillHome,
+  AiFillStar,
+  AiOutlineStar,
+} from "react-icons/ai";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import styles from "./styles.module.scss";
 import Image from "next/image";
@@ -11,11 +16,11 @@ const Navbar = () => {
   return (
     <div className={styles.Navbar}>
       <div className={styles.Navbar__logo}>
-      <Link href="/">
-        <a>
-          <Image width={210} height={43} src={logo} alt="SoundWave" />
-        </a>
-      </Link>
+        <Link href="/">
+          <a>
+            <Image width={210} height={43} src={logo} alt="SoundWave" />
+          </a>
+        </Link>
       </div>
 
       <ul>
@@ -30,11 +35,18 @@ const Navbar = () => {
         </li>
 
         <li>
-          <Link href="/search">
-            <a>
-              {" "}
-              <AiOutlineSearch />
-              Search
+          <Link href="/most-rated">
+            <a
+              className={
+                router.pathname == "/most-rated" ? `${styles.activebutton}` : ""
+              }
+            >
+              {router.pathname == "/most-rated" ? (
+                <AiFillStar />
+              ) : (
+                <AiOutlineStar />
+              )}
+              Most Rated
             </a>
           </Link>
         </li>
