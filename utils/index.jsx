@@ -3,7 +3,7 @@ export const getAlbum = async () => {
     `https://edgemony-backend.herokuapp.com/440/albums/`,
     {
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
       },
     }
   );
@@ -23,7 +23,7 @@ export const getPlaylist = async () => {
     `https://edgemony-backend.herokuapp.com/440/playlist/`,
     {
       headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
       },
     }
   );
@@ -44,7 +44,7 @@ export const putAlbum = (id, body) =>
     method: "PUT",
     headers: {
       "Content-type": "application/json",
-      Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
     },
     body: JSON.stringify(body),
   });
@@ -53,7 +53,7 @@ export const putPlaylist = (id, body) =>
   fetch(`https://edgemony-backend.herokuapp.com/440/playlist/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
     },
     body: JSON.stringify(body),
   });
@@ -62,7 +62,7 @@ export const putRatingAlbum = (id, body) =>
   fetch(`https://edgemony-backend.herokuapp.com/440/albums/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
     },
     body: JSON.stringify(body),
   });
@@ -71,7 +71,7 @@ export const putRatingPlaylist = (id, body) =>
   fetch(`https://edgemony-backend.herokuapp.com/440/playlist/${id}`, {
     method: "PUT",
     headers: {
-      Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTM2OTUsImV4cCI6MTY1NDU5NzI5NSwic3ViIjoiMSJ9._BkM8ocbRrpac8moXFfi90DdC13gcNL1w0BVJp5BJ_w"}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1OTg2ODgsImV4cCI6MTY1NDYwMjI4OCwic3ViIjoiMSJ9.1YIjtHpcyKv7oBZFUECzBsIccSi3cimfHngItDObudE`,
     },
     body: JSON.stringify(body),
   });
