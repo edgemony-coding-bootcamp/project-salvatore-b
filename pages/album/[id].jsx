@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import SongList from "../../components/SongsList";
 import styles from "./styles.module.scss";
 import StarRating from "../../components/StarRating";
@@ -12,71 +14,37 @@ import { putAlbum } from "../../utils";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import LayoutDefault from "../../components/LayoutDefault";
 
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
-  const res = await fetch(
-    `https://edgemony-backend.herokuapp.com/440/albums/${id}`,
-    {
-      headers: {
-        Authorization: `Bearer ${tokenForAll}`,
-      },
-    }
-  );
-  const data = await res.json();
-
-  return {
-    props: { album: data },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const res = await fetch(`https://edgemony-backend.herokuapp.com/440/albums/`,
-    {
-      headers: {
-        Authorization: `Bearer ${tokenForAll}`,
-      },
-    }
-
-  );
-  const data = await res.json();
+import SingleAlbum from "../../components/SingleAlbum";
 
 
-  const paths = data.map((album) => {
-    return {
-      params: { id: album.id.toString() },
-    };
-  });
+export default function AlbumId() {
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export default function AlbumId({ album }) {
-  const [albumLocal, setAlbumLocal] = useState(album);
+  // const [albumLocal, setAlbumLocal] = useState(album);
 
   const {tokenForAll, setTokenForAll} = useContext(MyContext);
 
   console.log("Siamo nella dinanima token ==>", tokenForAll)
 
 
+  const router = useRouter();
+  const { id } = router.query;
+
+
+
+
   const AddDelFavorite = () => {
     setAlbumLocal({ ...album, favorite: !albumLocal.favorite });
   };
 
-  useEffect(() => {
-    if (albumLocal !== undefined) {
+  // useEffect(() => {
+  //   if (albumLocal !== undefined) {
 
-      putAlbum( album.id, albumLocal);
+  //     putAlbum( album.id, albumLocal);
 
 
-    }
-  // eslint-disable-next-line
-  }, [albumLocal]);
-
-  console.log(album.cover);
-
+  //   }
+  // // eslint-disable-next-line
+  // }, [albumLocal]);
 
 
 
@@ -84,7 +52,13 @@ export default function AlbumId({ album }) {
 
   return (
     <>
-      <LayoutDefault>
+
+    <SingleAlbum id={id} />
+
+
+
+
+      {/* <LayoutDefault>
         <div className={styles.wrapper}>
           <div className={styles.box}>
             <div className={styles.box__cover}>
@@ -121,7 +95,12 @@ export default function AlbumId({ album }) {
 
           <SongList album={album} />
         </div>
-      </LayoutDefault>
+      </LayoutDefault> */}
+
+
+
+
+
     </>
   );
 }

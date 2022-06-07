@@ -46,6 +46,31 @@ export const getPlaylist = async () => {
   return data;
 };
 
+
+
+
+
+export const getSingleAlbum = async (id) => {
+  const response = await fetch(
+    `https://edgemony-backend.herokuapp.com/440/albums/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+  const data = await response.json();
+  return data;
+};
+
+
+
+
+
+
+
+
+
 export const putAlbum = (id, body) =>
   fetch(`https://edgemony-backend.herokuapp.com/660/albums/${id}`, {
     method: "PUT",

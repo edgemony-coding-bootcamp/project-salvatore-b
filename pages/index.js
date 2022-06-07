@@ -98,8 +98,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
-      <LayoutDefault credentials={credentials}>
+      <LayoutDefault>
        
 
         <div className={styles.wrapper}>

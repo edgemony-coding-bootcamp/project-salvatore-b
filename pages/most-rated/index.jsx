@@ -29,7 +29,7 @@ export default function MostRated() {
       <LayoutDefault>
         <div className={styles.wrapper}>
             <h2>Most Rated</h2>
-            {allData.length > 0 ? <CardAlbum allData={allData} inputSearchValue=""/>  : <p>No elements</p>}
+            {allData.length > 0 ? <CardAlbum allData={allData} inputSearchValue=""/>  : ""}
         </div>
       </LayoutDefault>
     </>
