@@ -21,6 +21,7 @@ const Login = () => {
   const [token, setToken] = useState("");
 
 
+  const {idUser, setIdUser} = useContext(MyContext);
   const {tokenForAll, setTokenForAll} = useContext(MyContext);
 
 
@@ -33,17 +34,26 @@ const Login = () => {
         body: JSON.stringify(credentials),
       })
         .then((response) => response.json())
-        .then((data) => setToken(data.accessToken));
+        .then((data) => {
+
+        setToken(data.accessToken);
+        setIdUser(data.user.id)
+
+        }
+        )
+
     }
   }, [credentials]);
 
   useEffect(() => {
 
-    // console.log("Cosa c'è? ===>", tokenForAll)
+    
+
+    console.log("ADESSSSSSSSSSOOOOOOOOOOOOOOO? ===>", idUser, tokenForAll)
 
     setTokenForAll(token);
 
-    console.log("Cosa c'è? ===>", tokenForAll)
+    //console.log("Cosa c'è? ===>", tokenForAll)
 
     localStorage.setItem("token", token);
 

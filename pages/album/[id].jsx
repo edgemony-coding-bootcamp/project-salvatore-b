@@ -7,7 +7,6 @@ import { useState, useEffect, useContext } from "react";
 import Image from "next/image";
 import {TOKEN} from "../../utils/token"
 
-import { MyContext } from "../../Context/context";
 
 import { putAlbum } from "../../utils";
 
@@ -16,14 +15,19 @@ import LayoutDefault from "../../components/LayoutDefault";
 
 import SingleAlbum from "../../components/SingleAlbum";
 
+import { MyContext } from "../../Context/context";
+
 
 export default function AlbumId() {
 
   // const [albumLocal, setAlbumLocal] = useState(album);
 
   const {tokenForAll, setTokenForAll} = useContext(MyContext);
+  const {idUser, setIdUser} = useContext(MyContext);
 
-  console.log("Siamo nella dinanima token ==>", tokenForAll)
+  
+
+  //console.log("Siamo nella dinanima token ==>", tokenForAll)
 
 
   const router = useRouter();
@@ -32,27 +36,10 @@ export default function AlbumId() {
 
 
 
-  const AddDelFavorite = () => {
-    setAlbumLocal({ ...album, favorite: !albumLocal.favorite });
-  };
-
-  // useEffect(() => {
-  //   if (albumLocal !== undefined) {
-
-  //     putAlbum( album.id, albumLocal);
-
-
-  //   }
-  // // eslint-disable-next-line
-  // }, [albumLocal]);
-
-
-
-
-
   return (
     <>
 
+    {console.log("id e token ===>>>>>", idUser,tokenForAll)}
     <SingleAlbum id={id} />
 
 

@@ -65,6 +65,21 @@ export const getSingleAlbum = async (id) => {
 
 
 
+export const getSinglePlaylist = async (id) => {
+  const response = await fetch(
+    `https://edgemony-backend.herokuapp.com/440/playlist/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
+  const data = await response.json();
+  return data;
+};
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-import {getSingleAlbum} from "../../utils";
+import {getSinglePlaylist} from "../../utils";
 import { useState, useEffect } from "react";
 
 import LayoutDefault from "../../components/LayoutDefault";
@@ -9,14 +9,14 @@ import SongList from "../../components/SongsList";
 import StarRating from "../../components/StarRating";
 
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
-import {putAlbum} from "../../utils";
+import {putPlaylist} from "../../utils";
 
 
 
 
-const SingleAlbum = ({id}) => {
+const SinglePlaylist = ({id}) => {
 
-    const [album, setAlbum] = useState({
+    const [playlist, setPlaylist] = useState({
       cover: "",
       featuring: [],
       genres: [],
@@ -30,7 +30,7 @@ const SingleAlbum = ({id}) => {
 
     useEffect(() => {
       if (id) {
-        getSingleAlbum(id).then((data) => setAlbum(data))
+        getSinglePlaylist(id).then((data) => setPlaylist(data))
       }
     },[id])
 
@@ -39,18 +39,18 @@ const SingleAlbum = ({id}) => {
 
     const AddDelFavorite = () => { 
 
-      setAlbum({...album, favorite: !album.favorite});
+        setPlaylist({...playlist, favorite: !playlist.favorite});
     }
   
     useEffect(() => {
   
-      if (album !== undefined) {
+      if (playlist !== undefined) {
         
-        putAlbum(album.id , album);
+        putPlaylist(playlist.id , playlist);
   
       } 
     // eslint-disable-next-line
-    },[album])
+    },[playlist])
 
 
 
@@ -69,8 +69,8 @@ const SingleAlbum = ({id}) => {
           <div className={styles.box}>
             <div className={styles.box__cover}>
               <img
-                src={album?.cover}
-                alt={album?.title}
+                src={playlist?.cover}
+                alt={playlist?.title}
                 width="200"
                 height="200"
               /> 
@@ -78,19 +78,19 @@ const SingleAlbum = ({id}) => {
 
             <div className={styles.box__info}>
 
-              <h1>{album.title}</h1>
+              <h1>{playlist.title}</h1>
               <p>
-                {album.artist} ft. {album.featuring.join(", ")}
+                {playlist.artist} ft. {playlist.featuring.join(", ")}
               </p>
-              <p>{album.year}</p>
-              <p>{album.genres.join(" ")}</p>
+              <p>{playlist.year}</p>
+              <p>{playlist.genres.join(" ")}</p>
 
               <div className={styles.box__info__actions}>
                 <button onClick={() => AddDelFavorite()}>
-                  {album.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
+                  {playlist.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
                 </button>
                
-                <StarRating album={album} />
+                <StarRating playlist={playlist} />
                 <button onClick={hideElement}>Hide</button> 
               </div>
 
@@ -98,7 +98,7 @@ const SingleAlbum = ({id}) => {
    
           </div>
 
-          <SongList album={album} />
+          <SongList playlist={playlist} />
 
         </div>
  
@@ -108,4 +108,4 @@ const SingleAlbum = ({id}) => {
     
 }
 
-export default SingleAlbum;
+export default SinglePlaylist;

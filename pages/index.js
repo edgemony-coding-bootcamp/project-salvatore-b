@@ -10,19 +10,13 @@ import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 
 
-
 import { useRouter } from "next/router";
 
-import { MyContext } from "../Context/context";
 
 
 export default function Home() {
 
   const router = useRouter();
-
-  const {tokenForAll, setTokenForAll} = useContext(MyContext);
-
-  console.log("Cosa c'è? ===>", tokenForAll)
 
   const [inputSearchValue, setinputSearchValue] = useState("");
   const [allData, setallData] = useState([]);
@@ -87,6 +81,11 @@ export default function Home() {
         .then((data) => setToken(data.accessToken));
     }
   }, [credentials]);
+
+
+
+  
+
 
 
 

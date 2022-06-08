@@ -1,0 +1,67 @@
+.wrapper {
+    width: 100%;
+
+    .box {
+
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: #000;
+        background: linear-gradient(to right, #2c3e50, #bdc3c7);
+        border-radius: 10px;
+        margin-bottom: 30px;
+
+            
+            &__cover {
+                margin-right: 20px;
+                min-width: 200px;
+            }
+  
+            &__info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: #fff;
+                width: 100%;
+
+                &__actions {
+                    display: flex;
+                    justify-content: space-between
+                }
+
+                h1 {
+                    margin-bottom: 20px;
+                    font-size: 50px;
+                    line-height: 55px;
+                }
+
+                button {
+                    all: unset;
+                    font-size: 30px;
+                    cursor: pointer;
+                }
+
+            }
+
+
+
+            @media all and (max-width: 767px) {
+
+                flex-direction: column;
+                
+  
+                &__cover {
+                    margin: 0 auto;
+                    margin-bottom: 30px;   
+                }
+            
+              }
+
+    }
+
+}
+
+
+
+
+
