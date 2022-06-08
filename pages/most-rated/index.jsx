@@ -18,7 +18,6 @@ export default function MostRated() {
             const arrOnlyFavorites = arrAll.filter((el) => el.rating === 5);
 
             setallData(arrOnlyFavorites);
-            console.log('dati',allData);
 
         });
     // eslint-disable-next-line

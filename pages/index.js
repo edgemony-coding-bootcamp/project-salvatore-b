@@ -27,7 +27,6 @@ export default function Home() {
 
   const albumFilterFunc = (isPoppedAlbum) => {
     if (isPoppedAlbum) {
-      console.log("è", isPoppedAlbum, "quindi Caso 1");
       const arr2 = allData.filter((item) => item.iam === "album");
       setdisplayData(arr2);
     } else {

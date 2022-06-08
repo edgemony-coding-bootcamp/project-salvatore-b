@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 
 export default function UserLogged({ parloaLayout }) {
   function userSignup() {
-    console.log("visualizza la modale");
     parloaLayout();
   }
 

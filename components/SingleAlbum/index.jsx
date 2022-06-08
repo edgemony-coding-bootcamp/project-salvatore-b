@@ -14,6 +14,7 @@ import {putAlbum} from "../../utils";
 import { useRouter } from "next/router";
 
 
+
 const SingleAlbum = ({id}) => {
 
     const router = useRouter();
@@ -72,11 +73,6 @@ const SingleAlbum = ({id}) => {
 
       // Infine faccio la PUT
 
-      // console.log("Oggetto album originale ===>", album)
-      // console.log("Oggetto album modificato ===>", albumLocal);
-
-      // console.log("cosa passerò alla PUT", {...albumLocal})
-
       putAlbum(album.id, {...albumLocal});
 
       router.push("/");
@@ -97,7 +93,10 @@ const SingleAlbum = ({id}) => {
     <div className={styles.wrapper}>
           <div className={styles.box}>
             <div className={styles.box__cover}>
-              <img
+
+            {/* <Image src={album?.cover} alt={album?.title} width={200} height={200} /> */}
+
+             <img
                 src={album?.cover}
                 alt={album?.title}
                 width="200"
@@ -118,11 +117,10 @@ const SingleAlbum = ({id}) => {
                 <button onClick={() => AddDelFavorite()}>
                   {album.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
                 </button>
-               
-                <StarRating album={album} />
 
                 <button onClick={hideElement}><AiOutlineDislike /></button> 
                 
+                <StarRating  album={album} />
               </div>
 
             </div>

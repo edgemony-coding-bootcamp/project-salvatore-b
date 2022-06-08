@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext} from "react";
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import imgLogin from "../../public/img_login.png";
 import logo from "../../public/logo_soundwave.png";
@@ -8,8 +8,6 @@ import InputLogin from "../../components/InputLogin";
 import styles from "./styles.module.scss";
 
 import { useRouter } from "next/router";
-
-import { MyContext } from "../../Context/context";
 
 
 
@@ -21,12 +19,9 @@ const Login = () => {
   const [token, setToken] = useState("");
 
 
-  const {idUser, setIdUser} = useContext(MyContext);
-  const {tokenForAll, setTokenForAll} = useContext(MyContext);
-
 
   useEffect(() => {
-    console.log("qui credentials ===>>", credentials);
+
     if (credentials.email && credentials.password) {
       fetch("https://edgemony-backend.herokuapp.com/login", {
         method: "POST",
@@ -39,7 +34,7 @@ const Login = () => {
         setToken(data.accessToken);
         
         localStorage.setItem("userId", data.user.id)
-        setIdUser(data.user.id)
+   
         }
         )
 
@@ -49,7 +44,6 @@ const Login = () => {
 
   useEffect(() => {
 
-    setTokenForAll(token);
 
     localStorage.setItem("token", token);
 

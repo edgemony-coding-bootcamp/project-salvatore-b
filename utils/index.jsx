@@ -1,10 +1,3 @@
-//import { useContext } from "react";
-//import { MyContext } from "../Context/context";
-
-//import {TOKEN} from "./token" 
-
-//const {tokenForAll, setTokenForAll} = useContext(MyContext);
-
 export const getAlbum = async () => {
   const response = await fetch(
     `https://edgemony-backend.herokuapp.com/440/albums/`,
@@ -16,11 +9,11 @@ export const getAlbum = async () => {
   );
   const data = await response.json();
 
-
-    data.forEach((data) => {
-      data[`iam`] = "album";
-    });
-
+    if (localStorage.getItem("token") != "") {
+      data.forEach((data) => {
+        data[`iam`] = "album";
+      });
+    }
 
   return data;
 };
@@ -36,11 +29,11 @@ export const getPlaylist = async () => {
   );
   const data = await response.json();
 
-
+  if (localStorage.getItem("token") != "") {
     data.forEach((data) => {
       data[`iam`] = "playlist";
     });
-
+  }
 
   
   return data;

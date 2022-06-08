@@ -8,7 +8,6 @@ import styles from "./styles.module.scss";
 
 const LayoutDefault = ({ children }) => {
   function parloaLayout() {
-    console.log("sei in layout");
     setViewModalSignUp({
       visible: true,
     });

@@ -25,10 +25,7 @@ const SinglePlaylist = ({id}) => {
       songs: []
     });
 
-    // const {tokenForAll, setTokenForAll} = useContext(MyContext);
-    // const {idUser, setIdUser} = useContext(MyContext);
 
-    // console.log("id e token ===>>>>>", idUser,tokenForAll)
 
     useEffect(() => {
       if (id) {
