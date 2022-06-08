@@ -36,8 +36,13 @@
                     &__info h2 {
             
                         font-size: 1rem;
-                        margin: 0.5rem 0 0.5rem 0;
+                        margin: 0.5rem 0 0 0;
         
+                    }
+
+                    .artist {
+                        color: $grey;
+                        font-size: 0.8rem;
                     }
 
             }

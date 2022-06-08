@@ -13,7 +13,7 @@ export default function UserLogged({ parloaLayout }) {
       <div className={styles.img_user}>
         <HiOutlineUserCircle />
       </div>
-      <div className={styles.info_user}>User Logged</div>
+      <div className={styles.info_user}>You</div>
     </button>
   );
 }

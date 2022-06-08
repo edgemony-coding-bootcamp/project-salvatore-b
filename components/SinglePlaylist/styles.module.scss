@@ -1,3 +1,5 @@
+@import '../../styles/palette.module.scss';
+
 .wrapper {
     width: 100%;
 
@@ -6,8 +8,7 @@
         display: flex;
         align-items: center;
         padding: 20px;
-        background: #000;
-        background: linear-gradient(to right, #2c3e50, #bdc3c7);
+        background-image: linear-gradient(to right, $yellow, $primary-color);
         border-radius: 10px;
         margin-bottom: 30px;
 

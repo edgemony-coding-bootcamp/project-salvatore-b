@@ -62,6 +62,7 @@ const Login = () => {
           height={1000}
           alt="ragazza soundwave"
           layout="responsive"
+          priority
         />
       </div>
       <div className={styles.allinfo}>
