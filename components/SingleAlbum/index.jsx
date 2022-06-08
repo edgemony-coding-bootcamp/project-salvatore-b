@@ -11,10 +11,12 @@ import StarRating from "../../components/StarRating";
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
 import {putAlbum} from "../../utils";
 
-
+import { useRouter } from "next/router";
 
 
 const SingleAlbum = ({id}) => {
+
+    const router = useRouter();
 
     const [album, setAlbum] = useState({
       cover: "",
@@ -51,10 +53,6 @@ const SingleAlbum = ({id}) => {
 
     const hideElement = () => {
 
-      // console.log('il tuo id da togliere', valoredatogliere)
-      // // setAlbum({...album, ELEMENTODARIMUOVERE })
-      // console.log('il tuo nuovo oggetto',album)
-
 
 
       // Array contenente gli users
@@ -72,12 +70,16 @@ const SingleAlbum = ({id}) => {
 
 
 
-      // Infine faccio la PUT..............................
+      // Infine faccio la PUT
 
-      console.log("Oggetto album originale ===>", album)
-      console.log("Oggetto album modificato ===>", albumLocal);
+      // console.log("Oggetto album originale ===>", album)
+      // console.log("Oggetto album modificato ===>", albumLocal);
 
-      
+      // console.log("cosa passerò alla PUT", {...albumLocal})
+
+      putAlbum(album.id, {...albumLocal});
+
+      router.push("/");
 
 
     }

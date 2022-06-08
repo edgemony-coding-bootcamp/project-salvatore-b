@@ -11,10 +11,12 @@ import StarRating from "../../components/StarRating";
 import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
 import {putPlaylist} from "../../utils";
 
-
+import { useRouter } from "next/router";
 
 
 const SinglePlaylist = ({id}) => {
+
+    const router = useRouter();
 
     const [playlist, setPlaylist] = useState({
       cover: "",
@@ -54,8 +56,36 @@ const SinglePlaylist = ({id}) => {
 
 
 
+
     const hideElement = () => {
-      console.log("Okkkk")
+
+
+      // Array contenente gli users
+      const users = playlist.users;
+
+      //Id proveniente dal Local Storage
+      const idToRemove = parseInt(localStorage.getItem("userId"));
+
+      // Cancello l'user creando un nuovo array di utenti senza quest'ultimo
+      const filteredUsers = users.filter(item => item !== idToRemove)
+        
+
+      // Ricreo l'oggetto playlist con gli users aggiornati
+      const playlistLocal = {...playlist, users: [...filteredUsers] };
+
+
+
+      // Infine faccio la PUT
+
+      // console.log("Oggetto playlist originale ===>", playlist)
+      // console.log("Oggetto playlist modificato ===>", playlistLocal);
+
+      // console.log("cosa passerò alla PUT", {...playlistLocal})
+
+      putPlaylist(playlist.id, {...playlistLocal});
+
+      router.push("/");
+
     }
 
 
