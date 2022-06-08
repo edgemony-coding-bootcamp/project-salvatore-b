@@ -1,3 +1,5 @@
+@import '../../styles/palette.module.scss';
+
 .star_rating {
 
     button {
@@ -9,14 +11,14 @@
     }
 
     button:hover {
-      color: red !important;
+      color: $yellow ;
     }
 
       .on {
         color: rgb(255, 255, 255);
       }
       .off {
-        color: #ccc !important;
+        color: #ccc !important ;
       }
 
 }

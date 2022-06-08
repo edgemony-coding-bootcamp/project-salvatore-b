@@ -29,8 +29,21 @@
 
                 &__actions {
                     display: flex;
-                    justify-content: space-between
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 10px;
+
                 }
+
+                .rating {
+                    text-align: right;
+                }
+
+                
+
+                
+
+        
 
                 h1 {
                     margin-bottom: 20px;
