@@ -18,8 +18,8 @@ export default function ModalSignup({ viewModalSignup, setViewModalSignUp }) {
   };
 
   const signOut = () => {
-    // localStorage.clear();
-    localStorage.removeItem("token");
+    localStorage.clear();
+    // localStorage.removeItem("token");
 
     router.push("/login");
   };

@@ -1,15 +1,20 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
 
+
 import Link from "next/link";
 
 export default function CardAlbum({ allData, inputSearchValue }) {
+
+
+
   return (
 
     <div className={styles.all}>
       {allData &&
         allData
-          ?.filter(
+        .filter((el)=> el.users.includes(parseInt(localStorage.getItem("userId"))))
+          .filter(
             (el) =>
               el?.title
                 .toLowerCase()
@@ -35,7 +40,7 @@ export default function CardAlbum({ allData, inputSearchValue }) {
                     </div>
                     <div className={styles.CardAlbum__container__info}>
                       <h2>{el?.title}</h2>
-                      {/* <p className={styles.year}>{el?.year}</p> */}
+                      <p className={styles.year}>{el?.artist}</p>
                     </div>
                   </a>
                 </Link>

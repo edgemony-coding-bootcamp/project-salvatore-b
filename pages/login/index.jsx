@@ -37,8 +37,9 @@ const Login = () => {
         .then((data) => {
 
         setToken(data.accessToken);
+        
+        localStorage.setItem("userId", data.user.id)
         setIdUser(data.user.id)
-
         }
         )
 

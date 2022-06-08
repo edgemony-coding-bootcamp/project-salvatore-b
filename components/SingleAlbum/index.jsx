@@ -23,25 +23,13 @@ const SingleAlbum = ({id}) => {
       songs: []
     });
 
-    // const {tokenForAll, setTokenForAll} = useContext(MyContext);
-    // const {idUser, setIdUser} = useContext(MyContext);
-
-    // console.log("id e token ===>>>>>", idUser,tokenForAll)
-
     useEffect(() => {
       if (id) {
         getSingleAlbum(id).then((data) => setAlbum(data))
       }
     },[id])
-
-   
-
-
-    const AddDelFavorite = () => { 
-
-      setAlbum({...album, favorite: !album.favorite});
-    }
   
+
     useEffect(() => {
   
       if (album !== undefined) {
@@ -53,10 +41,49 @@ const SingleAlbum = ({id}) => {
     },[album])
 
 
+    const AddDelFavorite = () => { 
+
+      setAlbum({...album, favorite: !album.favorite});
+    }
+
+
+
 
     const hideElement = () => {
-      console.log("Okkkk")
+
+      // console.log('il tuo id da togliere', valoredatogliere)
+      // // setAlbum({...album, ELEMENTODARIMUOVERE })
+      // console.log('il tuo nuovo oggetto',album)
+
+
+
+      // Array contenente gli users
+      const users = album.users;
+
+      //Id proveniente dal Local Storage
+      const idToRemove = parseInt(localStorage.getItem("userId"));
+
+      // Cancello l'user creando un nuovo array di utenti senza quest'ultimo
+      const filteredUsers = users.filter(item => item !== idToRemove)
+        
+
+      // Ricreo l'oggetto album con gli users aggiornati
+      const albumLocal = {...album, users: [...filteredUsers] };
+
+
+
+      // Infine faccio la PUT..............................
+
+      console.log("Oggetto album originale ===>", album)
+      console.log("Oggetto album modificato ===>", albumLocal);
+
+      
+
+
     }
+
+
+
 
 
 
