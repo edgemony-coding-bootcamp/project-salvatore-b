@@ -3,8 +3,12 @@
 .input_container {
 
     display: flex;
-    width: 100%;
+    max-width: 400px;
     justify-content: flex-start;
+
+    @media all and (max-width: 767px) {
+        max-width: 100%;
+    }
     
     input {
         border-radius: 20px 0 0 20px;
@@ -31,4 +35,7 @@
         color: $primary-color;
 
     }
+
+
+
 }

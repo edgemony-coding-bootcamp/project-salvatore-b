@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import Image from "next/image";
 import imgLogin from "../../public/img_login.png";
 import logo from "../../public/logo_soundwave.png";
@@ -9,14 +9,19 @@ import styles from "./styles.module.scss";
 
 import { useRouter } from "next/router";
 
+
+
+
 const Login = () => {
   const router = useRouter();
 
   const [credentials, setCredentials] = useState({});
   const [token, setToken] = useState("");
 
+
+
   useEffect(() => {
-    console.log("qui credentials ===>>", credentials);
+
     if (credentials.email && credentials.password) {
       fetch("https://edgemony-backend.herokuapp.com/login", {
         method: "POST",
@@ -24,21 +29,28 @@ const Login = () => {
         body: JSON.stringify(credentials),
       })
         .then((response) => response.json())
-        .then((data) => setToken(data.accessToken));
-    }
+        .then((data) => {
 
-    // if (localStorage.getItem('token')) {
-    //     window.location.href = "/";
-    // }
+        setToken(data.accessToken);
+        
+        localStorage.setItem("userId", data.user.id)
+   
+        }
+        )
+
+    }
+  // eslint-disable-next-line
   }, [credentials]);
 
   useEffect(() => {
+
+
     localStorage.setItem("token", token);
 
     if (localStorage.getItem("token")) {
-      // window.location.href = "/";
       router.push("/");
     }
+  // eslint-disable-next-line
   }, [token]);
 
   return (

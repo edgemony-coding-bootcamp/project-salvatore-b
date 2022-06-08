@@ -24,8 +24,8 @@
 
   .user {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 20px;
   }
   
 
@@ -46,6 +46,7 @@
         width: 100%;
         height: auto;
         padding: 10px 20px;
+        z-index: 1;
     }
     
     .main {

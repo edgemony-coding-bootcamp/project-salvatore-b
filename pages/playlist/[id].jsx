@@ -1,121 +1,14 @@
-import SongList from "../../components/SongsList";
-import styles from "./styles.module.scss";
-import StarRating from '../../components/StarRating';
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
-
-import {putPlaylist} from "../../utils";
-
-import LayoutDefault from "../../components/LayoutDefault";
-
-export const getStaticProps = async (context) => {
-  const id = context.params.id;
-  const res = await fetch(
-    `https://edgemony-backend.herokuapp.com/440/playlist/${id}`,
-    {
-      headers: {
-        Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1ODk2OTksImV4cCI6MTY1NDU5MzI5OSwic3ViIjoiMSJ9.XKl8EzXcGonMkV8PBW54hI4phWsMfgD6Z8mFuN9VLn0"}`,
-      },
-    }
-  );
-  const data = await res.json();
-
-  return {
-    props: { playlist: data },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const res = await fetch(`https://edgemony-backend.herokuapp.com/440/playlist/`,
-  {
-    headers: {
-      Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAbWFpbC5jb20iLCJpYXQiOjE2NTQ1ODk2OTksImV4cCI6MTY1NDU5MzI5OSwic3ViIjoiMSJ9.XKl8EzXcGonMkV8PBW54hI4phWsMfgD6Z8mFuN9VLn0"}`,
-    },
-  }
-  );
-  const data = await res.json();
-
-  const paths = data.map((playlist) => {
-    return {
-      params: { id: playlist.id.toString() },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
+import { useRouter } from "next/router";
+import SinglePlaylist from "../../components/SinglePlaylist";
 
 export default function PlaylistId({ playlist }) {
 
-  const [playlistLocal,setPlaylistLocal] = useState(playlist);
+  const router = useRouter();
+  const { id } = router.query;
 
-  const AddDelFavorite = () => { 
-
-    setPlaylistLocal({...playlist, favorite: !playlistLocal.favorite});
-  }
-
-  useEffect(() => {
-
-    if (playlistLocal !== undefined) {
-      
-      putPlaylist(playlist.id , playlistLocal);
-
-    } 
-  // eslint-disable-next-line
-  },[playlistLocal])
-
-
-
-  
   return (
     <>
-    
-  <LayoutDefault>
-
-  <div className={styles.wrapper}>
-
-    <div className={styles.box}>
-      <div className={styles.box__cover}>
-        <Image
-          src={playlist.cover}
-          alt={playlist.title}
-          width={200}
-          height={200}
-        />
-      </div>
-
-
-      <div className={styles.box__info}>
-
-        <h1>{playlist.title}</h1>
-        <p>
-          {playlist.artist} ft. {playlist.featuring.join(", ")}
-        </p>
-        <p>{playlist.year}</p>
-        <p>{playlist.genres.join(" ")}</p>
-
-        <div className={styles.box__info__actions}>
-          <button onClick={() => AddDelFavorite()}>
-            {playlistLocal.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
-          </button>
-          <StarRating playlist={playlist} />
-        </div>
-
-      </div>
-
-
-  </div>
-
-
-
-    <SongList playlist={playlist} />
-  </div>
-
-  </LayoutDefault>
-
+    <SinglePlaylist id={id} />
     </>
   );
 }

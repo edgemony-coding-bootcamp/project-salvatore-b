@@ -18,7 +18,7 @@ const InputLogin = ({ setCredentials }) => {
   return (
 
       <form onSubmit={onSubmit} className={styles.form}>
-        <label for="email">Email</label>
+        <label htmlFor="email">Email</label>
         <input
           type="email"
           id="email"
@@ -27,7 +27,7 @@ const InputLogin = ({ setCredentials }) => {
           onChange={(e) => setInputMailValue(e.target.value)}
           required
         />
-        <label for="password">Password</label>
+        <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"

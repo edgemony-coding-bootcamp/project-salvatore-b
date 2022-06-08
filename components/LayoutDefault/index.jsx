@@ -6,9 +6,8 @@ import ModalSignup from "../../components/ModalSignup";
 import {useState} from "react";
 import styles from "./styles.module.scss";
 
-const LayoutDefault = ({ children, credentials }) => {
+const LayoutDefault = ({ children }) => {
   function parloaLayout() {
-    console.log("sei in layout");
     setViewModalSignUp({
       visible: true,
     });
@@ -18,7 +17,7 @@ const LayoutDefault = ({ children, credentials }) => {
     visible: false,
   });
 
-  console.log('credenziali in layout default', credentials);
+
 
   return (
     <>
@@ -30,11 +29,14 @@ const LayoutDefault = ({ children, credentials }) => {
         <ModalSignup setViewModalSignUp={setViewModalSignUp} viewModalSignup={viewModalSignup} />
       </div>
 
-      <main className={styles.main}>{children}</main>
-
+      <main className={styles.main}>{children}
       <div className={styles.user}>
-        <UserLogged parloaLayout={parloaLayout} credentials={credentials}/>
+        <UserLogged parloaLayout={parloaLayout}/>
       </div>
+      
+      </main>
+
+
 
       {/* <footer className={styles.footer}>
             <Footer />

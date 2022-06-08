@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import CardAlbum from "../components/CardAlbum";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
@@ -9,9 +9,9 @@ import FilterButtonAlbum from "../components/FilterButtonAlbum";
 import FilterButtonPlaylist from "../components/FilterButtonPlaylist";
 import LayoutDefault from "../components/LayoutDefault";
 
-import MostLiked from "../components/MostLiked";
-import { AiFillStar } from "react-icons/ai";
+
 import { useRouter } from "next/router";
+
 
 
 export default function Home() {
@@ -27,7 +27,6 @@ export default function Home() {
 
   const albumFilterFunc = (isPoppedAlbum) => {
     if (isPoppedAlbum) {
-      console.log("è", isPoppedAlbum, "quindi Caso 1");
       const arr2 = allData.filter((item) => item.iam === "album");
       setdisplayData(arr2);
     } else {
@@ -56,7 +55,7 @@ export default function Home() {
       router.push("/login")
     }
  
-
+ // eslint-disable-next-line
   }, []);
 
 
@@ -84,6 +83,11 @@ export default function Home() {
 
 
 
+  
+
+
+
+
   return (
     <>
       <Head>
@@ -92,8 +96,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
-      <LayoutDefault credentials={credentials}>
+      <LayoutDefault>
        
 
         <div className={styles.wrapper}>
@@ -116,16 +119,6 @@ export default function Home() {
               allData={displayData}
               inputSearchValue={inputSearchValue}
             />
-          </div>
-
-          <div className={styles.wrapper__container}>
-            <h2>
-              Most Liked
-              <span className={styles.star_icon}>
-                <AiFillStar />
-              </span>
-            </h2>
-            <MostLiked allData={allData} />
           </div>
 
 

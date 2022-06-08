@@ -1,12 +1,11 @@
 import { HiOutlineUserCircle } from "react-icons/hi";
 import styles from "./styles.module.scss";
 
-export default function UserLogged({ parloaLayout, credentials }) {
+export default function UserLogged({ parloaLayout }) {
   function userSignup() {
-    console.log("visualizza la modale");
     parloaLayout();
   }
-  console.log('======>',credentials)
+
   
 
   return (
@@ -14,7 +13,7 @@ export default function UserLogged({ parloaLayout, credentials }) {
       <div className={styles.img_user}>
         <HiOutlineUserCircle />
       </div>
-      <div className={styles.info_user}>{credentials?.email != undefined ? credentials.email : "Sign up"}</div>
+      <div className={styles.info_user}>User Logged</div>
     </button>
   );
 }
