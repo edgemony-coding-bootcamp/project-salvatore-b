@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 import SongList from "../../components/SongsList";
 import StarRating from "../../components/StarRating";
 
-import { AiFillHeart,AiOutlineHeart} from 'react-icons/ai';
+import { AiFillHeart,AiOutlineHeart,AiOutlineDislike } from 'react-icons/ai';
 import {putPlaylist} from "../../utils";
 
 import { useRouter } from "next/router";
@@ -121,7 +121,7 @@ const SinglePlaylist = ({id}) => {
                 </button>
                
                 <StarRating playlist={playlist} />
-                <button onClick={hideElement}>Hide</button> 
+                <button onClick={hideElement}><AiOutlineDislike /></button> 
               </div>
 
             </div>

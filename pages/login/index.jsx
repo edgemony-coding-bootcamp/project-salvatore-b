@@ -44,23 +44,19 @@ const Login = () => {
         )
 
     }
+  // eslint-disable-next-line
   }, [credentials]);
 
   useEffect(() => {
 
-    
-
-    console.log("ADESSSSSSSSSSOOOOOOOOOOOOOOO? ===>", idUser, tokenForAll)
-
     setTokenForAll(token);
-
-    //console.log("Cosa c'è? ===>", tokenForAll)
 
     localStorage.setItem("token", token);
 
     if (localStorage.getItem("token")) {
       router.push("/");
     }
+  // eslint-disable-next-line
   }, [token]);
 
   return (

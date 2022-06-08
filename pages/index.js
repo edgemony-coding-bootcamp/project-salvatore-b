@@ -56,7 +56,7 @@ export default function Home() {
       router.push("/login")
     }
  
-
+ // eslint-disable-next-line
   }, []);
 
 

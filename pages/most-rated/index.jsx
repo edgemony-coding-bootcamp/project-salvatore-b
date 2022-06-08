@@ -21,7 +21,7 @@ export default function MostRated() {
             console.log('dati',allData);
 
         });
-
+    // eslint-disable-next-line
     }, []);
 
   return (
