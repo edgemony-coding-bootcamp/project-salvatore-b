@@ -43,8 +43,8 @@ export default function CardAlbum({ allData, inputSearchValue }) {
                       <Image
                         src={el?.cover}
                         alt={el?.title}
-                        width={140}
-                        height={140}
+                        width={160}
+                        height={160}
                       />
                     </div>
                     <div className={styles.CardAlbum__container__info}>

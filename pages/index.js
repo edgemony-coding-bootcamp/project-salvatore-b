@@ -44,10 +44,12 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (localStorage.getItem('token')) {
     Promise.all([getAlbum(), getPlaylist()]).then((values) => {
       setallData([...values[0], ...values[1]]);
       setdisplayData([...values[0], ...values[1]]);
-    });
+    
+    })}
 
 
     //controllo localstorage
@@ -70,7 +72,7 @@ export default function Home() {
 
 
   useEffect(() => {
-    if (credentials) {
+    if (credentials && localStorage.getItem('token')) {
       fetch("https://edgemony-backend.herokuapp.com/users", {
         method: "POST",
         headers: { "Content-type": "application/json" },

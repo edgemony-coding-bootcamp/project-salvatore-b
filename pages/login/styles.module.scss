@@ -1,15 +1,19 @@
 .loginpage {
     display: flex;
-    
+    height: 100vh;
+
 
     .img_container {
-        width: 80%;
+        width: 55%;
         background-color: red;
+        background-image: url('../../public/img_login.png');
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .allinfo {
         margin: 0 auto;
-        width: 50%;
+        width: 45%;
 
         .logo_container {
             padding: 2rem;
@@ -25,11 +29,13 @@
             text-align: center;
         }
     }
+
+
+
+    @media all and (max-width: 767px) {
+        .img_container {display: none;}
+        .allinfo { width: 100%;}
+    }
+
+
 }
-
-
-
-
-
-
-

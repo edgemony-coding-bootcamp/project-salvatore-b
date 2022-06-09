@@ -17,7 +17,7 @@ const SingleAlbum = ({ id }) => {
   const router = useRouter();
 
   const [album, setAlbum] = useState({
-    cover: "",
+    cover: "https://picsum.photos/200/300",
     featuring: [],
     genres: [],
     songs: [],
@@ -65,13 +65,11 @@ const SingleAlbum = ({ id }) => {
       <div className={styles.wrapper}>
         <div className={styles.box}>
           <div className={styles.box__cover}>
-            {/* <Image src={album?.cover} alt={album?.title} width={200} height={200} /> */}
-
-            <img
-              src={album?.cover}
+            <Image
+              src={album.cover}
               alt={album?.title}
-              width="200"
-              height="200"
+              width={200}
+              height={200}
             />
           </div>
 
@@ -91,11 +89,10 @@ const SingleAlbum = ({ id }) => {
               <button onClick={hideElement}>
                 <AiOutlineDislike />
               </button>
-
             </div>
             <div className={styles.rating}>
-                <StarRating album={album} />
-              </div>
+              <StarRating album={album} />
+            </div>
           </div>
         </div>
 
