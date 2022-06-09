@@ -82,7 +82,7 @@ const SingleAlbum = ({ id }) => {
             <p>{album.genres.join(" ")}</p>
 
             <div className={styles.box__info__actions}>
-              <button onClick={() => AddDelFavorite()}>
+              <button className={styles.heart} onClick={() => AddDelFavorite()}>
                 {album.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
               </button>
 

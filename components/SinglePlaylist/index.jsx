@@ -87,7 +87,7 @@ const SinglePlaylist = ({ id }) => {
             <p>{playlist.genres.join(" ")}</p>
 
             <div className={styles.box__info__actions}>
-              <button onClick={() => AddDelFavorite()}>
+              <button className={styles.heart} onClick={() => AddDelFavorite()}>
                 {playlist.favorite ? <AiFillHeart /> : <AiOutlineHeart />}
               </button>
 
