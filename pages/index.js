@@ -29,15 +29,16 @@ export default function Home() {
     if (isPoppedAlbum) {
       const arr2 = allData.filter((item) => item.iam === "album");
       setdisplayData(arr2);
+      setPoppedPlaylist(true);
     } else {
       setdisplayData(allData);
     }
   };
-
   const playlistFilterFunc = (isPoppedPlaylist) => {
     if (isPoppedPlaylist) {
       const arr2 = allData.filter((item) => item.iam === "playlist");
       setdisplayData(arr2);
+      setPopAlbum(true);
     } else {
       setdisplayData(allData);
     }
