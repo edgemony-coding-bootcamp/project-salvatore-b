@@ -24,7 +24,7 @@
 
   .user {
     position: fixed;
-    top: 20px;
+    top: 10px;
     right: 20px;
   }
   
@@ -38,7 +38,7 @@
 
   /* RESPONSIVE STRUCTURE ***********************/
   
-  @media all and (max-width: 767px) {
+  @media all and (max-width: 991px) {
   
     .navbar {
         top: auto;

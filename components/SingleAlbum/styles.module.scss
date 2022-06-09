@@ -72,8 +72,14 @@
                     margin: 0 auto;
                     margin-bottom: 30px;   
                 }
-            
-              }
+
+                &__info {
+                    h1 {
+                        font-size: 40px;
+                        line-height: 45px;
+                    }
+                }           
+            }
 
     }
 
