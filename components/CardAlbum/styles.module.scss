@@ -25,6 +25,10 @@
                         }
                     }
 
+                    &__info {
+                        width: 160px;
+                    }
+
                     &__info h2 {
                         font-size: 20px;
                         margin: 10px 0;
@@ -32,7 +36,8 @@
                     }
 
                     &__info p {
-                        font-size: 15px;      
+                        font-size: 15px;  
+                        color: $grey;    
                     }
             }
         }
@@ -43,9 +48,9 @@
         } 
 
 
-        @media all and (max-width: 1000px) {
+        @media all and (max-width: 1200px) {
             .CardAlbum {
-                width: 33%;
+                width: 25%;
             }
         }
 
