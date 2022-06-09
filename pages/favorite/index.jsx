@@ -34,7 +34,7 @@ const Favorite = () => {
         <>  
         <LayoutDefault>
             <div className={styles.wrapper}>
-                <h2>Favoriti:</h2>
+                <h2>Favorites</h2>
                 {allData.length > 0 ? <CardAlbum allData={allData} inputSearchValue="" /> : "" }
             </div>
 

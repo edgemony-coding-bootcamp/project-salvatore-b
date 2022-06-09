@@ -63,7 +63,7 @@ const Navbar = () => {
               ) : (
                 <MdFavoriteBorder />
               )}
-              Favorite
+              Favorites
             </a>
           </Link>
         </li>

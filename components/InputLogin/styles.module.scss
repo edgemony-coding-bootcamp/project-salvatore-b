@@ -2,13 +2,12 @@
 
     
 .form {
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // gap: 1px;
     margin-top: 2rem;
     padding: 5rem;
 
+    @media all and (max-width: 767px) {
+        padding: 2rem;
+    }
 
     label {
         text-align: left;
@@ -16,14 +15,11 @@
         padding-left: 1rem;
         color: rgb(112, 112, 112);
         font-weight: 600;
-
     }
 
     input {
         width: 100%;
-        font-weight: 600;
-        min-width: 400px;
-        
+        font-weight: 600;    
     }
 
     input[type="email"],input[type="password"] {

@@ -44,10 +44,12 @@ export default function Home() {
   };
 
   useEffect(() => {
+    if (localStorage.getItem('token')) {
     Promise.all([getAlbum(), getPlaylist()]).then((values) => {
       setallData([...values[0], ...values[1]]);
       setdisplayData([...values[0], ...values[1]]);
-    });
+    
+    })}
 
 
     //controllo localstorage
@@ -59,27 +61,27 @@ export default function Home() {
   }, []);
 
 
-  const [credentials, setCredentials] = useState({});
-  const [token, setToken] = useState("");
+  // const [credentials, setCredentials] = useState({});
+  // const [token, setToken] = useState("");
 
 
-  function getCredentials(inputMailValue, inputPasswordValue) {
-    setCredentials({ email: inputMailValue, password: inputPasswordValue });
-  }
+  // function getCredentials(inputMailValue, inputPasswordValue) {
+  //   setCredentials({ email: inputMailValue, password: inputPasswordValue });
+  // }
 
 
 
-  useEffect(() => {
-    if (credentials) {
-      fetch("https://edgemony-backend.herokuapp.com/users", {
-        method: "POST",
-        headers: { "Content-type": "application/json" },
-        body: JSON.stringify(credentials),
-      })
-        .then((response) => response.json())
-        .then((data) => setToken(data.accessToken));
-    }
-  }, [credentials]);
+  // useEffect(() => {
+  //   if (credentials && localStorage.getItem('token')) {
+  //     fetch("https://edgemony-backend.herokuapp.com/users", {
+  //       method: "POST",
+  //       headers: { "Content-type": "application/json" },
+  //       body: JSON.stringify(credentials),
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => setToken(data.accessToken));
+  //   }
+  // }, [credentials]);
 
 
 

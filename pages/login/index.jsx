@@ -28,16 +28,18 @@ const Login = () => {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(credentials),
       })
-        .then((response) => response.json())
-        .then((data) => {
-
-        setToken(data.accessToken);
-        
-        localStorage.setItem("userId", data.user.id)
-   
-        }
+        .then((response) => {
+          if (response.ok) { 
+            return response.json();
+           }
+           return Promise.reject(response); 
+        })
+        .then((data, status) => {
+            setToken(data.accessToken);
+            localStorage.setItem("userId", data.user.id)
+          }
         )
-
+        .catch(error => alert('Invalid credentials'));
     }
   // eslint-disable-next-line
   }, [credentials]);
@@ -56,13 +58,7 @@ const Login = () => {
   return (
     <div className={styles.loginpage}>
       <div className={styles.img_container}>
-        <Image
-          src={imgLogin}
-          width={1000}
-          height={1000}
-          alt="ragazza soundwave"
-          layout="responsive"
-        />
+        
       </div>
       <div className={styles.allinfo}>
         <div className={styles.logo_container}>

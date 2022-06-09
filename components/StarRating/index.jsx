@@ -6,7 +6,7 @@ import { putRatingAlbum, putRatingPlaylist } from '../../utils';
 export default function StarRating({ album, playlist }) {
   console.log('il tuo rating album è', album?.rating);
   console.log('il tuo rating playlist è', playlist?.rating);
-  const InitialRating = album ? album?.rating : playlist?.rating;
+  const InitialRating = album ? album.rating : playlist.rating;
   const [rating, setRating] = useState(InitialRating);
   const [hover, setHover] = useState(0);
   
@@ -35,7 +35,7 @@ export default function StarRating({ album, playlist }) {
             onMouseEnter={() => setHover(index)}
             onMouseLeave={() => setHover(rating)}
           >
-            <span className={styles.star}>{styles.off ? <AiFillStar/> : ''}</span>
+            <span className={styles.star}>{styles.off ? <AiFillStar size="1.2rem"/> : ''}</span>
           </button>
         );
       })}
