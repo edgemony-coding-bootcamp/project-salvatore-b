@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.scss";
 import CardAlbum from "../components/CardAlbum";
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
 import { getAlbum, getPlaylist } from "../utils";
 import { useState } from "react";
 import InputSearch from "../components/InputSearch";
@@ -29,15 +29,16 @@ export default function Home() {
     if (isPoppedAlbum) {
       const arr2 = allData.filter((item) => item.iam === "album");
       setdisplayData(arr2);
+      setPoppedPlaylist(true);
     } else {
       setdisplayData(allData);
     }
   };
-
   const playlistFilterFunc = (isPoppedPlaylist) => {
     if (isPoppedPlaylist) {
       const arr2 = allData.filter((item) => item.iam === "playlist");
       setdisplayData(arr2);
+      setPopAlbum(true);
     } else {
       setdisplayData(allData);
     }
@@ -59,35 +60,6 @@ export default function Home() {
  
  // eslint-disable-next-line
   }, []);
-
-
-  // const [credentials, setCredentials] = useState({});
-  // const [token, setToken] = useState("");
-
-
-  // function getCredentials(inputMailValue, inputPasswordValue) {
-  //   setCredentials({ email: inputMailValue, password: inputPasswordValue });
-  // }
-
-
-
-  // useEffect(() => {
-  //   if (credentials && localStorage.getItem('token')) {
-  //     fetch("https://edgemony-backend.herokuapp.com/users", {
-  //       method: "POST",
-  //       headers: { "Content-type": "application/json" },
-  //       body: JSON.stringify(credentials),
-  //     })
-  //       .then((response) => response.json())
-  //       .then((data) => setToken(data.accessToken));
-  //   }
-  // }, [credentials]);
-
-
-
-  
-
-
 
 
   return (

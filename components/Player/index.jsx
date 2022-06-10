@@ -17,6 +17,7 @@ export default function Player() {
     setPlaying(!isPlaying);
   };
 
+
   return (
     <div className={styles.player_all}>
       <div className={styles.img_container}>{/* <Image /> */}</div>

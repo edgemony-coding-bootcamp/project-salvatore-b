@@ -10,16 +10,20 @@
     }
 
     label {
+        display: block;
         text-align: left;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding-left: 1rem;
         color: rgb(112, 112, 112);
         font-weight: 600;
+        margin-bottom: 5px;
+
     }
 
     input {
         width: 100%;
-        font-weight: 600;    
+        font-weight: 600;
+        font-size: 0.9rem;
     }
 
     input[type="email"],input[type="password"] {
