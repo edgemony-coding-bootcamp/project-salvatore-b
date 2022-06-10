@@ -37,7 +37,7 @@ const LayoutDefault = ({ children }) => {
         </div>
       </main>
 
-      <div className={styles.player_container}>
+      <div className={styles.player}>
         <Player />
       </div>
     </>

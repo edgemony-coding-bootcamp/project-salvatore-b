@@ -19,7 +19,10 @@
                 align-items: center;
 
                     &__img {
-                        text-align: center;
+                        position: relative;
+                        width: 160px;
+                        height: 160px;
+           
                         img {
                             border-radius: 10px;
                         }
@@ -27,17 +30,16 @@
 
                     &__info {
                         width: 160px;
-                    }
 
-                    &__info h2 {
-                        font-size: 20px;
-                        margin: 10px 0;
-        
-                    }
+                        h2 {
+                            font-size: 20px;
+                            margin: 10px 0;
+                        }
 
-                    &__info p {
-                        font-size: 15px;  
-                        color: $grey;    
+                        p {
+                            font-size: 15px;  
+                            color: $grey;    
+                        }
                     }
             }
         }
@@ -46,6 +48,7 @@
             transform: translateY(-5px);
             box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.20);
         } 
+
 
 
         @media all and (max-width: 1200px) {
@@ -57,14 +60,28 @@
 
         @media all and (max-width: 767px) {
             .CardAlbum {
-                width: 50%;
+                width: 100%;
+
+                    &__container {
+                        display: flex;
+                        flex-direction: row;
+
+                            &__img {
+                                width: 100px;
+                                min-width: 100px;
+                                height: 100px;
+                                min-height: 100px;
+                                margin-right: 20px;
+                            }
+
+                            &__info {
+                                width: 100%;
+                            }
+        
+                    }
              }   
         }
 
-        @media all and (max-width: 400px) {
-            .CardAlbum {
-                width: 100%;
-             }   
-        }
+
        
 }

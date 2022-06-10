@@ -5,14 +5,11 @@
     justify-content: space-between;
     background: #fff;
     width: 100vw;
-    padding: 0.5rem;
-    box-shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #CFD8DC;
+    border-top: 1px solid #CFD8DC;
     align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
     color: $text-general-color;
-    // display: none;
 
     .img_container {
         background-image: linear-gradient( to right, $primary-color, $orange);
