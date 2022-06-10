@@ -16,6 +16,8 @@ import { useRouter } from "next/router";
 const SingleAlbum = ({ id }) => {
   const router = useRouter();
 
+
+  
   const [album, setAlbum] = useState({
     cover: "https://picsum.photos/200/300",
     featuring: [],
