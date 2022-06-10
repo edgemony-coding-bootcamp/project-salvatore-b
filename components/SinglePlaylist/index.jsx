@@ -55,11 +55,6 @@ const SinglePlaylist = ({ id }) => {
 
     // Infine faccio la PUT
 
-    // console.log("Oggetto playlist originale ===>", playlist)
-    // console.log("Oggetto playlist modificato ===>", playlistLocal);
-
-    // console.log("cosa passerò alla PUT", {...playlistLocal})
-
     putPlaylist(playlist.id, { ...playlistLocal });
 
     router.push("/");
